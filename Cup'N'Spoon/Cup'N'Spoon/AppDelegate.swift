@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  Cup'NTea
+//  Cup'N'Spoon
 //
 //  Created by Raymond Diamonds on 2017-07-10.
 //  Copyright © 2017 Raymond Diamonds. All rights reserved.

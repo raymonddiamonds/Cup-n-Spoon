@@ -7,25 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		38325E4F1F13E68200C2950E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38325E4E1F13E68200C2950E /* AppDelegate.swift */; };
-		38325E511F13E68200C2950E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38325E501F13E68200C2950E /* ViewController.swift */; };
-		38325E541F13E68200C2950E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38325E521F13E68200C2950E /* Main.storyboard */; };
-		38325E561F13E68200C2950E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38325E551F13E68200C2950E /* Assets.xcassets */; };
-		38325E591F13E68200C2950E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38325E571F13E68200C2950E /* LaunchScreen.storyboard */; };
+		38325E731F1427CD00C2950E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38325E721F1427CD00C2950E /* AppDelegate.swift */; };
+		38325E781F1427CD00C2950E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38325E761F1427CD00C2950E /* Main.storyboard */; };
+		38325E7A1F1427CD00C2950E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38325E791F1427CD00C2950E /* Assets.xcassets */; };
+		38325E7D1F1427CD00C2950E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38325E7B1F1427CD00C2950E /* LaunchScreen.storyboard */; };
+		38325E851F142FD800C2950E /* CafeListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38325E841F142FD800C2950E /* CafeListCollectionViewController.swift */; };
+		38325E8A1F14461800C2950E /* CafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38325E891F14461800C2950E /* CafeCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		38325E4B1F13E68100C2950E /* Cup'NTea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cup'NTea.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		38325E4E1F13E68200C2950E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		38325E501F13E68200C2950E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		38325E531F13E68200C2950E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		38325E551F13E68200C2950E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		38325E581F13E68200C2950E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		38325E5A1F13E68200C2950E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38325E6F1F1427CD00C2950E /* Cup'N'Spoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Cup'N'Spoon.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		38325E721F1427CD00C2950E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		38325E771F1427CD00C2950E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		38325E791F1427CD00C2950E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38325E7C1F1427CD00C2950E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		38325E7E1F1427CD00C2950E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38325E841F142FD800C2950E /* CafeListCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CafeListCollectionViewController.swift; path = Controllers/CafeListCollectionViewController.swift; sourceTree = "<group>"; };
+		38325E891F14461800C2950E /* CafeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		38325E481F13E68100C2950E /* Frameworks */ = {
+		38325E6C1F1427CD00C2950E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -35,73 +37,90 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		38325E421F13E68100C2950E = {
+		38325E661F1427CD00C2950E = {
 			isa = PBXGroup;
 			children = (
-				38325E4D1F13E68100C2950E /* Cup'NTea */,
-				38325E4C1F13E68100C2950E /* Products */,
+				38325E711F1427CD00C2950E /* Cup'N'Spoon */,
+				38325E701F1427CD00C2950E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		38325E4C1F13E68100C2950E /* Products */ = {
+		38325E701F1427CD00C2950E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				38325E4B1F13E68100C2950E /* Cup'NTea.app */,
+				38325E6F1F1427CD00C2950E /* Cup'N'Spoon.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		38325E4D1F13E68100C2950E /* Cup'NTea */ = {
+		38325E711F1427CD00C2950E /* Cup'N'Spoon */ = {
 			isa = PBXGroup;
 			children = (
-				38325E4E1F13E68200C2950E /* AppDelegate.swift */,
-				38325E501F13E68200C2950E /* ViewController.swift */,
-				38325E521F13E68200C2950E /* Main.storyboard */,
-				38325E551F13E68200C2950E /* Assets.xcassets */,
-				38325E571F13E68200C2950E /* LaunchScreen.storyboard */,
-				38325E5A1F13E68200C2950E /* Info.plist */,
+				38325E881F14460400C2950E /* View */,
+				38325E871F142FF900C2950E /* Controllers */,
+				38325E721F1427CD00C2950E /* AppDelegate.swift */,
+				38325E761F1427CD00C2950E /* Main.storyboard */,
+				38325E791F1427CD00C2950E /* Assets.xcassets */,
+				38325E7B1F1427CD00C2950E /* LaunchScreen.storyboard */,
+				38325E7E1F1427CD00C2950E /* Info.plist */,
 			);
-			path = "Cup'NTea";
+			path = "Cup'N'Spoon";
+			sourceTree = "<group>";
+		};
+		38325E871F142FF900C2950E /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				38325E841F142FD800C2950E /* CafeListCollectionViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		38325E881F14460400C2950E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				38325E891F14461800C2950E /* CafeCell.swift */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		38325E4A1F13E68100C2950E /* Cup'NTea */ = {
+		38325E6E1F1427CD00C2950E /* Cup'N'Spoon */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 38325E5D1F13E68200C2950E /* Build configuration list for PBXNativeTarget "Cup'NTea" */;
+			buildConfigurationList = 38325E811F1427CD00C2950E /* Build configuration list for PBXNativeTarget "Cup'N'Spoon" */;
 			buildPhases = (
-				38325E471F13E68100C2950E /* Sources */,
-				38325E481F13E68100C2950E /* Frameworks */,
-				38325E491F13E68100C2950E /* Resources */,
+				38325E6B1F1427CD00C2950E /* Sources */,
+				38325E6C1F1427CD00C2950E /* Frameworks */,
+				38325E6D1F1427CD00C2950E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Cup'NTea";
-			productName = "Cup'NTea";
-			productReference = 38325E4B1F13E68100C2950E /* Cup'NTea.app */;
+			name = "Cup'N'Spoon";
+			productName = "Cup'N'Spoon";
+			productReference = 38325E6F1F1427CD00C2950E /* Cup'N'Spoon.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		38325E431F13E68100C2950E /* Project object */ = {
+		38325E671F1427CD00C2950E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = "Raymond Diamonds";
 				TargetAttributes = {
-					38325E4A1F13E68100C2950E = {
+					38325E6E1F1427CD00C2950E = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = CPJ4P77Z36;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
-			buildConfigurationList = 38325E461F13E68100C2950E /* Build configuration list for PBXProject "Cup'NTea" */;
+			buildConfigurationList = 38325E6A1F1427CD00C2950E /* Build configuration list for PBXProject "Cup'N'Spoon" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -109,54 +128,55 @@
 				en,
 				Base,
 			);
-			mainGroup = 38325E421F13E68100C2950E;
-			productRefGroup = 38325E4C1F13E68100C2950E /* Products */;
+			mainGroup = 38325E661F1427CD00C2950E;
+			productRefGroup = 38325E701F1427CD00C2950E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				38325E4A1F13E68100C2950E /* Cup'NTea */,
+				38325E6E1F1427CD00C2950E /* Cup'N'Spoon */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		38325E491F13E68100C2950E /* Resources */ = {
+		38325E6D1F1427CD00C2950E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38325E591F13E68200C2950E /* LaunchScreen.storyboard in Resources */,
-				38325E561F13E68200C2950E /* Assets.xcassets in Resources */,
-				38325E541F13E68200C2950E /* Main.storyboard in Resources */,
+				38325E7D1F1427CD00C2950E /* LaunchScreen.storyboard in Resources */,
+				38325E7A1F1427CD00C2950E /* Assets.xcassets in Resources */,
+				38325E781F1427CD00C2950E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		38325E471F13E68100C2950E /* Sources */ = {
+		38325E6B1F1427CD00C2950E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				38325E511F13E68200C2950E /* ViewController.swift in Sources */,
-				38325E4F1F13E68200C2950E /* AppDelegate.swift in Sources */,
+				38325E851F142FD800C2950E /* CafeListCollectionViewController.swift in Sources */,
+				38325E8A1F14461800C2950E /* CafeCell.swift in Sources */,
+				38325E731F1427CD00C2950E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		38325E521F13E68200C2950E /* Main.storyboard */ = {
+		38325E761F1427CD00C2950E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				38325E531F13E68200C2950E /* Base */,
+				38325E771F1427CD00C2950E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		38325E571F13E68200C2950E /* LaunchScreen.storyboard */ = {
+		38325E7B1F1427CD00C2950E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				38325E581F13E68200C2950E /* Base */,
+				38325E7C1F1427CD00C2950E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -164,7 +184,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		38325E5B1F13E68200C2950E /* Debug */ = {
+		38325E7F1F1427CD00C2950E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -214,7 +234,7 @@
 			};
 			name = Debug;
 		};
-		38325E5C1F13E68200C2950E /* Release */ = {
+		38325E801F1427CD00C2950E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -257,27 +277,27 @@
 			};
 			name = Release;
 		};
-		38325E5E1F13E68200C2950E /* Debug */ = {
+		38325E821F1427CD00C2950E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CPJ4P77Z36;
-				INFOPLIST_FILE = "Cup'NTea/Info.plist";
+				INFOPLIST_FILE = "Cup'N'Spoon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Raymond-Diamonds.Cup-NTea";
+				PRODUCT_BUNDLE_IDENTIFIER = "Raymond-Diamonds.Cup-N-Spoon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
-		38325E5F1F13E68200C2950E /* Release */ = {
+		38325E831F1427CD00C2950E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CPJ4P77Z36;
-				INFOPLIST_FILE = "Cup'NTea/Info.plist";
+				INFOPLIST_FILE = "Cup'N'Spoon/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Raymond-Diamonds.Cup-NTea";
+				PRODUCT_BUNDLE_IDENTIFIER = "Raymond-Diamonds.Cup-N-Spoon";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -286,24 +306,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		38325E461F13E68100C2950E /* Build configuration list for PBXProject "Cup'NTea" */ = {
+		38325E6A1F1427CD00C2950E /* Build configuration list for PBXProject "Cup'N'Spoon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				38325E5B1F13E68200C2950E /* Debug */,
-				38325E5C1F13E68200C2950E /* Release */,
+				38325E7F1F1427CD00C2950E /* Debug */,
+				38325E801F1427CD00C2950E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		38325E5D1F13E68200C2950E /* Build configuration list for PBXNativeTarget "Cup'NTea" */ = {
+		38325E811F1427CD00C2950E /* Build configuration list for PBXNativeTarget "Cup'N'Spoon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				38325E5E1F13E68200C2950E /* Debug */,
-				38325E5F1F13E68200C2950E /* Release */,
+				38325E821F1427CD00C2950E /* Debug */,
+				38325E831F1427CD00C2950E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 38325E431F13E68100C2950E /* Project object */;
+	rootObject = 38325E671F1427CD00C2950E /* Project object */;
 }

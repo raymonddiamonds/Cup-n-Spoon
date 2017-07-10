@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "38325E4A1F13E68100C2950E"
-               BuildableName = "Cup&apos;NTea.app"
-               BlueprintName = "Cup&apos;NTea"
-               ReferencedContainer = "container:Cup&apos;NTea.xcodeproj">
+               BlueprintIdentifier = "38325E6E1F1427CD00C2950E"
+               BuildableName = "Cup&apos;N&apos;Spoon.app"
+               BlueprintName = "Cup&apos;N&apos;Spoon"
+               ReferencedContainer = "container:Cup&apos;N&apos;Spoon.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -32,10 +32,10 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "38325E4A1F13E68100C2950E"
-            BuildableName = "Cup&apos;NTea.app"
-            BlueprintName = "Cup&apos;NTea"
-            ReferencedContainer = "container:Cup&apos;NTea.xcodeproj">
+            BlueprintIdentifier = "38325E6E1F1427CD00C2950E"
+            BuildableName = "Cup&apos;N&apos;Spoon.app"
+            BlueprintName = "Cup&apos;N&apos;Spoon"
+            ReferencedContainer = "container:Cup&apos;N&apos;Spoon.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -55,10 +55,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "38325E4A1F13E68100C2950E"
-            BuildableName = "Cup&apos;NTea.app"
-            BlueprintName = "Cup&apos;NTea"
-            ReferencedContainer = "container:Cup&apos;NTea.xcodeproj">
+            BlueprintIdentifier = "38325E6E1F1427CD00C2950E"
+            BuildableName = "Cup&apos;N&apos;Spoon.app"
+            BlueprintName = "Cup&apos;N&apos;Spoon"
+            ReferencedContainer = "container:Cup&apos;N&apos;Spoon.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -74,10 +74,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "38325E4A1F13E68100C2950E"
-            BuildableName = "Cup&apos;NTea.app"
-            BlueprintName = "Cup&apos;NTea"
-            ReferencedContainer = "container:Cup&apos;NTea.xcodeproj">
+            BlueprintIdentifier = "38325E6E1F1427CD00C2950E"
+            BuildableName = "Cup&apos;N&apos;Spoon.app"
+            BlueprintName = "Cup&apos;N&apos;Spoon"
+            ReferencedContainer = "container:Cup&apos;N&apos;Spoon.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

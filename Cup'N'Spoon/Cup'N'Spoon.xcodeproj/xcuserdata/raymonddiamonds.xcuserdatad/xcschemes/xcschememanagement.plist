@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Cup'NTea.xcscheme</key>
+		<key>Cup'N'Spoon.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,7 +12,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>38325E4A1F13E68100C2950E</key>
+		<key>38325E6E1F1427CD00C2950E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
