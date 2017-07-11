@@ -20,8 +20,14 @@ class CafeListCollectionViewController: UICollectionViewController,UICollectionV
         //dummy data: list of cafes
         cafeList = ["Café Pika","The Humble Lion", "Café St-Laurent", "Not Starbucks"]
         
-
-       collectionView?.backgroundColor = UIColor.blue
+//        if let patternImage = UIImage(named: "Image") {
+//            view.backgroundColor = UIColor(patternImage: patternImage)
+//        }
+//
+//        collectionView!.backgroundColor = UIColor.clear
+//        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
+//        
+        collectionView?.backgroundColor = UIColor(red:0.96, green:0.95, blue:0.94, alpha:1.0)
         
 
     }
