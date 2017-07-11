@@ -10,14 +10,20 @@ import UIKit
 
 private let reuseIdentifier = "cafeCell"
 
-class CafeListCollectionViewController: UICollectionViewController {
+class CafeListCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
     
     var cafeList = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //dummy data: list of cafes
         cafeList = ["Café Pika","The Humble Lion", "Café St-Laurent", "Not Starbucks"]
+        
+
+       collectionView?.backgroundColor = UIColor.blue
+        
+
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -35,5 +41,16 @@ class CafeListCollectionViewController: UICollectionViewController {
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        
+        let height = self.view.frame.size.height;
+        let width = self.view.frame.size.height;
+        
+        return CGSize(width: width*0.26, height: height*0.26)
+    }
+    
+
 
 }
