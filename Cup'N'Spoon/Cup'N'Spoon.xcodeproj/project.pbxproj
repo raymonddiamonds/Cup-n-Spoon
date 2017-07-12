@@ -15,6 +15,8 @@
 		38325E7D1F1427CD00C2950E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38325E7B1F1427CD00C2950E /* LaunchScreen.storyboard */; };
 		38325E851F142FD800C2950E /* CafeListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38325E841F142FD800C2950E /* CafeListCollectionViewController.swift */; };
 		386577071F15C140007F4FD0 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386577061F15C140007F4FD0 /* UIImage.swift */; };
+		3865770A1F1698EB007F4FD0 /* YelpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386577091F1698EB007F4FD0 /* YelpClient.swift */; };
+		40DBBB2CFC4FA5AA40AA0E9D /* Pods_Cup_N_Spoon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8217D6DA83FF91DDF5C3348F /* Pods_Cup_N_Spoon.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,10 @@
 		38325E7E1F1427CD00C2950E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38325E841F142FD800C2950E /* CafeListCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CafeListCollectionViewController.swift; path = Controllers/CafeListCollectionViewController.swift; sourceTree = "<group>"; };
 		386577061F15C140007F4FD0 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Extensions/UIImage.swift; sourceTree = "<group>"; };
+		386577091F1698EB007F4FD0 /* YelpClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClient.swift; sourceTree = "<group>"; };
+		8217D6DA83FF91DDF5C3348F /* Pods_Cup_N_Spoon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cup_N_Spoon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		922D0CE35A03F608461644C0 /* Pods-Cup'N'Spoon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cup'N'Spoon.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cup'N'Spoon/Pods-Cup'N'Spoon.debug.xcconfig"; sourceTree = "<group>"; };
+		ACD8E12621C74DA7E7EE17D4 /* Pods-Cup'N'Spoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cup'N'Spoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cup'N'Spoon/Pods-Cup'N'Spoon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,12 +41,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40DBBB2CFC4FA5AA40AA0E9D /* Pods_Cup_N_Spoon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		33E0E4F2215FA0D442ED729D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8217D6DA83FF91DDF5C3348F /* Pods_Cup_N_Spoon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		38302CCC1F158BD000B69671 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -54,6 +69,8 @@
 			children = (
 				38325E711F1427CD00C2950E /* Cup'N'Spoon */,
 				38325E701F1427CD00C2950E /* Products */,
+				CF018FAC543C3697B9B7C5C7 /* Pods */,
+				33E0E4F2215FA0D442ED729D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,11 +85,12 @@
 		38325E711F1427CD00C2950E /* Cup'N'Spoon */ = {
 			isa = PBXGroup;
 			children = (
+				38325E721F1427CD00C2950E /* AppDelegate.swift */,
 				38325E881F14460400C2950E /* View */,
 				38325E871F142FF900C2950E /* Controllers */,
 				386577051F15C10F007F4FD0 /* Extensions */,
 				38302CCC1F158BD000B69671 /* Models */,
-				38325E721F1427CD00C2950E /* AppDelegate.swift */,
+				386577081F169882007F4FD0 /* Services */,
 				38325E761F1427CD00C2950E /* Main.storyboard */,
 				38325E791F1427CD00C2950E /* Assets.xcassets */,
 				38325E7B1F1427CD00C2950E /* LaunchScreen.storyboard */,
@@ -105,6 +123,23 @@
 			name = Extensions;
 			sourceTree = "<group>";
 		};
+		386577081F169882007F4FD0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				386577091F1698EB007F4FD0 /* YelpClient.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		CF018FAC543C3697B9B7C5C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				922D0CE35A03F608461644C0 /* Pods-Cup'N'Spoon.debug.xcconfig */,
+				ACD8E12621C74DA7E7EE17D4 /* Pods-Cup'N'Spoon.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -112,9 +147,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 38325E811F1427CD00C2950E /* Build configuration list for PBXNativeTarget "Cup'N'Spoon" */;
 			buildPhases = (
+				981611CF6C90B2C791AB25E9 /* [CP] Check Pods Manifest.lock */,
 				38325E6B1F1427CD00C2950E /* Sources */,
 				38325E6C1F1427CD00C2950E /* Frameworks */,
 				38325E6D1F1427CD00C2950E /* Resources */,
+				8D4FFA15F73AAED6E2131770 /* [CP] Embed Pods Frameworks */,
+				A7372FFADD23B2259541F090 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -173,6 +211,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8D4FFA15F73AAED6E2131770 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cup'N'Spoon/Pods-Cup'N'Spoon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		981611CF6C90B2C791AB25E9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A7372FFADD23B2259541F090 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cup'N'Spoon/Pods-Cup'N'Spoon-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		38325E6B1F1427CD00C2950E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -182,6 +268,7 @@
 				386577071F15C140007F4FD0 /* UIImage.swift in Sources */,
 				38325E851F142FD800C2950E /* CafeListCollectionViewController.swift in Sources */,
 				38325E731F1427CD00C2950E /* AppDelegate.swift in Sources */,
+				3865770A1F1698EB007F4FD0 /* YelpClient.swift in Sources */,
 				38302CCB1F158B5B00B69671 /* CafeCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +390,7 @@
 		};
 		38325E821F1427CD00C2950E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 922D0CE35A03F608461644C0 /* Pods-Cup'N'Spoon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CPJ4P77Z36;
@@ -316,6 +404,7 @@
 		};
 		38325E831F1427CD00C2950E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ACD8E12621C74DA7E7EE17D4 /* Pods-Cup'N'Spoon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = CPJ4P77Z36;
