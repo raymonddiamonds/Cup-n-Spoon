@@ -6,23 +6,11 @@
     },
     {
       "idiom" : "universal",
-      "filename" : "background.png",
+      "filename" : "rab-fyfe-199683 (1).jpg",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
-    },
-    {
-      "idiom" : "iphone",
-      "scale" : "1x"
-    },
-    {
-      "idiom" : "iphone",
-      "scale" : "2x"
-    },
-    {
-      "idiom" : "iphone",
       "scale" : "3x"
     }
   ],

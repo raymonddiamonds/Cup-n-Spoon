@@ -14,6 +14,7 @@
 		38325E7A1F1427CD00C2950E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 38325E791F1427CD00C2950E /* Assets.xcassets */; };
 		38325E7D1F1427CD00C2950E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38325E7B1F1427CD00C2950E /* LaunchScreen.storyboard */; };
 		38325E851F142FD800C2950E /* CafeListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38325E841F142FD800C2950E /* CafeListCollectionViewController.swift */; };
+		386577071F15C140007F4FD0 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386577061F15C140007F4FD0 /* UIImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		38325E7C1F1427CD00C2950E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		38325E7E1F1427CD00C2950E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		38325E841F142FD800C2950E /* CafeListCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CafeListCollectionViewController.swift; path = Controllers/CafeListCollectionViewController.swift; sourceTree = "<group>"; };
+		386577061F15C140007F4FD0 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Extensions/UIImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				38325E881F14460400C2950E /* View */,
 				38325E871F142FF900C2950E /* Controllers */,
+				386577051F15C10F007F4FD0 /* Extensions */,
 				38302CCC1F158BD000B69671 /* Models */,
 				38325E721F1427CD00C2950E /* AppDelegate.swift */,
 				38325E761F1427CD00C2950E /* Main.storyboard */,
@@ -92,6 +95,14 @@
 				38302CCA1F158B5B00B69671 /* CafeCell.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		386577051F15C10F007F4FD0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				386577061F15C140007F4FD0 /* UIImage.swift */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -168,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				38302CCE1F158BF900B69671 /* Cafe.swift in Sources */,
+				386577071F15C140007F4FD0 /* UIImage.swift in Sources */,
 				38325E851F142FD800C2950E /* CafeListCollectionViewController.swift in Sources */,
 				38325E731F1427CD00C2950E /* AppDelegate.swift in Sources */,
 				38302CCB1F158B5B00B69671 /* CafeCell.swift in Sources */,

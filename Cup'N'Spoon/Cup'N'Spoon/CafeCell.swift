@@ -10,6 +10,10 @@ import UIKit
 
 class CafeCell: UICollectionViewCell {
     
-    @IBOutlet weak var cafeName: UILabel!
+//    @IBOutlet weak var cafeName: UILabel!
+    @IBOutlet weak var cafeImage: UIImageView!
+    
 
+
+    @IBOutlet weak var cafeName: UILabel!
 }

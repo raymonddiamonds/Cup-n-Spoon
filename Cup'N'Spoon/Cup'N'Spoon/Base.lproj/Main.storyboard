@@ -31,19 +31,32 @@
                                     <rect key="frame" x="0.0" y="0.0" width="168" height="168"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rvJ-oI-Qqv">
-                                            <rect key="frame" x="0.0" y="74" width="168" height="21"/>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRo-ah-iDq">
+                                            <rect key="frame" x="0.0" y="0.0" width="168" height="168"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="tRI-lv-k5O">
+                                                    <rect key="frame" x="0.0" y="0.0" width="168" height="168"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cafe Num 1" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zw-VO-HyB">
+                                                    <rect key="frame" x="0.0" y="0.0" width="168" height="168"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="35"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                        </view>
                                     </subviews>
                                 </view>
-                                <color key="backgroundColor" red="0.02010897733271122" green="0.9621085524559021" blue="0.085060067474842072" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.037408005446195602" green="0.17715904116630554" blue="0.97330409288406372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
-                                    <outlet property="cafeName" destination="rvJ-oI-Qqv" id="C4S-d4-7Xb"/>
+                                    <outlet property="cafeImage" destination="tRI-lv-k5O" id="Se8-dd-ttX"/>
+                                    <outlet property="cafeName" destination="9Zw-VO-HyB" id="7dC-Xa-xLq"/>
+                                    <segue destination="65l-Oh-Nw1" kind="show" id="NVg-mX-J3T"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -58,14 +71,35 @@
             </objects>
             <point key="canvasLocation" x="2092" y="-150.67466266866569"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="PPw-UY-oza">
+            <objects>
+                <viewController id="65l-Oh-Nw1" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="SzI-Xd-dNc"/>
+                        <viewControllerLayoutGuide type="bottom" id="nof-WT-100"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PbQ-od-tlF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DT9-vf-RbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3061" y="-144"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="pMI-ri-OiU">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="oDW-Mm-8n1" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o6A-XB-dcx">
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="o6A-XB-dcx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.083329252898693085" green="0.73934322595596313" blue="0.69621831178665161" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -77,4 +111,7 @@
             <point key="canvasLocation" x="1152.8" y="-150.67466266866569"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Image" width="2040" height="1632"/>
+    </resources>
 </document>
