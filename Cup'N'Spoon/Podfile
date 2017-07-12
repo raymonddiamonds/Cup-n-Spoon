@@ -7,6 +7,6 @@ target 'Cup\'N\'Spoon' do
 
   # Pods for Cup'N'Spoon
   
-  pod "YelpAPI"
+  pod 'Alamofire'
   
 end

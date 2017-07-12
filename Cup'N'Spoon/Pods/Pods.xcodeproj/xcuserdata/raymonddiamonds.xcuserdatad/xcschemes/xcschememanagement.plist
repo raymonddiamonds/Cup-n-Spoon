@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-Cup'N'Spoon.xcscheme</key>
+		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>YelpAPI.xcscheme</key>
+		<key>Pods-Cup'N'Spoon.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -17,12 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>C8B8232DD50306D64745EB36598ED2FE</key>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D5535A420302E4A14F01C45F9521E222</key>
+		<key>9B5A005ECDEE182113A13BAD53FCA6EB</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,0 +1,13 @@
+{
+  'version': 0,
+  'case-sensitive': 'false',
+  'roots': [{
+    'type': 'directory',
+    'name': '/Users/raymonddiamonds/Raymond's Documents/Make School/Cup'NSpoon/Cup-n-Spoon/Cup'N'Spoon/build/Debug-iphoneos/AlamofireNetworkActivityIndicator/AlamofireNetworkActivityIndicator.framework/Modules'
+    'contents': [{
+      'type': 'file',
+      'name': 'module.modulemap',
+      'external-contents': '/Users/raymonddiamonds/Raymond's Documents/Make School/Cup'NSpoon/Cup-n-Spoon/Cup'N'Spoon/build/Pods.build/Debug-iphoneos/AlamofireNetworkActivityIndicator.build/unextended-module.modulemap',
+    }]
+  }]
+}
