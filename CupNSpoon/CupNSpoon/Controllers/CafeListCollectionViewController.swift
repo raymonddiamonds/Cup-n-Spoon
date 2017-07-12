@@ -20,7 +20,8 @@ class CafeListCollectionViewController: UICollectionViewController,UICollectionV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let requestParams: Parameters = ["access_token": AppDelegate.application. ]
+        // let requestParams: Parameters = ["access_token": ]
+        //i am testing this
         
         
         Alamofire.request("https://api.yelp.com/v3/businesses/search").responseJSON { (response) in
