@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CupNSpoon/Controllers/CafeListCollectionViewController.swift"
-            timestampString = "521591806.502598"
+            filePath = "CupNSpoon/YelpClientService.swift"
+            timestampString = "521672785.48165"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "viewDidLoad()"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "getBusinessess(url:parameters:headers:completionHandler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,14 +25,62 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CupNSpoon/AppDelegate.swift"
-            timestampString = "521591814.004467"
+            filePath = "CupNSpoon/YelpClientService.swift"
+            timestampString = "521673797.781761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "25"
-            endingLineNumber = "25"
-            landmarkName = "application(_:didFinishLaunchingWithOptions:)"
+            startingLineNumber = "30"
+            endingLineNumber = "30"
+            landmarkName = "getBusinessess(url:parameters:headers:completionHandler:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+            timestampString = "521673897.897249"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupNSpoon.CafeListCollectionViewController.viewDidLoad () -&gt; ()"
+                  moduleName = "CupNSpoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raymonddiamonds/Raymond&apos;s%20Documents/Make%20School/Cup&apos;NSpoon/Cup-n-Spoon/CupNSpoon/CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+                  timestampString = "521674168.501181"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "703">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupNSpoon.CafeListCollectionViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "CupNSpoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raymonddiamonds/Raymond&apos;s%20Documents/Make%20School/Cup&apos;NSpoon/Cup-n-Spoon/CupNSpoon/CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+                  timestampString = "521674168.504941"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "204">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

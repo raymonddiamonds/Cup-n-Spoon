@@ -18,6 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let clientId = "QPNrE0x7lV35PZrftEtXug"
     let clientSecret = "JmnL4tC4ujOYo0ocnTho5pxuLgA3WUCcuBENiQWEDTEgcvUiEzyDZKbqfnmAbmfh"
 
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
@@ -26,7 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
             let params: Parameters = ["client_id": clientId, "client_secret": clientSecret]
             
-            //        Alamofire.request(tokenURL, method: .post, parameter: params)
+            //Alamofire.request(tokenURL, method: .post, parameter: params)
             Alamofire.request(tokenURL, method: .post, parameters: params, encoding: URLEncoding.default).responseData { (response) in
                 let json = JSON(with: response.data!)
                 //            print("Here is JSON: \(json)")

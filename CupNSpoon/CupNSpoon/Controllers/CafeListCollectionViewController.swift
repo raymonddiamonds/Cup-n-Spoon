@@ -14,40 +14,32 @@ private let reuseIdentifier = "cafeCell"
 
 class CafeListCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
 
-    
-    var cafeList = [String]()
+    var cafeList = [Cafe]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // let requestParams: Parameters = ["access_token": ]
-        //i am testing this
+        let requestParams: Parameters = ["term": "cafe", "location": "Montreal"]
         
+        let baseURL = "https://api.yelp.com/v3/businesses/search"
         
-        Alamofire.request("https://api.yelp.com/v3/businesses/search").responseJSON { (response) in
-            print(response.result)
+        let headers: HTTPHeaders = [
+            "Authorization": "Bearer ZVSFGHzgWxncnt5-vre17_advOlPsETIy8UOEsk58V_cMSSgPRCVTL4p7p1zpJBYwuJR-3RMjZFTg1BnXdleKVLecGuYtEqYOrzrsxv2s2mhuMUcpd-0JfRI7JlmWXYx"
+        ]
+
+        
+        YelpClientService.getBusinesses(url: baseURL, parameters: requestParams, headers: headers) { (receivedCafes) in
+            self.cafeList = receivedCafes
+            self.collectionView?.reloadData()
         }
         
-        
-        
-        //dummy data: list of cafes
-        cafeList = ["Café Pika","Café Humble Lion", "Café St-Laurent", "Not Starbucks"]
-        
-        
-//        if let patternImage = UIImage(named: "Image") {
-//            view.backgroundColor = UIColor(patternImage: patternImage)
-//        }
-//
-//        collectionView!.backgroundColor = UIColor.clear
-//        collectionView!.contentInset = UIEdgeInsets(top: 23, left: 5, bottom: 10, right: 5)
-//        
         collectionView?.backgroundColor = UIColor(red:0.96, green:0.95, blue:0.94, alpha:1.0)
         
 
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 4
+        return cafeList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -68,7 +60,7 @@ class CafeListCollectionViewController: UICollectionViewController,UICollectionV
         //populating cell with Cafe Name from Array
         let cafe = cafeList[indexPath.row]
         
-        cell.cafeName.text = cafe
+        cell.cafeName.text = cafe.name
         
         return cell
     }
