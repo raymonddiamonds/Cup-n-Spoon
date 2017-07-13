@@ -17,7 +17,8 @@ class YelpClientService {
         
         Alamofire.request(url, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
             let json = JSON(with: response.data)
-            let businesses = json["businesse"].array
+            let businesses = json["businesses"].array
+            print(businesses)
             
             var cafes = [Cafe]()
             for business in businesses! {

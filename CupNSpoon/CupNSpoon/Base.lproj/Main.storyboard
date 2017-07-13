@@ -76,12 +76,12 @@
             <objects>
                 <viewController id="65l-Oh-Nw1" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="SzI-Xd-dNc"/>
-                        <viewControllerLayoutGuide type="bottom" id="nof-WT-100"/>
+                        <viewControllerLayoutGuide type="top" id="edN-nb-XNR"/>
+                        <viewControllerLayoutGuide type="bottom" id="QT8-ra-9EE"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="PbQ-od-tlF">
+                    <view key="view" contentMode="scaleToFill" id="Uo6-fl-BLs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

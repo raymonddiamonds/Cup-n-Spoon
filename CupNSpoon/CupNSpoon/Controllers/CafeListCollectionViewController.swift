@@ -19,7 +19,7 @@ class CafeListCollectionViewController: UICollectionViewController,UICollectionV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let requestParams: Parameters = ["term": "cafe", "location": "Montreal"]
+        let requestParams: Parameters = ["term": "cafe", "location": "Montreal", "sort_by": "distance"]
         
         let baseURL = "https://api.yelp.com/v3/businesses/search"
         
