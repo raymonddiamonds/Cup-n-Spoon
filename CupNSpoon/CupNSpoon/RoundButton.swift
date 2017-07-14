@@ -30,15 +30,6 @@ class RoundButton: UIButton {
             self.layer.borderColor = borderColor.cgColor
         }
     }
-    
-    @IBInspectable var backgroundColor: UIColor = UIColor.gray {
-        didSet {
-            self.layer.backgroundColor = backgroundColor.cgColor
-        }
-    }
 
-    
-    
-    
 }
 
