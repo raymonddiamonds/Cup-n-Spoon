@@ -12,7 +12,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="Y9q-yc-Gm7">
             <objects>
-                <viewController id="8bu-vB-kkB" customClass="WelcomeViewController" customModule="CupNSpoon" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8bu-vB-kkB" customClass="WelcomeViewController" customModule="CupNSpoon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4C8-Wq-O7l" customClass="WelcomeViewController" customModule="CupNSpoon" customModuleProvider="target"/>
                         <viewControllerLayoutGuide type="bottom" id="Dcb-BG-TVS"/>
@@ -24,8 +24,15 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="welcomebackground" translatesAutoresizingMaskIntoConstraints="NO" id="9Uq-qQ-sec">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cup N Spoon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYi-Gt-EDs">
+                                <rect key="frame" x="0.0" y="102" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="52"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tdR-5X-0LS" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                <rect key="frame" x="101" y="464" width="172" height="30"/>
+                                <rect key="frame" x="101" y="456" width="172" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="20"/>
                                 <state key="normal" title="Brew Your Latté">
@@ -42,17 +49,7 @@
                                         <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="brewYourLatte:" destination="8bu-vB-kkB" eventType="touchUpInside" id="W8b-bP-ZRu"/>
-                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cup N Spoon" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="11" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYi-Gt-EDs">
-                                <rect key="frame" x="0.0" y="102" width="375" height="90"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="51"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -62,6 +59,7 @@
                             <constraint firstItem="Dcb-BG-TVS" firstAttribute="top" secondItem="9Uq-qQ-sec" secondAttribute="bottom" id="wgh-ZS-5oq"/>
                         </constraints>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="D71-ap-e5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

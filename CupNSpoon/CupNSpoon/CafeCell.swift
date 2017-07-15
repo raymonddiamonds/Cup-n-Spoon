@@ -15,6 +15,10 @@ class CafeCell: UICollectionViewCell {
     @IBOutlet weak var cafeName: UILabel!
     
 
+
+    
+    
+
     
     
 }

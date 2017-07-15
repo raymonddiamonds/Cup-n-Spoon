@@ -21,41 +21,59 @@
                             <size key="itemSize" width="168" height="168"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="9" minY="14" maxX="9" maxY="11"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" tag="2" contentMode="center" reuseIdentifier="cafeCell" id="Wbf-c3-aQ9" customClass="CafeCell" customModule="CupNSpoon" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="168" height="168"/>
+                                <rect key="frame" x="9" y="14" width="168" height="168"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="168" height="168"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gRo-ah-iDq">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gRo-ah-iDq">
                                             <rect key="frame" x="0.0" y="0.0" width="168" height="168"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rab-fyfe-199683 (1)" translatesAutoresizingMaskIntoConstraints="NO" id="tRI-lv-k5O">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafe" translatesAutoresizingMaskIntoConstraints="NO" id="tRI-lv-k5O">
                                                     <rect key="frame" x="0.0" y="0.0" width="168" height="168"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cafe Num 1" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Zw-VO-HyB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="168" height="168"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Palatino-Bold" family="Palatino" pointSize="35"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ywW-sd-PWV" customClass="CafeLabel" customModule="CupNSpoon" customModuleProvider="target">
+                                                    <rect key="frame" x="8" y="8" width="152" height="62"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="iPhoneFontSize">
+                                                            <real key="value" value="18"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                            <constraints>
+                                                <constraint firstItem="ywW-sd-PWV" firstAttribute="leading" secondItem="gRo-ah-iDq" secondAttribute="leading" constant="8" id="E2R-U0-SO4"/>
+                                                <constraint firstAttribute="trailing" secondItem="ywW-sd-PWV" secondAttribute="trailing" constant="8" id="GZh-rX-Sb0"/>
+                                                <constraint firstItem="ywW-sd-PWV" firstAttribute="top" secondItem="gRo-ah-iDq" secondAttribute="top" constant="8" id="P0V-E5-hIB"/>
+                                                <constraint firstAttribute="trailing" secondItem="tRI-lv-k5O" secondAttribute="trailing" id="QJN-8u-ZZx"/>
+                                                <constraint firstAttribute="bottom" secondItem="tRI-lv-k5O" secondAttribute="bottom" id="WPX-xU-lsu"/>
+                                                <constraint firstItem="tRI-lv-k5O" firstAttribute="leading" secondItem="gRo-ah-iDq" secondAttribute="leading" id="dtx-4X-D7K"/>
+                                                <constraint firstItem="tRI-lv-k5O" firstAttribute="top" secondItem="gRo-ah-iDq" secondAttribute="top" id="iMX-mj-1GH"/>
+                                                <constraint firstAttribute="bottom" secondItem="ywW-sd-PWV" secondAttribute="bottom" constant="98" id="vvc-en-QWp"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                 </view>
                                 <color key="tintColor" red="0.037408005446195602" green="0.17715904116630554" blue="0.97330409288406372" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="gRo-ah-iDq" secondAttribute="bottom" id="2Qs-AI-Cd9"/>
+                                    <constraint firstItem="gRo-ah-iDq" firstAttribute="top" secondItem="Wbf-c3-aQ9" secondAttribute="top" id="P1Z-Eq-4dC"/>
+                                    <constraint firstItem="gRo-ah-iDq" firstAttribute="leading" secondItem="Wbf-c3-aQ9" secondAttribute="leading" id="Vaw-Js-2dY"/>
+                                    <constraint firstAttribute="trailing" secondItem="gRo-ah-iDq" secondAttribute="trailing" id="zPY-sa-0yX"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="cafeImage" destination="tRI-lv-k5O" id="QHX-9s-D4d"/>
-                                    <outlet property="cafeName" destination="9Zw-VO-HyB" id="vfU-DO-lQ3"/>
+                                    <outlet property="cafeName" destination="ywW-sd-PWV" id="ytD-r5-7e7"/>
                                     <segue destination="65l-Oh-Nw1" kind="show" id="NVg-mX-J3T"/>
                                 </connections>
                             </collectionViewCell>
@@ -69,12 +87,12 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJU-HK-tZx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2092" y="-150.67466266866569"/>
+            <point key="canvasLocation" x="2090.625" y="-151.05633802816902"/>
         </scene>
-        <!--View Controller-->
+        <!--Detailed Cafe-->
         <scene sceneID="PPw-UY-oza">
             <objects>
-                <viewController id="65l-Oh-Nw1" sceneMemberID="viewController">
+                <viewController id="65l-Oh-Nw1" customClass="DetailedCafe" customModule="CupNSpoon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="edN-nb-XNR"/>
                         <viewControllerLayoutGuide type="bottom" id="QT8-ra-9EE"/>
@@ -82,12 +100,48 @@
                     <view key="view" contentMode="scaleToFill" id="Uo6-fl-BLs">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Du-Bg-wBw">
+                                <rect key="frame" x="0.0" y="64" width="375" height="293"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafe" translatesAutoresizingMaskIntoConstraints="NO" id="SQT-L5-6Tz">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="293"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cafe Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFE-fs-ly5">
+                                        <rect key="frame" x="8" y="165" width="266" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="UlP-Wg-KTN"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="aFE-fs-ly5" firstAttribute="leading" secondItem="7Du-Bg-wBw" secondAttribute="leading" constant="8" id="CLn-Pw-pb8"/>
+                                    <constraint firstAttribute="bottom" secondItem="SQT-L5-6Tz" secondAttribute="bottom" id="Deq-7E-V5G"/>
+                                    <constraint firstItem="SQT-L5-6Tz" firstAttribute="top" secondItem="7Du-Bg-wBw" secondAttribute="top" id="Rak-2L-dI8"/>
+                                    <constraint firstAttribute="trailing" secondItem="SQT-L5-6Tz" secondAttribute="trailing" id="U6r-JE-OET"/>
+                                    <constraint firstItem="SQT-L5-6Tz" firstAttribute="leading" secondItem="7Du-Bg-wBw" secondAttribute="leading" id="UbG-M3-97w"/>
+                                    <constraint firstAttribute="bottom" secondItem="aFE-fs-ly5" secondAttribute="bottom" constant="8" id="k6n-Y6-v08"/>
+                                    <constraint firstItem="aFE-fs-ly5" firstAttribute="top" secondItem="7Du-Bg-wBw" secondAttribute="top" constant="165" id="lnQ-BT-trl"/>
+                                    <constraint firstAttribute="trailing" secondItem="aFE-fs-ly5" secondAttribute="trailing" constant="101" id="tmQ-kB-Ii2"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7Du-Bg-wBw" firstAttribute="leading" secondItem="Uo6-fl-BLs" secondAttribute="leading" id="6t8-nC-fMY"/>
+                            <constraint firstAttribute="trailing" secondItem="7Du-Bg-wBw" secondAttribute="trailing" id="D9y-4t-qAo"/>
+                            <constraint firstItem="7Du-Bg-wBw" firstAttribute="top" secondItem="edN-nb-XNR" secondAttribute="bottom" id="bd4-UG-EcE"/>
+                            <constraint firstItem="QT8-ra-9EE" firstAttribute="top" secondItem="7Du-Bg-wBw" secondAttribute="bottom" constant="310" id="kGS-o2-Wvo"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DT9-vf-RbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3061" y="-144"/>
+            <point key="canvasLocation" x="3060" y="-144.71830985915494"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pMI-ri-OiU">
@@ -112,6 +166,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="rab-fyfe-199683 (1)" width="4080" height="3264"/>
+        <image name="cafe" width="3456" height="1944"/>
     </resources>
 </document>

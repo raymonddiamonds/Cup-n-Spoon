@@ -9,6 +9,7 @@
 import Foundation
 
 class Cafe {
+    //Mark: Properties
     var name: String
 
     

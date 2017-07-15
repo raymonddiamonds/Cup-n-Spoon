@@ -1,16 +1,17 @@
 //
-//  WelcomeViewController.swift
+//  DetailedCafe.swift
 //  CupNSpoon
 //
-//  Created by Raymond Diamonds on 2017-07-13.
+//  Created by Raymond Diamonds on 2017-07-14.
 //  Copyright © 2017 Raymond Diamonds. All rights reserved.
 //
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
-  
+class DetailedCafe: UIViewController {
     
+    @IBOutlet weak var backgroundPic: UIImageView!
+    @IBOutlet weak var cafeName: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()

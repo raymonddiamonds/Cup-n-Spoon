@@ -19,7 +19,7 @@ class CafeListCollectionViewController: UICollectionViewController,UICollectionV
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let requestParams: Parameters = ["term": "cafe", "location": "San Francisco", "sort_by": "distance"]
+        let requestParams: Parameters = ["term": "cafe", "location": "3433 rue Durocher, Montreal", "sort_by": "distance"]
         
         let baseURL = "https://api.yelp.com/v3/businesses/search"
         
@@ -37,6 +37,8 @@ class CafeListCollectionViewController: UICollectionViewController,UICollectionV
         
 
     }
+    
+    
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cafeList.count
@@ -47,11 +49,11 @@ class CafeListCollectionViewController: UICollectionViewController,UICollectionV
         
         //Configure the cell
         
-        if cell.cafeImage.viewWithTag(99) == nil {
+        if cell.cafeImage.viewWithTag(98) == nil {
             // Create a subview which will add an overlay effect on image view
             let overlay = UIView(frame: CGRect(x: 0,y: 0,width: cell.cafeImage.frame.size.width, height: cell.cafeImage.frame.size.height))
             overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.37);
-            overlay.tag = 99
+            overlay.tag = 98
             
             // Add the subview to the UIImageView
             cell.cafeImage.addSubview(overlay)
@@ -65,14 +67,21 @@ class CafeListCollectionViewController: UICollectionViewController,UICollectionV
         return cell
     }
     
+    
     //dynamically resizing Collecting View cell
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         
         let height = self.view.frame.size.height;
         let width = self.view.frame.size.height;
         
-        return CGSize(width: width*0.26, height: height*0.26)
-    }
+        return CGSize(width: width*0.25, height: height*0.25)
+        
+        //return CGSize(width: width*0.26, height: height*0.26)
+        
+//        return CGSize(width: CGFloat((collectionView.frame.size.width / 2) - 20), height: CGFloat(100))
+    } 
+    
+
     
 
 
