@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -71,6 +72,14 @@
                                     <constraint firstItem="gRo-ah-iDq" firstAttribute="leading" secondItem="Wbf-c3-aQ9" secondAttribute="leading" id="Vaw-Js-2dY"/>
                                     <constraint firstAttribute="trailing" secondItem="gRo-ah-iDq" secondAttribute="trailing" id="zPY-sa-0yX"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <outlet property="cafeImage" destination="tRI-lv-k5O" id="QHX-9s-D4d"/>
                                     <outlet property="cafeName" destination="ywW-sd-PWV" id="ytD-r5-7e7"/>
@@ -94,54 +103,45 @@
             <objects>
                 <viewController id="65l-Oh-Nw1" customClass="DetailedCafe" customModule="CupNSpoon" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="edN-nb-XNR"/>
-                        <viewControllerLayoutGuide type="bottom" id="QT8-ra-9EE"/>
+                        <viewControllerLayoutGuide type="top" id="7CH-XL-Jb0"/>
+                        <viewControllerLayoutGuide type="bottom" id="4O9-Ns-Ww2"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Uo6-fl-BLs">
+                    <view key="view" contentMode="scaleToFill" id="B6j-sN-Y4K">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Du-Bg-wBw">
-                                <rect key="frame" x="0.0" y="64" width="375" height="293"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ra5-pN-3FD">
+                                <rect key="frame" x="0.0" y="64" width="375" height="215"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafe" translatesAutoresizingMaskIntoConstraints="NO" id="SQT-L5-6Tz">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="293"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cafe Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aFE-fs-ly5">
-                                        <rect key="frame" x="8" y="165" width="266" height="21"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cafe" translatesAutoresizingMaskIntoConstraints="NO" id="vuu-wN-3oW">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="215"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="21" id="UlP-Wg-KTN"/>
+                                            <constraint firstAttribute="width" secondItem="vuu-wN-3oW" secondAttribute="height" multiplier="75:43" id="ZRt-Yl-hSs"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
-                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="aFE-fs-ly5" firstAttribute="leading" secondItem="7Du-Bg-wBw" secondAttribute="leading" constant="8" id="CLn-Pw-pb8"/>
-                                    <constraint firstAttribute="bottom" secondItem="SQT-L5-6Tz" secondAttribute="bottom" id="Deq-7E-V5G"/>
-                                    <constraint firstItem="SQT-L5-6Tz" firstAttribute="top" secondItem="7Du-Bg-wBw" secondAttribute="top" id="Rak-2L-dI8"/>
-                                    <constraint firstAttribute="trailing" secondItem="SQT-L5-6Tz" secondAttribute="trailing" id="U6r-JE-OET"/>
-                                    <constraint firstItem="SQT-L5-6Tz" firstAttribute="leading" secondItem="7Du-Bg-wBw" secondAttribute="leading" id="UbG-M3-97w"/>
-                                    <constraint firstAttribute="bottom" secondItem="aFE-fs-ly5" secondAttribute="bottom" constant="8" id="k6n-Y6-v08"/>
-                                    <constraint firstItem="aFE-fs-ly5" firstAttribute="top" secondItem="7Du-Bg-wBw" secondAttribute="top" constant="165" id="lnQ-BT-trl"/>
-                                    <constraint firstAttribute="trailing" secondItem="aFE-fs-ly5" secondAttribute="trailing" constant="101" id="tmQ-kB-Ii2"/>
+                                    <constraint firstAttribute="bottom" secondItem="vuu-wN-3oW" secondAttribute="bottom" id="DS9-vT-SuE"/>
+                                    <constraint firstItem="vuu-wN-3oW" firstAttribute="leading" secondItem="ra5-pN-3FD" secondAttribute="leading" id="MXd-Wn-P9U"/>
+                                    <constraint firstItem="vuu-wN-3oW" firstAttribute="top" secondItem="ra5-pN-3FD" secondAttribute="top" id="ZpF-wu-Yxe"/>
+                                    <constraint firstAttribute="width" secondItem="ra5-pN-3FD" secondAttribute="height" multiplier="75:43" id="bgu-BI-EKj"/>
+                                    <constraint firstAttribute="trailing" secondItem="vuu-wN-3oW" secondAttribute="trailing" id="p2a-o1-3il"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="7Du-Bg-wBw" firstAttribute="leading" secondItem="Uo6-fl-BLs" secondAttribute="leading" id="6t8-nC-fMY"/>
-                            <constraint firstAttribute="trailing" secondItem="7Du-Bg-wBw" secondAttribute="trailing" id="D9y-4t-qAo"/>
-                            <constraint firstItem="7Du-Bg-wBw" firstAttribute="top" secondItem="edN-nb-XNR" secondAttribute="bottom" id="bd4-UG-EcE"/>
-                            <constraint firstItem="QT8-ra-9EE" firstAttribute="top" secondItem="7Du-Bg-wBw" secondAttribute="bottom" constant="310" id="kGS-o2-Wvo"/>
+                            <constraint firstItem="ra5-pN-3FD" firstAttribute="top" secondItem="7CH-XL-Jb0" secondAttribute="bottom" id="3mZ-v7-UJM"/>
+                            <constraint firstItem="ra5-pN-3FD" firstAttribute="leading" secondItem="B6j-sN-Y4K" secondAttribute="leading" id="62P-0b-M8L"/>
+                            <constraint firstAttribute="trailing" secondItem="ra5-pN-3FD" secondAttribute="trailing" id="Cx3-t4-xF3"/>
+                            <constraint firstItem="4O9-Ns-Ww2" firstAttribute="top" secondItem="ra5-pN-3FD" secondAttribute="bottom" constant="388" id="MmG-hv-Be3"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DT9-vf-RbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3060" y="-144.71830985915494"/>
+            <point key="canvasLocation" x="3060" y="-145.27736131934034"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="pMI-ri-OiU">

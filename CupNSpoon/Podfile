@@ -8,5 +8,6 @@ target 'CupNSpoon' do
   # Pods for CupNSpoon
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod ‘Kingfisher’, ‘~> 3.0’
 
 end

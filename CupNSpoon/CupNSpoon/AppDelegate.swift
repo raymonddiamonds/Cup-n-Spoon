@@ -19,18 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let clientSecret = "JmnL4tC4ujOYo0ocnTho5pxuLgA3WUCcuBENiQWEDTEgcvUiEzyDZKbqfnmAbmfh"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-//        
-//        self.window = UIWindow(frame: UIScreen.main.bounds)
-//        let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-//        let WelcomeViewController: WelcomeViewController = mainStoryboard.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
-//        
-//        self.window?.rootViewController = WelcomeViewController
-//        
-//        self.window?.makeKeyAndVisible()
-//        
-    
-
         
         if UserDefaults.standard.value(forKey: "token") as? String == nil {
             let tokenURL = "https://api.yelp.com/oauth2/token"

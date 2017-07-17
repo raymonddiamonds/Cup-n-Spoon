@@ -7,14 +7,18 @@
 //
 
 import Foundation
+import Kingfisher
 
 class Cafe {
     //Mark: Properties
     var name: String
+    var imageURL: String
+
 
     
-    init(name: String) {
+    init(name: String, imageURL: String) {
         self.name = name
+        self.imageURL = imageURL
 
     }
 

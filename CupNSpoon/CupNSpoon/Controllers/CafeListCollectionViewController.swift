@@ -9,12 +9,14 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Kingfisher
 
 private let reuseIdentifier = "cafeCell"
 
 class CafeListCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
 
     var cafeList = [Cafe]()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,35 +36,35 @@ class CafeListCollectionViewController: UICollectionViewController,UICollectionV
         }
         
         collectionView?.backgroundColor = UIColor(red:0.96, green:0.95, blue:0.94, alpha:1.0)
-        
 
     }
-    
-    
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cafeList.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CafeCell
         
         //Configure the cell
+
+        //populating cell with cafeName and cafeImage from Array
+        let cafe = cafeList[indexPath.row]
+        cell.cafeName.text = cafe.name
         
+        let imageURL = URL(string: cafe.imageURL)
+        cell.cafeImage.kf.setImage(with: imageURL)
+        
+        // Create a subview which will add an overlay effect on image view
         if cell.cafeImage.viewWithTag(98) == nil {
-            // Create a subview which will add an overlay effect on image view
             let overlay = UIView(frame: CGRect(x: 0,y: 0,width: cell.cafeImage.frame.size.width, height: cell.cafeImage.frame.size.height))
             overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.37);
             overlay.tag = 98
             
-            // Add the subview to the UIImageView
+            //Add the subview to the UIImageView
             cell.cafeImage.addSubview(overlay)
         }
-
-        //populating cell with Cafe Name from Array
-        let cafe = cafeList[indexPath.row]
-        
-        cell.cafeName.text = cafe.name
         
         return cell
     }
