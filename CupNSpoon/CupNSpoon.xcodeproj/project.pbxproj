@@ -14,7 +14,7 @@
 		383809451F183CDE0013E3C5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383809441F183CDE0013E3C5 /* WelcomeViewController.swift */; };
 		383809471F183D7D0013E3C5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383809461F183D7D0013E3C5 /* RoundButton.swift */; };
 		3838094B1F19797E0013E3C5 /* CafeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838094A1F19797E0013E3C5 /* CafeLabel.swift */; };
-		3838094F1F198C5B0013E3C5 /* DetailedCafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838094E1F198C5B0013E3C5 /* DetailedCafe.swift */; };
+		383809551F1D863C0013E3C5 /* DetailedCafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383809541F1D863C0013E3C5 /* DetailedCafe.swift */; };
 		389CEAB01F16CC4A0081BC00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAAF1F16CC4A0081BC00 /* AppDelegate.swift */; };
 		389CEAB51F16CC4A0081BC00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 389CEAB31F16CC4A0081BC00 /* Main.storyboard */; };
 		389CEAB71F16CC4A0081BC00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 389CEAB61F16CC4A0081BC00 /* Assets.xcassets */; };
@@ -34,7 +34,7 @@
 		383809441F183CDE0013E3C5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Controllers/WelcomeViewController.swift; sourceTree = "<group>"; };
 		383809461F183D7D0013E3C5 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		3838094A1F19797E0013E3C5 /* CafeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CafeLabel.swift; path = Extensions/CafeLabel.swift; sourceTree = "<group>"; };
-		3838094E1F198C5B0013E3C5 /* DetailedCafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCafe.swift; sourceTree = "<group>"; };
+		383809541F1D863C0013E3C5 /* DetailedCafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCafe.swift; sourceTree = "<group>"; };
 		389CEAAC1F16CC4A0081BC00 /* CupNSpoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupNSpoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		389CEAAF1F16CC4A0081BC00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		389CEAB41F16CC4A0081BC00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -161,7 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				389CEAC71F16CD170081BC00 /* CafeCell.swift */,
-				3838094E1F198C5B0013E3C5 /* DetailedCafe.swift */,
+				383809541F1D863C0013E3C5 /* DetailedCafe.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -293,7 +293,7 @@
 			files = (
 				383809471F183D7D0013E3C5 /* RoundButton.swift in Sources */,
 				389CEAC81F16CD170081BC00 /* CafeCell.swift in Sources */,
-				3838094F1F198C5B0013E3C5 /* DetailedCafe.swift in Sources */,
+				383809551F1D863C0013E3C5 /* DetailedCafe.swift in Sources */,
 				383809451F183CDE0013E3C5 /* WelcomeViewController.swift in Sources */,
 				3838094B1F19797E0013E3C5 /* CafeLabel.swift in Sources */,
 				389CEAC41F16CCF90081BC00 /* Cafe.swift in Sources */,

@@ -13,12 +13,18 @@ class Cafe {
     //Mark: Properties
     var name: String
     var imageURL: String
+    var address: String
+    var distance: Double
+    var phoneNum: String
 
 
     
-    init(name: String, imageURL: String) {
+    init(name: String, imageURL: String, address: String, distance: Double, phoneNum: String) {
         self.name = name
         self.imageURL = imageURL
+        self.address = address
+        self.distance = distance
+        self.phoneNum = phoneNum
 
     }
 

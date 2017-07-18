@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "884852BDC97F3BB6A008618A01BF05DD"
-               BuildableName = "Pods_CupNSpoon.framework"
-               BlueprintName = "Pods-CupNSpoon"
+               BlueprintIdentifier = "CD11672B6619C297B6AEE3DFB8213C59"
+               BuildableName = "FontAwesome_swift.framework"
+               BlueprintName = "FontAwesome.swift"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "884852BDC97F3BB6A008618A01BF05DD"
-            BuildableName = "Pods_CupNSpoon.framework"
-            BlueprintName = "Pods-CupNSpoon"
+            BlueprintIdentifier = "CD11672B6619C297B6AEE3DFB8213C59"
+            BuildableName = "FontAwesome_swift.framework"
+            BlueprintName = "FontAwesome.swift"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

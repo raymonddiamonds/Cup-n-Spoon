@@ -15,7 +15,7 @@ class CafeLabel: UILabel {
                 overrideFontSize(fontSize: iPhoneFontSize)
             }
         }
-        
+
         func overrideFontSize(fontSize:CGFloat){
             let currentFontName = self.font.fontName
             var calculatedFont: UIFont?
@@ -27,7 +27,7 @@ class CafeLabel: UILabel {
                 self.font = calculatedFont
                 break
             case 568.0: //iphone 5, 5s => 4 inch
-                calculatedFont = UIFont(name: currentFontName, size: fontSize * 0.8)
+                calculatedFont = UIFont(name: currentFontName, size: fontSize * 0.6)
                 self.font = calculatedFont
                 break
             case 667.0: //iphone 6, 6s => 4.7 inch
@@ -44,5 +44,17 @@ class CafeLabel: UILabel {
             }
             
         }
+    
+    @IBInspectable var borderWidth: CGFloat = 0 {
+        didSet {
+            self.layer.borderWidth = borderWidth
+            
+        }
+    }
+    @IBInspectable var borderColor: UIColor = UIColor.clear {
+        didSet {
+            self.layer.borderColor = borderColor.cgColor
+        }
+    }
 
 }

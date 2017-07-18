@@ -10,4 +10,10 @@ target 'CupNSpoon' do
   pod 'SwiftyJSON'
   pod ‘Kingfisher’, ‘~> 3.0’
 
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '10.0'
+use_frameworks!
+
+pod 'FontAwesome.swift'
+
 end

@@ -13,7 +13,10 @@ class CafeCell: UICollectionViewCell {
 //    @IBOutlet weak var cafeName: UILabel!
     @IBOutlet weak var cafeImage: UIImageView!
     @IBOutlet weak var cafeName: UILabel!
+    @IBOutlet weak var cafeAddress: UILabel!
     
+    
+
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = cornerRadius

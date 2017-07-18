@@ -24,7 +24,11 @@ class YelpClientService {
             for business in businesses! {
                 let name = business["name"].stringValue
                 let imageURL = business["image_url"].stringValue
-                let cafe = Cafe(name: name, imageURL: imageURL)
+                let address = business["location"]["address1"].stringValue
+                let distance = business["distance"].doubleValue
+                let phoneNum = business["phone"].stringValue
+
+                let cafe = Cafe(name: name, imageURL: imageURL, address: address, distance: distance, phoneNum: phoneNum)
                 cafes.append(cafe)
             }
             
