@@ -27,13 +27,22 @@ class CafeListCollectionViewController: UICollectionViewController,UICollectionV
         let baseURL = "https://api.yelp.com/v3/businesses/search"
         
         let headers: HTTPHeaders = [
-            "Authorization": "Bearer ZVSFGHzgWxncnt5-vre17_advOlPsETIy8UOEsk58V_cMSSgPRCVTL4p7p1zpJBYwuJR-3RMjZFTg1BnXdleKVLecGuYtEqYOrzrsxv2s2mhuMUcpd-0JfRI7JlmWXYx"
+            "Authorization": "Bearer \(UserDefaults.standard.string(forKey: "token") ?? "")"
         ]
+        
+
+
 
         
         YelpClientService.getBusinesses(url: baseURL, parameters: requestParams, headers: headers) { (receivedCafes) in
             self.cafeList = receivedCafes
-            self.collectionView?.reloadData()
+            
+            DispatchQueue.main.async {
+                self.collectionView?.reloadData()
+
+            }
+            
+        
         }
         
         collectionView?.backgroundColor = UIColor(red:0.96, green:0.95, blue:0.94, alpha:1.0)
@@ -57,7 +66,7 @@ class CafeListCollectionViewController: UICollectionViewController,UICollectionV
         
         cell.cafeAddress.text = cafe.address
         
-        print(cafe.distance)
+        //print(cafe.distance)
         
         let imageURL = URL(string: cafe.imageURL)
         cell.cafeImage.kf.setImage(with: imageURL)
@@ -107,6 +116,8 @@ class CafeListCollectionViewController: UICollectionViewController,UICollectionV
 //        return CGSize(width: CGFloat((collectionView.frame.size.width / 2) - 20), height: CGFloat(100))
     } 
     
+    @IBAction func unwindToCafeListCollectionViewController(_ segue: UIStoryboardSegue) {
+    }
 
     
 

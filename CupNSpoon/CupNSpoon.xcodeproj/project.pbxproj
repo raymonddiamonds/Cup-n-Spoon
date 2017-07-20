@@ -23,6 +23,7 @@
 		389CEAC41F16CCF90081BC00 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAC31F16CCF90081BC00 /* Cafe.swift */; };
 		389CEAC61F16CD000081BC00 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAC51F16CD000081BC00 /* UIImage.swift */; };
 		389CEAC81F16CD170081BC00 /* CafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAC71F16CD170081BC00 /* CafeCell.swift */; };
+		38AED35C1F201E2B000C2211 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AED35B1F201E2B000C2211 /* Review.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		389CEAC31F16CCF90081BC00 /* Cafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cafe.swift; path = Models/Cafe.swift; sourceTree = "<group>"; };
 		389CEAC51F16CD000081BC00 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Extensions/UIImage.swift; sourceTree = "<group>"; };
 		389CEAC71F16CD170081BC00 /* CafeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeCell.swift; sourceTree = "<group>"; };
+		38AED35B1F201E2B000C2211 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		B2C748506A9C51946A0891E7 /* Pods-CupNSpoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CupNSpoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-CupNSpoon/Pods-CupNSpoon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				389CEAC31F16CCF90081BC00 /* Cafe.swift */,
+				38AED35B1F201E2B000C2211 /* Review.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				383809551F1D863C0013E3C5 /* DetailedCafe.swift in Sources */,
 				383809451F183CDE0013E3C5 /* WelcomeViewController.swift in Sources */,
 				3838094B1F19797E0013E3C5 /* CafeLabel.swift in Sources */,
+				38AED35C1F201E2B000C2211 /* Review.swift in Sources */,
 				389CEAC41F16CCF90081BC00 /* Cafe.swift in Sources */,
 				389CEAC61F16CD000081BC00 /* UIImage.swift in Sources */,
 				383809411F1832F80013E3C5 /* CafeDetailsViewController.swift in Sources */,

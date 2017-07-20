@@ -12,19 +12,25 @@ import Kingfisher
 class Cafe {
     //Mark: Properties
     var name: String
+    var id: String
     var imageURL: String
     var address: String
     var distance: Double
     var phoneNum: String
+    var rating: Double
+
+    
 
 
     
-    init(name: String, imageURL: String, address: String, distance: Double, phoneNum: String) {
+    init(name: String, id: String, imageURL: String, address: String, distance: Double, phoneNum: String, rating: Double) {
         self.name = name
+        self.id = id
         self.imageURL = imageURL
         self.address = address
         self.distance = distance
         self.phoneNum = phoneNum
+        self.rating = rating
 
     }
 

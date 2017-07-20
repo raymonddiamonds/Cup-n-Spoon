@@ -11,15 +11,18 @@ import FontAwesome_swift
 
 class CafeDetailsViewController: UIViewController {
     
+    @IBOutlet weak var cafeNameLabel: CafeLabel!
     @IBOutlet weak var backgroundPic: UIImageView!
-    @IBOutlet weak var phoneButton: UIButton!
-    
     @IBOutlet weak var addressDetails: UILabel!
+
+
+    var reviewList = [Review]()
+    
     var cafe: Cafe?
     var phoneNum: String = ""
     var imageURL: String = ""
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,26 +32,51 @@ class CafeDetailsViewController: UIViewController {
             print(currentCafe.address)
             
             addressDetails.text = currentCafe.address
+            cafeNameLabel.text = currentCafe.name
             phoneNum = currentCafe.phoneNum
             imageURL = currentCafe.imageURL
+            
+            
+            let reviewURL = "https://api.yelp.com/v3/businesses/\(currentCafe.id)/reviews"
+            
+            //code to get the ratings for all of our cafes in cafeList
+            YelpClientService.getReviews(url: reviewURL, completionHandler: 
+                { (receivedReviews) in
+                    self.reviewList = receivedReviews
+                    print("hi \(receivedReviews)")
+                    
+                    
+            })
+
         }
         else {
             print("is nil")
         }
         
+//        func phoneButton(_ sender: Any) {
+//            
+//            if let phoneURL = NSURL(string: "tel://\(phoneNum)") {
+//                UIApplication.shared.openURL(phoneURL as URL)
+//            }
+//        }
+        
+        //adding background cafe pic
         let backgroundPicURL = URL(string: self.imageURL)
         backgroundPic.kf.setImage(with: backgroundPicURL)
         
-        phoneButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 32)
-        phoneButton.setTitle(String.fontAwesomeIcon(name: .phone), for: .normal)
-        
-        if let url = URL(string: phoneNum), UIApplication.shared.canOpenURL(url) {
-            if #available(iOS 10, *) {
-                UIApplication.shared.open(url)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
+        // Create a subview which will add an overlay effect on image view
+        if backgroundPic.viewWithTag(98) == nil {
+            let overlay = UIView(frame: CGRect(x: 0,y: 0,width: backgroundPic.frame.size.width, height: backgroundPic.frame.size.height))
+            overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55)
+            //0.37
+            overlay.tag = 98
+            
+            //Add the subview to the UIImageView
+            backgroundPic.addSubview(overlay)
         }
+        
+
+
         
         
         
