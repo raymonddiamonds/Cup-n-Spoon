@@ -14,7 +14,6 @@
 		383809451F183CDE0013E3C5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383809441F183CDE0013E3C5 /* WelcomeViewController.swift */; };
 		383809471F183D7D0013E3C5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383809461F183D7D0013E3C5 /* RoundButton.swift */; };
 		3838094B1F19797E0013E3C5 /* CafeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838094A1F19797E0013E3C5 /* CafeLabel.swift */; };
-		383809551F1D863C0013E3C5 /* DetailedCafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383809541F1D863C0013E3C5 /* DetailedCafe.swift */; };
 		389CEAB01F16CC4A0081BC00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAAF1F16CC4A0081BC00 /* AppDelegate.swift */; };
 		389CEAB51F16CC4A0081BC00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 389CEAB31F16CC4A0081BC00 /* Main.storyboard */; };
 		389CEAB71F16CC4A0081BC00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 389CEAB61F16CC4A0081BC00 /* Assets.xcassets */; };
@@ -24,6 +23,7 @@
 		389CEAC61F16CD000081BC00 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAC51F16CD000081BC00 /* UIImage.swift */; };
 		389CEAC81F16CD170081BC00 /* CafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAC71F16CD170081BC00 /* CafeCell.swift */; };
 		38AED35C1F201E2B000C2211 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AED35B1F201E2B000C2211 /* Review.swift */; };
+		38AED3601F2122F5000C2211 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AED35F1F2122F5000C2211 /* ReviewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,7 +35,6 @@
 		383809441F183CDE0013E3C5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Controllers/WelcomeViewController.swift; sourceTree = "<group>"; };
 		383809461F183D7D0013E3C5 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		3838094A1F19797E0013E3C5 /* CafeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CafeLabel.swift; path = Extensions/CafeLabel.swift; sourceTree = "<group>"; };
-		383809541F1D863C0013E3C5 /* DetailedCafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedCafe.swift; sourceTree = "<group>"; };
 		389CEAAC1F16CC4A0081BC00 /* CupNSpoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupNSpoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		389CEAAF1F16CC4A0081BC00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		389CEAB41F16CC4A0081BC00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -47,6 +46,7 @@
 		389CEAC51F16CD000081BC00 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Extensions/UIImage.swift; sourceTree = "<group>"; };
 		389CEAC71F16CD170081BC00 /* CafeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeCell.swift; sourceTree = "<group>"; };
 		38AED35B1F201E2B000C2211 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		38AED35F1F2122F5000C2211 /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		B2C748506A9C51946A0891E7 /* Pods-CupNSpoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CupNSpoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-CupNSpoon/Pods-CupNSpoon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -164,7 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				389CEAC71F16CD170081BC00 /* CafeCell.swift */,
-				383809541F1D863C0013E3C5 /* DetailedCafe.swift */,
+				38AED35F1F2122F5000C2211 /* ReviewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -295,8 +295,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				383809471F183D7D0013E3C5 /* RoundButton.swift in Sources */,
+				38AED3601F2122F5000C2211 /* ReviewCell.swift in Sources */,
 				389CEAC81F16CD170081BC00 /* CafeCell.swift in Sources */,
-				383809551F1D863C0013E3C5 /* DetailedCafe.swift in Sources */,
 				383809451F183CDE0013E3C5 /* WelcomeViewController.swift in Sources */,
 				3838094B1F19797E0013E3C5 /* CafeLabel.swift in Sources */,
 				38AED35C1F201E2B000C2211 /* Review.swift in Sources */,

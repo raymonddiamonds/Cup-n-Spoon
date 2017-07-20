@@ -7,9 +7,9 @@
 //
 
 import UIKit
-import FontAwesome_swift
 
-class CafeDetailsViewController: UIViewController {
+
+class CafeDetailsViewController: UITableViewController {
     
     @IBOutlet weak var cafeNameLabel: CafeLabel!
     @IBOutlet weak var backgroundPic: UIImageView!
@@ -26,8 +26,6 @@ class CafeDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-
-        
         if let currentCafe = cafe {
             print(currentCafe.address)
             
@@ -43,9 +41,6 @@ class CafeDetailsViewController: UIViewController {
             YelpClientService.getReviews(url: reviewURL, completionHandler: 
                 { (receivedReviews) in
                     self.reviewList = receivedReviews
-                    print("hi \(receivedReviews)")
-                    
-                    
             })
 
         }
@@ -75,13 +70,25 @@ class CafeDetailsViewController: UIViewController {
             backgroundPic.addSubview(overlay)
         }
         
-
-
-        
-        
-        
-        
     }
+    
+    //creating # of tableView cells
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviewList.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewCell
+        
+        let review = reviewList[indexPath.row]
+        
+        cell.userName.text = review.userName
+
+        
+        return cell
+    }
+    
     
 
 
