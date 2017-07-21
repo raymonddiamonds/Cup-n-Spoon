@@ -24,6 +24,7 @@
 		389CEAC81F16CD170081BC00 /* CafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAC71F16CD170081BC00 /* CafeCell.swift */; };
 		38AED35C1F201E2B000C2211 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AED35B1F201E2B000C2211 /* Review.swift */; };
 		38AED3601F2122F5000C2211 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AED35F1F2122F5000C2211 /* ReviewCell.swift */; };
+		38AED3681F22835C000C2211 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AED3671F22835C000C2211 /* Rating.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +48,7 @@
 		389CEAC71F16CD170081BC00 /* CafeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeCell.swift; sourceTree = "<group>"; };
 		38AED35B1F201E2B000C2211 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		38AED35F1F2122F5000C2211 /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
+		38AED3671F22835C000C2211 /* Rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		B2C748506A9C51946A0891E7 /* Pods-CupNSpoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CupNSpoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-CupNSpoon/Pods-CupNSpoon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -84,6 +86,7 @@
 			children = (
 				389CEAC31F16CCF90081BC00 /* Cafe.swift */,
 				38AED35B1F201E2B000C2211 /* Review.swift */,
+				38AED3671F22835C000C2211 /* Rating.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -306,6 +309,7 @@
 				389CEAC21F16CCF10081BC00 /* CafeListCollectionViewController.swift in Sources */,
 				3838093D1F1815230013E3C5 /* YelpClientService.swift in Sources */,
 				389CEAB01F16CC4A0081BC00 /* AppDelegate.swift in Sources */,
+				38AED3681F22835C000C2211 /* Rating.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

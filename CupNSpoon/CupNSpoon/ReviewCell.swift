@@ -16,5 +16,6 @@ class ReviewCell: UITableViewCell {
     
     @IBOutlet weak var reviewText: UILabel!
 
+    @IBOutlet weak var yelpStars: UIImageView!
     
 }

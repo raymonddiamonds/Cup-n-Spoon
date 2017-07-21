@@ -9,16 +9,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>FontAwesome.swift-FontAwesome.swift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>FontAwesome.swift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Kingfisher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +32,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6991F49AED797519343B1F4591001691</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>884852BDC97F3BB6A008618A01BF05DD</key>
+		<key>4553570D2EF3D14561077F49DC750FBD</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,12 +42,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>CD11672B6619C297B6AEE3DFB8213C59</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>ED7B1F8E709EC14D9C6D5BEFCC76A285</key>
+		<key>8ED7A19CB023CEE3854064427DC86CAA</key>
 		<dict>
 			<key>primary</key>
 			<true/>

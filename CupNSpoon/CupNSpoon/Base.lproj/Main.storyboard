@@ -49,7 +49,7 @@
                                                             <real key="value" value="18"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                            <real key="value" value="0.5"/>
+                                                            <real key="value" value="0.0"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                             <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,20 +62,28 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ztd-Ek-OAC">
+                                                    <rect key="frame" x="13" y="70" width="141" height="1"/>
+                                                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </view>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                             <constraints>
                                                 <constraint firstItem="ywW-sd-PWV" firstAttribute="leading" secondItem="gRo-ah-iDq" secondAttribute="leading" constant="8" id="E2R-U0-SO4"/>
+                                                <constraint firstItem="tRI-lv-k5O" firstAttribute="centerX" secondItem="Ztd-Ek-OAC" secondAttribute="centerX" id="F6z-lF-dUd"/>
                                                 <constraint firstAttribute="trailing" secondItem="ywW-sd-PWV" secondAttribute="trailing" constant="8" id="GZh-rX-Sb0"/>
+                                                <constraint firstItem="tRI-lv-k5O" firstAttribute="top" secondItem="gRo-ah-iDq" secondAttribute="top" id="HBs-Ug-t9B"/>
+                                                <constraint firstItem="dqm-Oc-sye" firstAttribute="top" secondItem="Ztd-Ek-OAC" secondAttribute="bottom" constant="38" id="MSY-w4-QvD"/>
+                                                <constraint firstItem="Ztd-Ek-OAC" firstAttribute="trailing" secondItem="dqm-Oc-sye" secondAttribute="trailing" id="NYf-GV-heB"/>
                                                 <constraint firstItem="ywW-sd-PWV" firstAttribute="top" secondItem="gRo-ah-iDq" secondAttribute="top" constant="8" id="P0V-E5-hIB"/>
-                                                <constraint firstAttribute="trailing" secondItem="tRI-lv-k5O" secondAttribute="trailing" id="QJN-8u-ZZx"/>
                                                 <constraint firstItem="dqm-Oc-sye" firstAttribute="leading" secondItem="ywW-sd-PWV" secondAttribute="leading" id="Qv8-ag-1lt"/>
-                                                <constraint firstAttribute="bottom" secondItem="tRI-lv-k5O" secondAttribute="bottom" id="WPX-xU-lsu"/>
                                                 <constraint firstItem="dqm-Oc-sye" firstAttribute="bottom" secondItem="gRo-ah-iDq" secondAttribute="bottomMargin" id="dFS-iZ-RZK"/>
-                                                <constraint firstItem="tRI-lv-k5O" firstAttribute="leading" secondItem="gRo-ah-iDq" secondAttribute="leading" id="dtx-4X-D7K"/>
+                                                <constraint firstItem="tRI-lv-k5O" firstAttribute="leading" secondItem="gRo-ah-iDq" secondAttribute="leading" id="fQb-eF-pEh"/>
+                                                <constraint firstItem="Ztd-Ek-OAC" firstAttribute="top" secondItem="ywW-sd-PWV" secondAttribute="bottom" id="frj-2g-v2T"/>
                                                 <constraint firstAttribute="trailing" secondItem="dqm-Oc-sye" secondAttribute="trailing" constant="14" id="fxQ-LF-nrS"/>
-                                                <constraint firstItem="tRI-lv-k5O" firstAttribute="top" secondItem="gRo-ah-iDq" secondAttribute="top" id="iMX-mj-1GH"/>
+                                                <constraint firstAttribute="bottom" secondItem="tRI-lv-k5O" secondAttribute="bottom" id="jsz-Db-bmr"/>
+                                                <constraint firstItem="tRI-lv-k5O" firstAttribute="centerX" secondItem="ywW-sd-PWV" secondAttribute="centerX" id="rEb-LT-o5H"/>
                                                 <constraint firstItem="dqm-Oc-sye" firstAttribute="top" secondItem="ywW-sd-PWV" secondAttribute="bottom" constant="39" id="tGn-gS-h16"/>
                                                 <constraint firstAttribute="bottom" secondItem="ywW-sd-PWV" secondAttribute="bottom" constant="98" id="vvc-en-QWp"/>
                                             </constraints>
@@ -199,7 +207,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="87"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="zkt-3z-3pO" id="EJT-So-yeF">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="87"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="86.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="User's Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWH-1U-5d3">
@@ -247,6 +255,7 @@
                                             <outlet property="date" destination="A1a-30-x1O" id="ZBx-Kg-Uhi"/>
                                             <outlet property="reviewText" destination="Bbk-S1-VgB" id="zZZ-ph-pj7"/>
                                             <outlet property="userName" destination="hWH-1U-5d3" id="Rkm-l9-vAQ"/>
+                                            <outlet property="yelpStars" destination="9mI-8b-48n" id="jBW-4q-FQh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -255,6 +264,10 @@
                                     <outlet property="delegate" destination="65l-Oh-Nw1" id="sqZ-oy-3Gr"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lDT-fo-oha">
+                                <rect key="frame" x="174" y="414" width="185" height="64"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>

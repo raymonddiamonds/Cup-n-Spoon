@@ -7,20 +7,23 @@
 //
 
 import Foundation
+import UIKit
 
 class Review {
-    var rating: Double
+    var rating: Rating
     var userName: String
     var text: String
     var timeCreated: Date
     var url: String
     
-    init(rating: Double, userName: String, text: String, timeCreated: Date, url: String){
+    init(rating: Rating, userName: String, text: String, timeCreated: Date, url: String){
         self.rating = rating
         self.userName = userName
         self.text = text
         self.timeCreated = timeCreated
         self.url = url
+        
+        //let image = UIImage(named: self.rating.rawValue)
         
     }
     

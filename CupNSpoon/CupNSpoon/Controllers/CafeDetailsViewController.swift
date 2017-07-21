@@ -102,16 +102,9 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         cell.userName.text = review.userName
         cell.reviewText.text = review.text
+
+        cell.yelpStars.image = UIImage(named: review.rating.rawValue)
         
-        let a:Double = review.rating
-        let
-        b:String = String(format:"%f", a)
-        print(b)
-        
-//        switch rating {
-//        case 5:
-//            
-//        }
         
         
         
