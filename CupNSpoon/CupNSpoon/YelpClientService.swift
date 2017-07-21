@@ -41,7 +41,7 @@ class YelpClientService {
         }
     }
     
-    static func getReviews(url: String, completionHandler: @escaping ([Review])-> Void)
+    static func getReviews(url: String, completionHandler: @escaping ([Review]?)-> Void)
     {
         let httpHeaders: HTTPHeaders = ["Authorization": "Bearer \(UserDefaults.standard.string(forKey: "token") ?? "")"]
         
@@ -52,11 +52,44 @@ class YelpClientService {
                 let returnedJson = JSON(with: returnedResponse.data as Any)
                 let reviewArray = returnedJson["reviews"].array
                 print(reviewArray as Any)
+                
+                var reviews = [Review]()
+                
+                for review in reviewArray! {
+                    
+                    let userName = review["user"]["name"].stringValue
+                    let rating = review["rating"].doubleValue
+                    let text = review["text"].stringValue
+                    
+                    let formatter = DateFormatter()
+                    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    
+                    let timeCreated =  formatter.date(from: review["time_created"].stringValue)
+
+//                    let dateFormatter = DateFormatter()
+//                    dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+//                    let dateCreated = review["time_created"].stringValue
+//                    let date = dateFormatter.date(from: dateCreated)!
+//                    dateFormatter.dateFormat = "MM/dd/yyyy"
+//                    let timeCreated = dateFormatter.string(from:date)
+                    
+                    let url = review["url"].stringValue
+                    
+                    let review = Review(rating: rating, userName: userName, text: text, timeCreated: timeCreated!, url: url)
+                    reviews.append(review)
+                    
+                }
+                
+                completionHandler(reviews)
+
             }
         }
         else
         {
             print("invalid url")
+            completionHandler(nil)
         }
     }
 }
+
+

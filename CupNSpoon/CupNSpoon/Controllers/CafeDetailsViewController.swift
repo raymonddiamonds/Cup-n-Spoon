@@ -9,11 +9,12 @@
 import UIKit
 
 
-class CafeDetailsViewController: UITableViewController {
+class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var cafeNameLabel: CafeLabel!
     @IBOutlet weak var backgroundPic: UIImageView!
     @IBOutlet weak var addressDetails: UILabel!
+    @IBOutlet weak var tableView: UITableView!
 
 
     var reviewList = [Review]()
@@ -25,6 +26,8 @@ class CafeDetailsViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         if let currentCafe = cafe {
             print(currentCafe.address)
@@ -40,7 +43,14 @@ class CafeDetailsViewController: UITableViewController {
             //code to get the ratings for all of our cafes in cafeList
             YelpClientService.getReviews(url: reviewURL, completionHandler: 
                 { (receivedReviews) in
-                    self.reviewList = receivedReviews
+                    self.reviewList = receivedReviews!
+                    
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                        
+                }
+
+
             })
 
         }
@@ -72,24 +82,57 @@ class CafeDetailsViewController: UITableViewController {
         
     }
     
-    //creating # of tableView cells
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return reviewList.count
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //creating # of tableView cells
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviewList.count
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell", for: indexPath) as! ReviewCell
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) as! ReviewCell
         
         let review = reviewList[indexPath.row]
         
-        cell.userName.text = review.userName
-
+        print(review.userName)
         
+        cell.userName.text = review.userName
+        cell.reviewText.text = review.text
+        
+        let a:Double = review.rating
+        let
+        b:String = String(format:"%f", a)
+        print(b)
+        
+//        switch rating {
+//        case 5:
+//            
+//        }
+        
+        
+        
+        //cell.date.text = review.timeCreated
+
+
+
         return cell
+        
+    }
+
+}
+
+//extension to convert Date type to String
+extension Date
+{
+    func toString( dateFormat format  : String ) -> String
+    {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        return dateFormatter.string(from: self)
     }
     
-    
-
-
 }

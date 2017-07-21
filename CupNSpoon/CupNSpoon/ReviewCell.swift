@@ -11,7 +11,10 @@ import UIKit
 class ReviewCell: UITableViewCell {
 
     @IBOutlet weak var userName: UILabel!
+
     @IBOutlet weak var date: UILabel!
     
+    @IBOutlet weak var reviewText: UILabel!
+
     
 }

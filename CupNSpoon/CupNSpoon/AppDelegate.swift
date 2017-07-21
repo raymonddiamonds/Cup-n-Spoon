@@ -36,10 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        // 1
         
-
-
         
         return true
     }
