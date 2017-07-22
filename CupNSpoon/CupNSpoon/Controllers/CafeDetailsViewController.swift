@@ -103,7 +103,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         cell.userName.text = review.userName
         cell.reviewText.text = review.text
 
-        cell.yelpStars.image = UIImage(named: review.rating.rawValue)
+        cell.yelpStars.image = UIImage(named: review.rating.getImageName())
         
         
         

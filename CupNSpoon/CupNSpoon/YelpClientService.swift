@@ -31,7 +31,7 @@ class YelpClientService {
                 let id = business["id"].stringValue
                 let ratingDouble = business["rating"].doubleValue
                 
-                let rating = String(ratingDouble)
+                let rating = String.init(format: "%.1f", ratingDouble)
                 
 
 
@@ -64,7 +64,7 @@ class YelpClientService {
                     let userName = review["user"]["name"].stringValue
                     
                     let ratingDouble = review["rating"].doubleValue
-                    let rating = String(ratingDouble)
+                    let rating = String.init(format: "%.1f", ratingDouble)
            
                     let text = review["text"].stringValue
                     
