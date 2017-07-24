@@ -15,19 +15,15 @@ class CafeCell: UICollectionViewCell {
     @IBOutlet weak var cafeName: UILabel!
     @IBOutlet weak var cafeAddress: UILabel!
     
-    
-
     @IBInspectable var cornerRadius: CGFloat = 0 {
         didSet {
             self.layer.cornerRadius = cornerRadius
         }
-        
     }
     
     @IBInspectable var borderWidth: CGFloat = 0 {
         didSet {
             self.layer.borderWidth = borderWidth
-            
         }
     }
     
@@ -36,12 +32,5 @@ class CafeCell: UICollectionViewCell {
             self.layer.borderColor = borderColor.cgColor
         }
     }
-    
-
-
-    
-    
-
-    
     
 }

@@ -15,14 +15,16 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var backgroundPic: UIImageView!
     @IBOutlet weak var addressDetails: UILabel!
     @IBOutlet weak var tableView: UITableView!
-
-
+    @IBOutlet weak var avgYelpStar: UIImageView!
+    @IBOutlet weak var reviewCount: UILabel!
+    
+    
     var reviewList = [Review]()
     
     var cafe: Cafe?
     var phoneNum: String = ""
     var imageURL: String = ""
-    
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,9 +38,15 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             cafeNameLabel.text = currentCafe.name
             phoneNum = currentCafe.phoneNum
             imageURL = currentCafe.imageURL
+
+            reviewCount.text = " | \(Int(currentCafe.reviewCount)) reviews"
+            
+            avgYelpStar.image = UIImage(named:   currentCafe.rating.getImageName())
             
             
             let reviewURL = "https://api.yelp.com/v3/businesses/\(currentCafe.id)/reviews"
+            
+
             
             //code to get the ratings for all of our cafes in cafeList
             YelpClientService.getReviews(url: reviewURL, completionHandler: 
@@ -47,41 +55,36 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
                     
                 DispatchQueue.main.async {
                     self.tableView.reloadData()
-                        
                 }
-
-
             })
-
         }
         else {
             print("is nil")
         }
         
-//        func phoneButton(_ sender: Any) {
-//            
-//            if let phoneURL = NSURL(string: "tel://\(phoneNum)") {
-//                UIApplication.shared.openURL(phoneURL as URL)
-//            }
-//        }
+        func numReview() {
+            reviewCount.text = "| \(reviewCount) reviews"
+        }
         
-        //adding background cafe pic
+        // Making back button colour on nav controller white
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        
+        // Adding background cafe pic using kingfisher
         let backgroundPicURL = URL(string: self.imageURL)
         backgroundPic.kf.setImage(with: backgroundPicURL)
-        
+
         // Create a subview which will add an overlay effect on image view
         if backgroundPic.viewWithTag(98) == nil {
             let overlay = UIView(frame: CGRect(x: 0,y: 0,width: backgroundPic.frame.size.width, height: backgroundPic.frame.size.height))
             overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55)
-            //0.37
             overlay.tag = 98
             
             //Add the subview to the UIImageView
             backgroundPic.addSubview(overlay)
         }
-        
     }
     
+    //creating # of tableView sections
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -89,9 +92,9 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     //creating # of tableView cells
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return reviewList.count
-        
     }
     
+    //creating individual tableView cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "reviewCell", for: indexPath) as! ReviewCell
@@ -105,17 +108,10 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 
         cell.yelpStars.image = UIImage(named: review.rating.getImageName())
         
-        
-        
-        
         //cell.date.text = review.timeCreated
 
-
-
         return cell
-        
     }
-
 }
 
 //extension to convert Date type to String

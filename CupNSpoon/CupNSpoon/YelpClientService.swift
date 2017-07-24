@@ -30,12 +30,11 @@ class YelpClientService {
                 let phoneNum = business["phone"].stringValue
                 let id = business["id"].stringValue
                 let ratingDouble = business["rating"].doubleValue
-                
                 let rating = String.init(format: "%.1f", ratingDouble)
-                
+                let reviewCount = business["review_count"].double
 
 
-                let cafe = Cafe(name: name, id: id, imageURL: imageURL, address: address, distance: distance, phoneNum: phoneNum, rating: Rating(rawValue: rating)!)
+                let cafe = Cafe(name: name, id: id, imageURL: imageURL, address: address, distance: distance, phoneNum: phoneNum, rating: Rating(rawValue: rating)!, reviewCount: reviewCount!)
                 cafes.append(cafe)
             }
             
@@ -65,18 +64,26 @@ class YelpClientService {
                     
                     let ratingDouble = review["rating"].doubleValue
                     let rating = String.init(format: "%.1f", ratingDouble)
-           
+
                     let text = review["text"].stringValue
+                    let date = review["time_created"].string
+                    print(date)
                     
-                    let formatter = DateFormatter()
-                    formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+                    /*var dateString = review["time_created"].string
                     
-                    let timeCreated =  formatter.date(from: review["time_created"].stringValue)
+                    var dateFor: DateFormatter = DateFormatter()
+                    dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+                    
+                   // var timeCreated = dateFor.date(from: dateString!)!*/
+                    
+
+                
+
                     
                     
                     let url = review["url"].stringValue
                     
-                    let review = Review(rating: Rating(rawValue: rating)!, userName: userName, text: text, timeCreated: timeCreated!, url: url)
+                    let review = Review(rating: Rating(rawValue: rating)!, userName: userName, text: text, timeCreated: date!,  url: url)
                     reviews.append(review)
                     
                 }

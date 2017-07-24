@@ -13,10 +13,10 @@ class Review {
     var rating: Rating
     var userName: String
     var text: String
-    var timeCreated: Date
+    var timeCreated: String
     var url: String
     
-    init(rating: Rating, userName: String, text: String, timeCreated: Date, url: String){
+    init(rating: Rating, userName: String, text: String, timeCreated: String, url: String){
         self.rating = rating
         self.userName = userName
         self.text = text

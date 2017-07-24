@@ -18,12 +18,9 @@ class Cafe {
     var distance: Double
     var phoneNum: String
     var rating: Rating
-
+    var reviewCount: Double
     
-
-
-    
-    init(name: String, id: String, imageURL: String, address: String, distance: Double, phoneNum: String, rating: Rating) {
+    init(name: String, id: String, imageURL: String, address: String, distance: Double, phoneNum: String, rating: Rating, reviewCount: Double) {
         self.name = name
         self.id = id
         self.imageURL = imageURL
@@ -31,6 +28,7 @@ class Cafe {
         self.distance = distance
         self.phoneNum = phoneNum
         self.rating = rating
+        self.reviewCount = reviewCount
 
     }
 
