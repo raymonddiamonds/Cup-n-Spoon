@@ -66,15 +66,17 @@ class YelpClientService {
                     let rating = String.init(format: "%.1f", ratingDouble)
 
                     let text = review["text"].stringValue
-                    let date = review["time_created"].string
-                    print(date)
+                    let date = review["time_created"].stringValue
+                    
+                    
+
                     
                     /*var dateString = review["time_created"].string
                     
                     var dateFor: DateFormatter = DateFormatter()
-                    dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+                    dateFor.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"*/
                     
-                   // var timeCreated = dateFor.date(from: dateString!)!*/
+                   // var timeCreated = dateFor.date(from: dateString!)!
                     
 
                 
@@ -83,7 +85,7 @@ class YelpClientService {
                     
                     let url = review["url"].stringValue
                     
-                    let review = Review(rating: Rating(rawValue: rating)!, userName: userName, text: text, timeCreated: date!,  url: url)
+                    let review = Review(rating: Rating(rawValue: rating)!, userName: userName, text: text, timeCreated: date,  url: url)
                     reviews.append(review)
                     
                 }

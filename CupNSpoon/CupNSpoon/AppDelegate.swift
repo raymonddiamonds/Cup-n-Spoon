@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -19,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let clientSecret = "JmnL4tC4ujOYo0ocnTho5pxuLgA3WUCcuBENiQWEDTEgcvUiEzyDZKbqfnmAbmfh"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        FirebaseApp.configure()
         
         if UserDefaults.standard.value(forKey: "token") as? String == nil {
             let tokenURL = "https://api.yelp.com/oauth2/token"
@@ -36,7 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
         
-        
+
         
         return true
     }

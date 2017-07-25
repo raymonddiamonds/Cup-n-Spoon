@@ -17,6 +17,9 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var avgYelpStar: UIImageView!
     @IBOutlet weak var reviewCount: UILabel!
+    @IBAction func yelpURL(_ sender: Any) {
+        
+    }
     
     
     var reviewList = [Review]()
@@ -84,6 +87,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    
     //creating # of tableView sections
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -105,6 +109,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         cell.userName.text = review.userName
         cell.reviewText.text = review.text
+        cell.date.text = review.timeCreated.components(separatedBy: " ")[0]
 
         cell.yelpStars.image = UIImage(named: review.rating.getImageName())
         
@@ -112,16 +117,5 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 
         return cell
     }
-}
 
-//extension to convert Date type to String
-extension Date
-{
-    func toString( dateFormat format  : String ) -> String
-    {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
-        return dateFormatter.string(from: self)
-    }
-    
 }
