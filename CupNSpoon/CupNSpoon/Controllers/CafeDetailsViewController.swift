@@ -42,7 +42,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             phoneNum = currentCafe.phoneNum
             imageURL = currentCafe.imageURL
 
-            reviewCount.text = " | \(Int(currentCafe.reviewCount)) reviews"
+            reviewCount.text = "\(Int(currentCafe.reviewCount)) reviews"
             
             avgYelpStar.image = UIImage(named:   currentCafe.rating.getImageName())
             
