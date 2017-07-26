@@ -163,8 +163,8 @@
 			children = (
 				389CEAC11F16CCF10081BC00 /* CafeListCollectionViewController.swift */,
 				383809401F1832F80013E3C5 /* CafeDetailsViewController.swift */,
-				383809441F183CDE0013E3C5 /* WelcomeViewController.swift */,
 				38BBCCFC1F27ED93008D1591 /* RatingViewController.swift */,
+				383809441F183CDE0013E3C5 /* WelcomeViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
