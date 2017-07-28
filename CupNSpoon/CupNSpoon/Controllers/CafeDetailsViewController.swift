@@ -11,6 +11,8 @@ import UIKit
 
 class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var featuresTextView: UITextView!
+    
     @IBOutlet weak var cafeNameLabel: CafeLabel!
     @IBOutlet weak var backgroundPic: UIImageView!
     @IBOutlet weak var addressDetails: UILabel!
@@ -26,7 +28,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     var cafe: Cafe?
     var phoneNum: String = ""
     var imageURL: String = ""
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
@@ -39,7 +41,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             cafeNameLabel.text = currentCafe.name
             phoneNum = currentCafe.phoneNum
             imageURL = currentCafe.imageURL
-
+            
             reviewCount.text = "\(Int(currentCafe.reviewCount)) reviews"
             
             avgYelpStar.image = UIImage(named:   currentCafe.rating.getImageName())
@@ -47,22 +49,33 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             
             let reviewURL = "https://api.yelp.com/v3/businesses/\(currentCafe.id)/reviews"
             
-
+            
             
             //code to get the ratings for all of our cafes in cafeList
-            YelpClientService.getReviews(url: reviewURL, completionHandler: 
+            YelpClientService.getReviews(url: reviewURL, completionHandler:
                 { (receivedReviews) in
                     self.reviewList = receivedReviews!
                     
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
+                    DispatchQueue.main.async {
+                        self.tableView.reloadData()
+                    }
             })
             
             //Retrieve hashtags/count from Firebase
             RatingService.retrieveForCafe(yelpID: (cafe?.id)! , completion: { (tags) in
                 self.cafe?.hashtagCounts = tags
-
+                
+                for individualKey in Array(tags.keys)
+                {
+                    if self.featuresTextView.text != ""
+                    {
+                        self.featuresTextView.text = "\(self.featuresTextView.text!)   #\(individualKey): \(tags[individualKey]!)"
+                    }
+                    else
+                    {
+                        self.featuresTextView.text = "#\(individualKey): \(tags[individualKey]!)"
+                    }
+                }
 
             })
         }
@@ -78,7 +91,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         // Adding background cafe pic using kingfisher
         let backgroundPicURL = URL(string: self.imageURL)
         backgroundPic.kf.setImage(with: backgroundPicURL)
-
+        
         // Create a subview which will add an overlay effect on image view
         if backgroundPic.viewWithTag(98) == nil {
             let overlay = UIView(frame: CGRect(x: 0,y: 0,width: backgroundPic.frame.size.width, height: backgroundPic.frame.size.height))
@@ -88,11 +101,6 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             //Add the subview to the UIImageView
             backgroundPic.addSubview(overlay)
         }
-    }
-    
-    //collection view hashtag count
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (cafe?.hashtagCounts?.count)!
     }
     
     //creating # of tableView sections
@@ -117,18 +125,18 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         cell.userName.text = review.userName
         cell.reviewText.text = review.text
         cell.date.text = review.timeCreated.components(separatedBy: " ")[0]
-
+        
         cell.yelpStars.image = UIImage(named: review.rating.getImageName())
         
         //cell.date.text = review.timeCreated
-
+        
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addRating" {
             if let destinationVC = segue.destination as? RatingViewController {
-                    destinationVC.yelpID = (cafe?.id)!
+                destinationVC.yelpID = (cafe?.id)!
             }
         }
         
@@ -136,5 +144,5 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     @IBAction func unwindToCafeDetailsViewController(_ segue: UIStoryboardSegue) {
     }
-
+    
 }

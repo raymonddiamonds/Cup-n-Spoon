@@ -1,5 +1,5 @@
 //
-//  HashtagFeaturesCollectionViewCell.swift
+//  HashtagCell.swift
 //  CupNSpoon
 //
 //  Created by Raymond Diamonds on 2017-07-28.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HashtagFeaturesCollectionViewCell: UICollectionViewCell {
+class HashtagCell: UICollectionViewCell {
     
     @IBOutlet weak var hashtagLabel: UILabel!
     
