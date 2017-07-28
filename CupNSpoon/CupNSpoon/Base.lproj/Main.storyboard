@@ -46,7 +46,7 @@
                                                     <nil key="highlightedColor"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="iPhoneFontSize">
-                                                            <real key="value" value="18"/>
+                                                            <real key="value" value="20"/>
                                                         </userDefinedRuntimeAttribute>
                                                         <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                             <real key="value" value="0.0"/>
@@ -58,7 +58,7 @@
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 rue Address" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqm-Oc-sye" userLabel="Cafe Address">
                                                     <rect key="frame" x="8" y="109" width="146" height="51"/>
-                                                    <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="10"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-ThinItalic" family="Helvetica Neue" pointSize="11"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -141,11 +141,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bBJ-Nj-XS1">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bBJ-Nj-XS1">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q0C-ga-X3J" userLabel="Content View">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="800"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" layoutMarginsFollowReadableWidth="YES" image="cafe" translatesAutoresizingMaskIntoConstraints="NO" id="1Br-UY-IJb">
                                                 <rect key="frame" x="0.0" y="0.0" width="375" height="244"/>
@@ -191,17 +191,6 @@
                                                 </constraints>
                                                 <state key="normal" image="icons8-Google Maps-500"/>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nDQ-Qi-1wl">
-                                                <rect key="frame" x="334" y="202" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="30" id="2jp-a8-16x"/>
-                                                    <constraint firstAttribute="height" constant="30" id="hbU-7r-XuQ"/>
-                                                </constraints>
-                                                <state key="normal" title="phone" image="icons8-Phone-100 (2)"/>
-                                                <connections>
-                                                    <action selector="phoneButton:" destination="65l-Oh-Nw1" eventType="touchUpInside" id="hw3-eW-FzD"/>
-                                                </connections>
-                                            </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFS-mJ-qJx" userLabel="line between stars and count">
                                                 <rect key="frame" x="187" y="106" width="1" height="15"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -220,7 +209,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2g-JN-nh1">
-                                                <rect key="frame" x="8" y="346" width="119" height="21"/>
+                                                <rect key="frame" x="8" y="463" width="119" height="21"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="119" id="Xhg-Dc-ejU"/>
                                                     <constraint firstAttribute="height" constant="21" id="aU6-KG-uva"/>
@@ -237,7 +226,7 @@
                                                 </constraints>
                                             </view>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zPF-Q6-qw2">
-                                                <rect key="frame" x="0.0" y="373" width="375" height="230"/>
+                                                <rect key="frame" x="0.0" y="492" width="375" height="308"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="reviewCell" rowHeight="87" id="zkt-3z-3pO" customClass="ReviewCell" customModule="CupNSpoon" customModuleProvider="target">
@@ -320,8 +309,69 @@
                                                     <outlet property="delegate" destination="65l-Oh-Nw1" id="sqZ-oy-3Gr"/>
                                                 </connections>
                                             </tableView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UY-nF-Wpw" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                                <rect key="frame" x="318" y="303" width="46" height="30"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yog-oI-Kdz" userLabel="Rate/review separator">
+                                                <rect key="frame" x="8" y="339" width="359" height="1"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="M9i-6d-3ne"/>
+                                                </constraints>
+                                            </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xk3-0h-9m3">
+                                                <rect key="frame" x="113" y="107.5" width="70" height="12"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="12" id="LVQ-yP-qnP"/>
+                                                    <constraint firstAttribute="width" constant="70" id="hOj-zE-u2N"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1tB-SF-NLU">
+                                                <rect key="frame" x="8" y="451" width="356" height="1"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Features" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FK0-N0-EI2">
+                                                <rect key="frame" x="9" y="348" width="78" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WoK-Yz-Jf7">
+                                                <rect key="frame" x="9" y="377" width="355" height="66"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="3lV-AD-yiy">
+                                                    <size key="itemSize" width="111" height="22"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="hashtag" id="HWL-sF-FnA" customClass="HashtagFeaturesCollectionViewCell" customModule="CupNSpoon" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="111" height="22"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                                            <rect key="frame" x="0.0" y="0.0" width="111" height="22"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hashtagLabel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aha-TG-HFk">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="111" height="21"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </view>
+                                                        <connections>
+                                                            <outlet property="hashtagLabel" destination="Aha-TG-HFk" id="Xjp-CM-n2O"/>
+                                                        </connections>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UY-nF-Wpw" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
+                                                <rect key="frame" x="277" y="301" width="46" height="30"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="46" id="B86-tc-g3A"/>
                                                     <constraint firstAttribute="height" constant="30" id="uy7-cO-diD"/>
@@ -342,20 +392,6 @@
                                                     <segue destination="XBi-ma-zFb" kind="show" identifier="addRating" id="K4B-Zn-zKe"/>
                                                 </connections>
                                             </button>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yog-oI-Kdz" userLabel="Rate/review separator">
-                                                <rect key="frame" x="8" y="339" width="359" height="1"/>
-                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="1" id="M9i-6d-3ne"/>
-                                                </constraints>
-                                            </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xk3-0h-9m3">
-                                                <rect key="frame" x="113" y="107.5" width="70" height="12"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="12" id="LVQ-yP-qnP"/>
-                                                    <constraint firstAttribute="width" constant="70" id="hOj-zE-u2N"/>
-                                                </constraints>
-                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -367,18 +403,16 @@
                                             <constraint firstItem="kwj-us-xLR" firstAttribute="top" secondItem="bvl-eR-uic" secondAttribute="bottom" constant="4" id="ADg-Qb-raH"/>
                                             <constraint firstItem="zPF-Q6-qw2" firstAttribute="leading" secondItem="Q0C-ga-X3J" secondAttribute="leading" id="B0Q-RD-Be4"/>
                                             <constraint firstItem="gik-s5-bCQ" firstAttribute="centerY" secondItem="nFS-mJ-qJx" secondAttribute="centerY" id="BAU-Sk-IxS"/>
-                                            <constraint firstItem="QUh-Uc-GvT" firstAttribute="top" secondItem="nDQ-Qi-1wl" secondAttribute="bottom" constant="28" id="BcM-Mb-nyh"/>
-                                            <constraint firstAttribute="height" constant="603" id="DUX-de-u1v"/>
+                                            <constraint firstAttribute="height" constant="800" id="DUX-de-u1v"/>
                                             <constraint firstAttribute="trailing" secondItem="zPF-Q6-qw2" secondAttribute="trailing" id="Dec-CQ-oo7"/>
                                             <constraint firstItem="kwj-us-xLR" firstAttribute="leading" secondItem="Q0C-ga-X3J" secondAttribute="leading" constant="8" id="F6C-Uo-47T"/>
                                             <constraint firstItem="a2g-JN-nh1" firstAttribute="leading" secondItem="Q0C-ga-X3J" secondAttribute="leading" constant="8" id="Jpn-Cb-ycd"/>
                                             <constraint firstItem="nFS-mJ-qJx" firstAttribute="leading" secondItem="xk3-0h-9m3" secondAttribute="trailing" constant="4" id="R9v-QY-8gP"/>
-                                            <constraint firstAttribute="trailing" secondItem="nDQ-Qi-1wl" secondAttribute="trailing" constant="11" id="Ufe-Vn-lNS"/>
                                             <constraint firstAttribute="trailing" secondItem="3UY-nF-Wpw" secondAttribute="trailing" constant="11" id="WG7-jd-xZS"/>
                                             <constraint firstItem="1Br-UY-IJb" firstAttribute="leading" secondItem="Q0C-ga-X3J" secondAttribute="leading" id="Zs3-mk-IAe"/>
                                             <constraint firstItem="2kY-Qf-kaV" firstAttribute="top" secondItem="Q0C-ga-X3J" secondAttribute="top" constant="65" id="a8k-6q-WXa"/>
                                             <constraint firstItem="1Br-UY-IJb" firstAttribute="top" secondItem="Q0C-ga-X3J" secondAttribute="top" id="bAp-AN-bGg"/>
-                                            <constraint firstItem="zPF-Q6-qw2" firstAttribute="top" secondItem="a2g-JN-nh1" secondAttribute="bottom" constant="6" id="cnf-xd-ShL"/>
+                                            <constraint firstItem="zPF-Q6-qw2" firstAttribute="top" secondItem="a2g-JN-nh1" secondAttribute="bottom" constant="8" id="cnf-xd-ShL"/>
                                             <constraint firstAttribute="bottom" secondItem="zPF-Q6-qw2" secondAttribute="bottom" id="dBe-vm-dHZ"/>
                                             <constraint firstAttribute="trailing" secondItem="2kY-Qf-kaV" secondAttribute="trailing" constant="70" id="ebp-wf-LqF"/>
                                             <constraint firstItem="3UY-nF-Wpw" firstAttribute="top" secondItem="kwj-us-xLR" secondAttribute="bottom" constant="6" id="f1x-SA-K12"/>
@@ -394,7 +428,7 @@
                                             <constraint firstItem="gik-s5-bCQ" firstAttribute="leading" secondItem="nFS-mJ-qJx" secondAttribute="trailing" constant="4" id="vfY-XE-B8a"/>
                                             <constraint firstItem="nFS-mJ-qJx" firstAttribute="centerX" secondItem="Q0C-ga-X3J" secondAttribute="centerX" id="viB-oQ-eBg"/>
                                             <constraint firstItem="yog-oI-Kdz" firstAttribute="leading" secondItem="Q0C-ga-X3J" secondAttribute="leading" constant="8" id="yDn-R9-v53"/>
-                                            <constraint firstItem="a2g-JN-nh1" firstAttribute="top" secondItem="yog-oI-Kdz" secondAttribute="bottom" constant="6" id="yES-jF-vZL"/>
+                                            <constraint firstItem="a2g-JN-nh1" firstAttribute="top" secondItem="yog-oI-Kdz" secondAttribute="bottom" constant="123" id="yES-jF-vZL"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -539,7 +573,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPa-Na-Jix" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                <rect key="frame" x="174" y="312" width="153" height="30"/>
+                                <rect key="frame" x="184" y="312" width="153" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="#AmpleOutletAccess"/>
                                 <userDefinedRuntimeAttributes>
@@ -571,7 +605,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2j-h0-wTP" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                <rect key="frame" x="133" y="350" width="109" height="30"/>
+                                <rect key="frame" x="140" y="350" width="109" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="#AmpleSeating"/>
                                 <userDefinedRuntimeAttributes>
@@ -587,7 +621,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fe-fK-EAT" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                <rect key="frame" x="256" y="350" width="71" height="30"/>
+                                <rect key="frame" x="266" y="350" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="#Terasse"/>
                                 <userDefinedRuntimeAttributes>
@@ -615,7 +649,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQi-bl-gyj" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                <rect key="frame" x="26" y="443" width="61" height="30"/>
+                                <rect key="frame" x="46" y="443" width="61" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="#Vegan"/>
                                 <userDefinedRuntimeAttributes>
@@ -631,7 +665,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzb-xq-YB0" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                <rect key="frame" x="234" y="443" width="93" height="30"/>
+                                <rect key="frame" x="244" y="443" width="93" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="#GlutenFree"/>
                                 <userDefinedRuntimeAttributes>
@@ -659,7 +693,7 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABU-qV-BuS" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                <rect key="frame" x="13" y="545" width="52" height="30"/>
+                                <rect key="frame" x="46" y="545" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="#Loud"/>
                                 <userDefinedRuntimeAttributes>
@@ -674,24 +708,8 @@
                                     <action selector="selectedHash:" destination="XBi-ma-zFb" eventType="touchUpInside" id="RHO-h7-6Iv"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMa-qP-4Um" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                <rect key="frame" x="87" y="545" width="55" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="#Quiet"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="3"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                                <connections>
-                                    <action selector="selectedHash:" destination="XBi-ma-zFb" eventType="touchUpInside" id="3le-nw-EoE"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JF6-NE-Jnr" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                <rect key="frame" x="165" y="545" width="58" height="30"/>
+                                <rect key="frame" x="279" y="545" width="58" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="#Music"/>
                                 <userDefinedRuntimeAttributes>
@@ -723,7 +741,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-u8-xER" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                <rect key="frame" x="133" y="443" width="71" height="30"/>
+                                <rect key="frame" x="152" y="443" width="71" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="#Organic"/>
                                 <userDefinedRuntimeAttributes>
@@ -736,6 +754,22 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="selectedHash:" destination="XBi-ma-zFb" eventType="touchUpInside" id="bdo-vR-Agi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMa-qP-4Um" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
+                                <rect key="frame" x="160" y="545" width="55" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="#Quiet"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="3"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectedHash:" destination="XBi-ma-zFb" eventType="touchUpInside" id="3le-nw-EoE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -777,6 +811,5 @@
         <image name="cafe" width="3456" height="1944"/>
         <image name="five" width="102" height="18"/>
         <image name="icons8-Google Maps-500" width="250" height="250"/>
-        <image name="icons8-Phone-100 (2)" width="100" height="100"/>
     </resources>
 </document>

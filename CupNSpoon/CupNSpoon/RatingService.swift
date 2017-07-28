@@ -9,6 +9,7 @@
 import Foundation
 import FirebaseDatabase
 import FirebaseAuth
+import SwiftyJSON
 
 struct RatingService {
     
@@ -49,29 +50,34 @@ struct RatingService {
         Auth.auth().signInAnonymously() { (user, error) in
             if error != nil { return }
             
-        let ref = Database.database().reference().child("cafes").child(yelpID)
+            let ref = Database.database().reference().child("cafes").child(yelpID)
             
-        
+            ref.observeSingleEvent(of: .value, with: { (snapshot) in
+                
+                guard let snapshot = snapshot.value as? [String: Int] else {
+                    return completion([:])
+                }
+                
+                completion(snapshot)
             
-        ref.observeSingleEvent(of: <#T##DataEventType#>, with: <#T##(DataSnapshot) -> Void#>, withCancel: <#T##((Error) -> Void)?##((Error) -> Void)?##(Error) -> Void#>)
-        
-        /*
-        
-        ref.observeSingleEvent(of: .value, with: { (snapshot) in
-            guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
-                return completion([])
-            }
+            })
             
-            let posts = snapshot.reversed().flatMap(Post.init)
-            completion(posts)
-        })
-        */
+            /*
+             ref.observeSingleEvent(of: .value, with: { (snapshot) in
+             guard let snapshot = snapshot.children.allObjects as? [DataSnapshot] else {
+             return completion([])
+             }
+             
+             let posts = snapshot.reversed().flatMap(Post.init)
+             completion(posts)
+             })*/
+        }
     }
     
     static func filterCafesByHastags(yelpIDs: [String], hashtags: String, completion: @escaping ([Cafe]) -> Void) {
         
     }
     
-
+    
     
 }

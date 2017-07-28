@@ -21,14 +21,12 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
-    
     var reviewList = [Review]()
     
     var cafe: Cafe?
     var phoneNum: String = ""
     var imageURL: String = ""
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.delegate = self
@@ -60,14 +58,19 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
                     self.tableView.reloadData()
                 }
             })
+            
+            //Retrieve hashtags/count from Firebase
+            RatingService.retrieveForCafe(yelpID: (cafe?.id)! , completion: { (tags) in
+                self.cafe?.hashtagCounts = tags
+
+
+            })
         }
         else {
             print("is nil")
         }
         
-        func numReview() {
-            reviewCount.text = "| \(reviewCount) reviews"
-        }
+        
         
         // Making back button colour on nav controller white
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -87,6 +90,10 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         }
     }
     
+    //collection view hashtag count
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return (cafe?.hashtagCounts?.count)!
+    }
     
     //creating # of tableView sections
     func numberOfSections(in tableView: UITableView) -> Int {
