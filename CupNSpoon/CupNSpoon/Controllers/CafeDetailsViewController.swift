@@ -117,5 +117,17 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 
         return cell
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "addRating" {
+            if let destinationVC = segue.destination as? RatingViewController {
+                    destinationVC.yelpID = (cafe?.id)!
+            }
+        }
+        
+    }
+    
+    @IBAction func unwindToCafeDetailsViewController(_ segue: UIStoryboardSegue) {
+    }
 
 }

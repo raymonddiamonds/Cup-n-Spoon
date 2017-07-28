@@ -19,6 +19,8 @@ class Cafe {
     var phoneNum: String
     var rating: Rating
     var reviewCount: Double
+    var hashtagCounts: [String:Int]?
+    var totalRatingsCount: Int?
     
     init(name: String, id: String, imageURL: String, address: String, distance: Double, phoneNum: String, rating: Rating, reviewCount: Double) {
         self.name = name
