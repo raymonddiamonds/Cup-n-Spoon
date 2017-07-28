@@ -8,11 +8,11 @@
 
 import UIKit
 
+private let reuseIdentifier = "hashtag"
 
 class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var featuresTextView: UITextView!
-    
+    @IBOutlet weak var hashtagLabel: UILabel!
     @IBOutlet weak var cafeNameLabel: CafeLabel!
     @IBOutlet weak var backgroundPic: UIImageView!
     @IBOutlet weak var addressDetails: UILabel!
@@ -65,7 +65,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             RatingService.retrieveForCafe(yelpID: (cafe?.id)! , completion: { (tags) in
                 self.cafe?.hashtagCounts = tags
                 
-                for individualKey in Array(tags.keys)
+                /*for individualKey in Array(tags.keys)
                 {
                     if self.featuresTextView.text != ""
                     {
@@ -75,15 +75,13 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
                     {
                         self.featuresTextView.text = "#\(individualKey): \(tags[individualKey]!)"
                     }
-                }
+                }*/
 
             })
         }
         else {
             print("is nil")
         }
-        
-        
         
         // Making back button colour on nav controller white
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -102,6 +100,19 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             backgroundPic.addSubview(overlay)
         }
     }
+    
+    
+     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+     return (cafe?.hashtagCounts?.count)!
+     }
+     
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HashtagCell
+     
+     return cell
+     }
+    
+    
     
     //creating # of tableView sections
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -133,7 +144,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addRating" {
             if let destinationVC = segue.destination as? RatingViewController {
                 destinationVC.yelpID = (cafe?.id)!
