@@ -15,7 +15,7 @@
         <scene sceneID="oQT-F0-y47">
             <objects>
                 <collectionViewController id="iu5-Zg-EzS" customClass="CafeListCollectionViewController" customModule="CupNSpoon" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="TRa-V2-4TD">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" dataMode="prototypes" id="TRa-V2-4TD">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -336,11 +336,14 @@
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UY-nF-Wpw" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
                                                 <rect key="frame" x="321" y="346" width="46" height="23"/>
+                                                <color key="backgroundColor" red="0.078431372549019607" green="0.81176470588235294" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="46" id="B86-tc-g3A"/>
                                                     <constraint firstAttribute="height" constant="23" id="uy7-cO-diD"/>
                                                 </constraints>
-                                                <state key="normal" title="Rate"/>
+                                                <state key="normal" title="Rate">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                         <real key="value" value="1"/>
@@ -374,39 +377,44 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="atG-Oe-feH">
-                                                <rect key="frame" x="9" y="370" width="355" height="73"/>
+                                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gn7-0O-mFv">
+                                                <rect key="frame" x="9" y="377" width="358" height="66"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6it-fB-3Vt">
-                                                    <size key="itemSize" width="109" height="24"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vCw-1t-Vyj">
+                                                    <size key="itemSize" width="105" height="25"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 </collectionViewFlowLayout>
                                                 <cells>
-                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="hashtag" id="3oO-8b-hfS" customClass="HashtagCell" customModule="CupNSpoon" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="24"/>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="hashtag" id="jIX-bC-nl1" customClass="HashtagCell" customModule="CupNSpoon" customModuleProvider="target">
+                                                        <rect key="frame" x="0.0" y="0.0" width="105" height="25"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                                            <rect key="frame" x="0.0" y="0.0" width="109" height="24"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="105" height="25"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <subviews>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cu-3b-CVl">
-                                                                    <rect key="frame" x="0.0" y="2" width="109" height="21"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcy-Ze-fyt">
+                                                                    <rect key="frame" x="0.0" y="2" width="105" height="21"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                    <nil key="textColor"/>
+                                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
                                                         </view>
                                                         <connections>
-                                                            <outlet property="hashtagLabel" destination="3cu-3b-CVl" id="spY-09-AxO"/>
+                                                            <outlet property="hashtagLabel" destination="gcy-Ze-fyt" id="08b-TK-MmD"/>
                                                         </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icons8-Marker-100" translatesAutoresizingMaskIntoConstraints="NO" id="CxJ-dH-65o">
+                                                <rect key="frame" x="0.0" y="203" width="38" height="41"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -478,6 +486,7 @@
                         <outlet property="avgYelpStar" destination="xk3-0h-9m3" id="wsm-cT-BpD"/>
                         <outlet property="backgroundPic" destination="1Br-UY-IJb" id="WbF-8t-t8N"/>
                         <outlet property="cafeNameLabel" destination="2kY-Qf-kaV" id="sVD-5r-HMk"/>
+                        <outlet property="hashtagCollectionView" destination="gn7-0O-mFv" id="oMC-gd-hhT"/>
                         <outlet property="reviewCount" destination="gik-s5-bCQ" id="SWS-tL-Go9"/>
                         <outlet property="tableView" destination="zPF-Q6-qw2" id="ncB-yJ-wyA"/>
                         <segue destination="Loc-Vg-VjX" kind="unwind" unwindAction="unwindToCafeListCollectionViewController:" id="XBH-C8-7dZ"/>
@@ -486,7 +495,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DT9-vf-RbL" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="Loc-Vg-VjX" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="2955.5" y="-152.5"/>
+            <point key="canvasLocation" x="2954.4000000000001" y="-153.37331334332833"/>
         </scene>
         <!--Rating View Controller-->
         <scene sceneID="vHm-wT-y0C">
@@ -522,7 +531,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBR-R3-jJJ" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
                                 <rect key="frame" x="42" y="220" width="81" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title=" #FastWifi  "/>
+                                <state key="normal" title="#FastWifi  "/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                         <real key="value" value="1"/>
@@ -798,6 +807,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AMq-1l-VH3" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="2hv-YY-hdB" userLabel="Exit" sceneMemberID="exit"/>
@@ -811,10 +821,10 @@
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o6A-XB-dcx">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="o6A-XB-dcx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.078109689056873322" green="0.81149321794509888" blue="0.67338413000106812" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="barTintColor" red="0.078431372549019607" green="0.81176470588235294" blue="0.67450980392156867" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </textAttributes>
@@ -834,5 +844,6 @@
         <image name="cafe" width="3456" height="1944"/>
         <image name="five" width="102" height="18"/>
         <image name="icons8-Google Maps-500" width="250" height="250"/>
+        <image name="icons8-Marker-100" width="100" height="100"/>
     </resources>
 </document>

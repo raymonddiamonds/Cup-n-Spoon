@@ -11,8 +11,6 @@
 		381BF30A1F2BD2940062D1F8 /* HashtagCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 381BF3091F2BD2940062D1F8 /* HashtagCell.swift */; };
 		3838093D1F1815230013E3C5 /* YelpClientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838093C1F1815230013E3C5 /* YelpClientService.swift */; };
 		383809411F1832F80013E3C5 /* CafeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383809401F1832F80013E3C5 /* CafeDetailsViewController.swift */; };
-		383809431F1834440013E3C5 /* WelcomeScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 383809421F1834440013E3C5 /* WelcomeScreen.storyboard */; };
-		383809451F183CDE0013E3C5 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383809441F183CDE0013E3C5 /* WelcomeViewController.swift */; };
 		383809471F183D7D0013E3C5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383809461F183D7D0013E3C5 /* RoundButton.swift */; };
 		3838094B1F19797E0013E3C5 /* CafeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838094A1F19797E0013E3C5 /* CafeLabel.swift */; };
 		389CEAB01F16CC4A0081BC00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAAF1F16CC4A0081BC00 /* AppDelegate.swift */; };
@@ -29,6 +27,7 @@
 		38BBCCF91F26B47C008D1591 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38BBCCF81F26B47C008D1591 /* GoogleService-Info.plist */; };
 		38BBCCFD1F27ED94008D1591 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BBCCFC1F27ED93008D1591 /* RatingViewController.swift */; };
 		38BBCCFF1F2A88F3008D1591 /* RatingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BBCCFE1F2A88F3008D1591 /* RatingService.swift */; };
+		38EFE6331F2FB7F300F2B6AA /* GMapsDistanceMatrixService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38EFE6321F2FB7F300F2B6AA /* GMapsDistanceMatrixService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,8 +36,6 @@
 		381BF3091F2BD2940062D1F8 /* HashtagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagCell.swift; sourceTree = "<group>"; };
 		3838093C1F1815230013E3C5 /* YelpClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClientService.swift; sourceTree = "<group>"; };
 		383809401F1832F80013E3C5 /* CafeDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CafeDetailsViewController.swift; path = Controllers/CafeDetailsViewController.swift; sourceTree = "<group>"; };
-		383809421F1834440013E3C5 /* WelcomeScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = WelcomeScreen.storyboard; sourceTree = "<group>"; };
-		383809441F183CDE0013E3C5 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Controllers/WelcomeViewController.swift; sourceTree = "<group>"; };
 		383809461F183D7D0013E3C5 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		3838094A1F19797E0013E3C5 /* CafeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CafeLabel.swift; path = Extensions/CafeLabel.swift; sourceTree = "<group>"; };
 		389CEAAC1F16CC4A0081BC00 /* CupNSpoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupNSpoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -57,6 +54,7 @@
 		38BBCCF81F26B47C008D1591 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38BBCCFC1F27ED93008D1591 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingViewController.swift; path = Controllers/RatingViewController.swift; sourceTree = "<group>"; };
 		38BBCCFE1F2A88F3008D1591 /* RatingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingService.swift; sourceTree = "<group>"; };
+		38EFE6321F2FB7F300F2B6AA /* GMapsDistanceMatrixService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GMapsDistanceMatrixService.swift; sourceTree = "<group>"; };
 		B2C748506A9C51946A0891E7 /* Pods-CupNSpoon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CupNSpoon.release.xcconfig"; path = "Pods/Target Support Files/Pods-CupNSpoon/Pods-CupNSpoon.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -104,6 +102,7 @@
 			children = (
 				3838093C1F1815230013E3C5 /* YelpClientService.swift */,
 				38BBCCFE1F2A88F3008D1591 /* RatingService.swift */,
+				38EFE6321F2FB7F300F2B6AA /* GMapsDistanceMatrixService.swift */,
 			);
 			name = Services;
 			sourceTree = "<group>";
@@ -112,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				389CEAB31F16CC4A0081BC00 /* Main.storyboard */,
-				383809421F1834440013E3C5 /* WelcomeScreen.storyboard */,
 			);
 			name = Storyboards;
 			sourceTree = "<group>";
@@ -169,7 +167,6 @@
 				389CEAC11F16CCF10081BC00 /* CafeListCollectionViewController.swift */,
 				383809401F1832F80013E3C5 /* CafeDetailsViewController.swift */,
 				38BBCCFC1F27ED93008D1591 /* RatingViewController.swift */,
-				383809441F183CDE0013E3C5 /* WelcomeViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -251,7 +248,6 @@
 				389CEAB71F16CC4A0081BC00 /* Assets.xcassets in Resources */,
 				38BBCCF91F26B47C008D1591 /* GoogleService-Info.plist in Resources */,
 				389CEAB51F16CC4A0081BC00 /* Main.storyboard in Resources */,
-				383809431F1834440013E3C5 /* WelcomeScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -313,12 +309,12 @@
 				383809471F183D7D0013E3C5 /* RoundButton.swift in Sources */,
 				38AED3601F2122F5000C2211 /* ReviewCell.swift in Sources */,
 				389CEAC81F16CD170081BC00 /* CafeCell.swift in Sources */,
-				383809451F183CDE0013E3C5 /* WelcomeViewController.swift in Sources */,
 				3838094B1F19797E0013E3C5 /* CafeLabel.swift in Sources */,
 				38AED35C1F201E2B000C2211 /* Review.swift in Sources */,
 				389CEAC41F16CCF90081BC00 /* Cafe.swift in Sources */,
 				389CEAC61F16CD000081BC00 /* UIImage.swift in Sources */,
 				383809411F1832F80013E3C5 /* CafeDetailsViewController.swift in Sources */,
+				38EFE6331F2FB7F300F2B6AA /* GMapsDistanceMatrixService.swift in Sources */,
 				38BBCCFF1F2A88F3008D1591 /* RatingService.swift in Sources */,
 				389CEAC21F16CCF10081BC00 /* CafeListCollectionViewController.swift in Sources */,
 				3838093D1F1815230013E3C5 /* YelpClientService.swift in Sources */,

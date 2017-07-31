@@ -10,6 +10,7 @@ import UIKit
 
 class HashtagCell: UICollectionViewCell {
     
+
     @IBOutlet weak var hashtagLabel: UILabel!
 
     

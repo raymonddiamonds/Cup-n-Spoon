@@ -58,6 +58,8 @@ struct RatingService {
                     return completion([:])
                 }
                 
+
+                
                 completion(snapshot)
             
             })

@@ -8,11 +8,13 @@
 
 import UIKit
 
-private let reuseIdentifier = "hashtag"
+
 
 class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    @IBOutlet weak var hashtagLabel: UILabel!
+
+    @IBOutlet weak var hashtagCollectionView: UICollectionView!
+    
     @IBOutlet weak var cafeNameLabel: CafeLabel!
     @IBOutlet weak var backgroundPic: UIImageView!
     @IBOutlet weak var addressDetails: UILabel!
@@ -23,9 +25,24 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
     }
     
+    let reuseIdentifier = "hashtag"
+    
+    
     var reviewList = [Review]()
     
-    var cafe: Cafe?
+    private var _hashArray: [String]?
+    var hashArray: [String]? {
+        return _hashArray
+    }
+    
+    var cafe: Cafe? {
+        didSet{
+            if let hashCounts = cafe?.hashtagCounts {
+                _hashArray = Array(hashCounts.keys)
+            }
+        }
+    }
+    
     var phoneNum: String = ""
     var imageURL: String = ""
     
@@ -34,6 +51,9 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         self.tableView.delegate = self
         self.tableView.dataSource = self
         
+        self.hashtagCollectionView.delegate = self
+        self.hashtagCollectionView.dataSource = self
+
         if let currentCafe = cafe {
             print(currentCafe.address)
             
@@ -46,11 +66,8 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             
             avgYelpStar.image = UIImage(named:   currentCafe.rating.getImageName())
             
-            
             let reviewURL = "https://api.yelp.com/v3/businesses/\(currentCafe.id)/reviews"
-            
-            
-            
+
             //code to get the ratings for all of our cafes in cafeList
             YelpClientService.getReviews(url: reviewURL, completionHandler:
                 { (receivedReviews) in
@@ -64,6 +81,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             //Retrieve hashtags/count from Firebase
             RatingService.retrieveForCafe(yelpID: (cafe?.id)! , completion: { (tags) in
                 self.cafe?.hashtagCounts = tags
+                self.hashtagCollectionView.reloadData()
                 
                 /*for individualKey in Array(tags.keys)
                 {
@@ -83,6 +101,9 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             print("is nil")
         }
         
+
+        
+        
         // Making back button colour on nav controller white
         self.navigationController?.navigationBar.tintColor = UIColor.white
         
@@ -99,20 +120,24 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             //Add the subview to the UIImageView
             backgroundPic.addSubview(overlay)
         }
+     }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
+        self.navigationController?.navigationBar.shadowImage = UIImage()
+        self.navigationController?.navigationBar.isTranslucent = true
+        
     }
     
-    
-     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-     return (cafe?.hashtagCounts?.count)!
-     }
-     
-     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HashtagCell
-     
-     return cell
-     }
-    
-    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.navigationBar.shadowImage = nil
+        self.navigationController?.navigationBar.setBackgroundImage(nil, for: .default)
+        self.navigationController?.navigationBar.isTranslucent = true
+        
+    }
+
     
     //creating # of tableView sections
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -139,21 +164,48 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         cell.yelpStars.image = UIImage(named: review.rating.getImageName())
         
+        cell.selectionStyle = .none
+        
         //cell.date.text = review.timeCreated
         
         return cell
     }
     
-    func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addRating" {
             if let destinationVC = segue.destination as? RatingViewController {
                 destinationVC.yelpID = (cafe?.id)!
             }
         }
-        
     }
     
     @IBAction func unwindToCafeDetailsViewController(_ segue: UIStoryboardSegue) {
+    }
+    
+}
+
+extension CafeDetailsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return self.cafe?.hashtagCounts?.count ?? 0
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HashtagCell
+        
+        
+        // configure cell based on...
+        // self.hashArray[indexPath.item]
+        
+        
+        let hashtag = self.hashArray?[indexPath.item]
+
+        
+        cell.hashtagLabel.text = "#\(hashtag!)"
+        
+        return cell
     }
     
 }

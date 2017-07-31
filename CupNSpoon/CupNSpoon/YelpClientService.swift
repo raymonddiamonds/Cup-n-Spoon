@@ -33,11 +33,9 @@ class YelpClientService {
                 let rating = String.init(format: "%.1f", ratingDouble)
                 let reviewCount = business["review_count"].double
 
-
                 let cafe = Cafe(name: name, id: id, imageURL: imageURL, address: address, distance: distance, phoneNum: phoneNum, rating: Rating(rawValue: rating)!, reviewCount: reviewCount!)
                 cafes.append(cafe)
             }
-            
             
             completionHandler(cafes)
             print(json)

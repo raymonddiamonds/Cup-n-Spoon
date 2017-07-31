@@ -11,9 +11,11 @@ import Alamofire
 import SwiftyJSON
 import Kingfisher
 
-private let reuseIdentifier = "cafeCell"
+
 
 class CafeListCollectionViewController: UICollectionViewController,UICollectionViewDelegateFlowLayout {
+    
+    private let reuseIdentifier = "cafeCell"
 
     var cafeList = [Cafe]()
 
@@ -41,10 +43,7 @@ class CafeListCollectionViewController: UICollectionViewController,UICollectionV
                 self.collectionView?.reloadData()
 
             }
-            
-        
         }
-        
         collectionView?.backgroundColor = UIColor(red:0.96, green:0.95, blue:0.94, alpha:1.0)
 
     }

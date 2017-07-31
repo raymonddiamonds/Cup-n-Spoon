@@ -9,7 +9,7 @@
 import Foundation
 import Kingfisher
 
-class Cafe {
+struct Cafe {
     //Mark: Properties
     var name: String
     var id: String
