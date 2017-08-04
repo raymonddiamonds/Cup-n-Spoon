@@ -32,17 +32,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Alamofire.request(tokenURL, method: .post, parameters: params, encoding: URLEncoding.default).responseData { (response) in
                 let json = JSON(with: response.data!)
                 //            print("Here is JSON: \(json)")
-                print(json["access_token"])
+               
                 let accessToken = json["access_token"].stringValue
                 
                 UserDefaults.standard.setValue(accessToken, forKey: "token")
+                
             }
+            
+            
         }
         
+        UIApplication.shared.statusBarStyle = .lightContent
+        
+        func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+            // Override point for customization after application launch.
+            // Sets background to a blank/empty image
+            UINavigationBar.appearance().setBackgroundImage(UIImage(), for: .default)
+            // Sets shadow (line below the bar) to a blank image
+            UINavigationBar.appearance().shadowImage = UIImage()
+            // Sets the translucent background color
+            UINavigationBar.appearance().backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+            // Set translucent. (Default value is already true, so this can be removed if desired.)
+            UINavigationBar.appearance().isTranslucent = true
+            return true
+        }
 
         
         return true
     }
+
 
     func applicationWillResignActive(_ application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

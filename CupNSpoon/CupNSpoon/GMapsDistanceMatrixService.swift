@@ -7,5 +7,15 @@
 //
 
 import Foundation
+import GoogleMaps
+import GooglePlaces
 
-
+class GMapsDistanceMatrixService {
+    
+    var origin = ""
+    var dest = ""
+    let baseURL = "https://maps.googleapis.com/maps/api/directions/json?origin="
+    let apiKey = ""
+    
+    
+}

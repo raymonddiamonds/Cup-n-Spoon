@@ -18,27 +18,33 @@ class YelpClientService {
         
         Alamofire.request(url, parameters: parameters, encoding: URLEncoding.default, headers: headers).responseJSON { (response) in
             let json = JSON(with: response.data as Any)
-            let businesses = json["businesses"].array
-            print(businesses as Any)
-            
             var cafes = [Cafe]()
-            for business in businesses! {
-                let name = business["name"].stringValue
-                let imageURL = business["image_url"].stringValue
-                let address = business["location"]["address1"].stringValue
-                let distance = business["distance"].doubleValue
-                let phoneNum = business["phone"].stringValue
-                let id = business["id"].stringValue
-                let ratingDouble = business["rating"].doubleValue
-                let rating = String.init(format: "%.1f", ratingDouble)
-                let reviewCount = business["review_count"].double
 
-                let cafe = Cafe(name: name, id: id, imageURL: imageURL, address: address, distance: distance, phoneNum: phoneNum, rating: Rating(rawValue: rating)!, reviewCount: reviewCount!)
-                cafes.append(cafe)
+            if let businesses = json["businesses"].array {
+                for business in businesses {
+                    
+                    let name = business["name"].stringValue
+                    let imageURL = business["image_url"].stringValue
+                    let address = business["location"]["address1"].stringValue
+                    let distance = business["distance"].doubleValue
+                    let phoneNum = business["phone"].stringValue
+                    let id = business["id"].stringValue
+                    let ratingDouble = business["rating"].doubleValue
+                    let rating = String.init(format: "%.1f", ratingDouble)
+                    let reviewCount = business["review_count"].double
+                    
+                    let cafe = Cafe(name: name, id: id, imageURL: imageURL, address: address, distance: distance, phoneNum: phoneNum, rating: Rating(rawValue: rating)!, reviewCount: reviewCount!)
+                    cafes.append(cafe)
+                }
+            } else {
+                completionHandler([])
             }
+
+            
+
             
             completionHandler(cafes)
-            print(json)
+
         }
     }
     
@@ -52,7 +58,7 @@ class YelpClientService {
             Alamofire.request(requestUrl, encoding: URLEncoding.default, headers: httpHeaders).responseJSON { (returnedResponse) in
                 let returnedJson = JSON(with: returnedResponse.data as Any)
                 let reviewArray = returnedJson["reviews"].array
-                print(reviewArray as Any)
+
                 
                 var reviews = [Review]()
                 

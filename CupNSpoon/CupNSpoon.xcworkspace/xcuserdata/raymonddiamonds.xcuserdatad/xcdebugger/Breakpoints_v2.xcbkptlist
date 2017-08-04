@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CupNSpoon/Controllers/RatingViewController.swift"
-            timestampString = "522888568.865618"
+            filePath = "CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+            timestampString = "523419856.174738"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "33"
-            endingLineNumber = "33"
-            landmarkName = "prepare(for:sender:)"
+            startingLineNumber = "96"
+            endingLineNumber = "96"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,12 +25,108 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CupNSpoon/Controllers/CafeDetailsViewController.swift"
-            timestampString = "523213984.186614"
+            filePath = "CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+            timestampString = "523419856.174738"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupNSpoon.CafeListCollectionViewController.collectionView (__ObjC.UICollectionView, numberOfItemsInSection : Swift.Int) -&gt; Swift.Int"
+                  moduleName = "CupNSpoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raymonddiamonds/Raymond&apos;s%20Documents/Make%20School/Cup&apos;NSpoon/Cup-n-Spoon/CupNSpoon/CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+                  timestampString = "523577269.265328"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "56">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupNSpoon.CafeListCollectionViewController.collectionView (__ObjC.UICollectionView, numberOfItemsInSection : Swift.Int) -&gt; Swift.Int"
+                  moduleName = "CupNSpoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raymonddiamonds/Raymond&apos;s%20Documents/Make%20School/Cup&apos;NSpoon/Cup-n-Spoon/CupNSpoon/CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+                  timestampString = "523577269.27026"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "102"
+                  endingLineNumber = "102"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+            timestampString = "523419856.174738"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "108"
+            endingLineNumber = "108"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+            timestampString = "523419856.174738"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "collectionView(_:numberOfItemsInSection:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/YelpClientService.swift"
+            timestampString = "523476880.202935"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "getBusinesses(url:parameters:headers:completionHandler:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/CafeListViewController.swift"
+            timestampString = "523573511.832145"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "72"
+            endingLineNumber = "72"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -41,12 +137,92 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CupNSpoon/Controllers/CafeDetailsViewController.swift"
-            timestampString = "523222344.605894"
+            filePath = "CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+            timestampString = "523492810.520065"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "204"
-            endingLineNumber = "204"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+            timestampString = "523492811.605785"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+            timestampString = "523492816.06087"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "59"
+            endingLineNumber = "59"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupNSpoon.CafeListCollectionViewController.(viewDidLoad () -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "CupNSpoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raymonddiamonds/Raymond&apos;s%20Documents/Make%20School/Cup&apos;NSpoon/Cup-n-Spoon/CupNSpoon/CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+                  timestampString = "523577269.356883"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "59"
+                  endingLineNumber = "59"
+                  offsetFromSymbolStart = "346">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupNSpoon.CafeListCollectionViewController.(viewDidLoad () -&gt; ()).(closure #1).(closure #1).(closure #2)"
+                  moduleName = "CupNSpoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raymonddiamonds/Raymond&apos;s%20Documents/Make%20School/Cup&apos;NSpoon/Cup-n-Spoon/CupNSpoon/CupNSpoon/Controllers/CafeListCollectionViewController.swift"
+                  timestampString = "523577269.359935"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "65"
+                  endingLineNumber = "65"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/CafeListViewController.swift"
+            timestampString = "523573661.564852"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
             landmarkName = "collectionView(_:cellForItemAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -57,14 +233,206 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "CupNSpoon/Controllers/CafeDetailsViewController.swift"
-            timestampString = "523213972.514601"
+            filePath = "CupNSpoon/CafeListViewController.swift"
+            timestampString = "523573878.624367"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "cafe"
-            landmarkType = "24">
+            startingLineNumber = "127"
+            endingLineNumber = "127"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/CafeListViewController.swift"
+            timestampString = "523573939.180063"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/CafeListViewController.swift"
+            timestampString = "523573959.715494"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupNSpoon.CafeListViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "CupNSpoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raymonddiamonds/Raymond&apos;s%20Documents/Make%20School/Cup&apos;NSpoon/Cup-n-Spoon/CupNSpoon/CupNSpoon/CafeListViewController.swift"
+                  timestampString = "523577269.381553"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "119"
+                  endingLineNumber = "119"
+                  offsetFromSymbolStart = "1123">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupNSpoon.CafeListViewController.(viewDidLoad () -&gt; ()).(closure #1).(closure #5)"
+                  moduleName = "CupNSpoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raymonddiamonds/Raymond&apos;s%20Documents/Make%20School/Cup&apos;NSpoon/Cup-n-Spoon/CupNSpoon/CupNSpoon/CafeListViewController.swift"
+                  timestampString = "523577269.384687"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/CafeListViewController.swift"
+            timestampString = "523574290.602559"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/CafeListViewController.swift"
+            timestampString = "523574294.202583"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "257"
+            endingLineNumber = "257"
+            landmarkName = "collectionView(_:cellForItemAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/CafeListViewController.swift"
+            timestampString = "523574620.525998"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "91"
+            endingLineNumber = "91"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupNSpoon.CafeListViewController.(viewDidLoad () -&gt; ()).(closure #1).(closure #3)"
+                  moduleName = "CupNSpoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raymonddiamonds/Raymond&apos;s%20Documents/Make%20School/Cup&apos;NSpoon/Cup-n-Spoon/CupNSpoon/CupNSpoon/CafeListViewController.swift"
+                  timestampString = "523577269.398331"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "77">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupNSpoon.CafeListViewController.(viewDidLoad () -&gt; ()).(closure #1).(closure #3).(closure #1)"
+                  moduleName = "CupNSpoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raymonddiamonds/Raymond&apos;s%20Documents/Make%20School/Cup&apos;NSpoon/Cup-n-Spoon/CupNSpoon/CupNSpoon/CafeListViewController.swift"
+                  timestampString = "523577269.401619"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "166">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "CupNSpoon/CafeListViewController.swift"
+            timestampString = "523577261.59094"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupNSpoon.CafeListViewController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "CupNSpoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raymonddiamonds/Raymond&apos;s%20Documents/Make%20School/Cup&apos;NSpoon/Cup-n-Spoon/CupNSpoon/CupNSpoon/CafeListViewController.swift"
+                  timestampString = "523577269.407474"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "67"
+                  endingLineNumber = "67"
+                  offsetFromSymbolStart = "321">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "CupNSpoon.CafeListViewController.(viewDidLoad () -&gt; ()).(closure #1).(closure #2)"
+                  moduleName = "CupNSpoon"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/raymonddiamonds/Raymond&apos;s%20Documents/Make%20School/Cup&apos;NSpoon/Cup-n-Spoon/CupNSpoon/CupNSpoon/CafeListViewController.swift"
+                  timestampString = "523577269.410101"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

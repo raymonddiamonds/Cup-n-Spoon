@@ -57,7 +57,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         if let currentCafe = cafe {
             print(currentCafe.address)
             
-            addressDetails.text = currentCafe.address
+            //addressDetails.text = currentCafe.address
             cafeNameLabel.text = currentCafe.name
             phoneNum = currentCafe.phoneNum
             imageURL = currentCafe.imageURL
