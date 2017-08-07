@@ -52,32 +52,31 @@ class CafeListCollectionViewController: UIViewController,UICollectionViewDelegat
             
             DispatchQueue.main.async {
                 self.studyCafeListCollectionView?.reloadData()
+            }
+            
+            let cafeIDs = self.allCafeList.map { $0.id }
+            
+            
+            RatingService.filterCafesByHastags(yelpIDs: cafeIDs, hashtags: ["LaptopFriendly"], completion: { (filteredIds) in
                 
-                let cafeIDs = self.allCafeList.map { $0.id }
+                //filter thru allCafeList according to filteredIds
+                //reloadData for corresponding collecView
                 
                 
-                RatingService.filterCafesByHastags(yelpIDs: cafeIDs, hashtags: ["LaptopFriendly"], completion: { (filteredIds) in
-                    
-                    //filter thru allCafeList according to filteredIds
-                    //reloadData for corresponding collecView
-                    
-                    
-                    if let temporaryFilteredIds = filteredIds {
-                        self.studyCafeList = self.allCafeList.filter {temporaryFilteredIds.contains($0.id)}
-                        
+                if let temporaryFilteredIds = filteredIds {
+                    self.studyCafeList = self.allCafeList.filter {temporaryFilteredIds.contains($0.id)}
+                    DispatchQueue.main.async {
                         self.studyCafeListCollectionView?.reloadData()
                     }
-                    else
-                    {
-                        print("no filtered ids")
-                    }
-                    
-                })
+                }
+                else
+                {
+                    print("no filtered ids")
+                }
                 
-                //do the above for all collectionViews
-                
-                
-            }
+            })
+            
+            //do the above for all collectionViews
         }
         
         studyCafeListCollectionView?.backgroundColor = UIColor(red:0.96, green:0.95, blue:0.94, alpha:1.0)
@@ -86,14 +85,14 @@ class CafeListCollectionViewController: UIViewController,UICollectionViewDelegat
         self.navigationController?.navigationBar.shadowImage = UIImage()
         self.navigationController?.navigationBar.isTranslucent = true
         self.navigationController?.view.backgroundColor = .clear
-
+        
         
         
     }
-
     
     
-   func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection
         section: Int) -> Int {
         
         switch collectionView.tag {
@@ -109,7 +108,7 @@ class CafeListCollectionViewController: UIViewController,UICollectionViewDelegat
             
         }
         
-    return 6
+        return 6
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -119,82 +118,82 @@ class CafeListCollectionViewController: UIViewController,UICollectionViewDelegat
         return cell
     }
     /*
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
-        switch collectionView.tag {
-            
-        // STUDY CAFE COLLEC VIEW
-        case 0:
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: studyCellIdentifier, for: indexPath) as! CafeCell
-            
-            //Configure the cell
-            
-            //populating cell w/ cafeName,cafeAddress,cafeImage from cafe obj Array
-            let cafe = allCafeList[indexPath.row]
-            
-            cell.cafeName.text = cafe.name
-            
-            cell.cafeAddress.text = cafe.address
-            
-            //print(cafe.distance)
-            
-            let imageURL = URL(string: cafe.imageURL)
-            cell.cafeImage.kf.setImage(with: imageURL)
-            
-            // Create a subview which will add an overlay effect on image view
-            if cell.cafeImage.viewWithTag(98) == nil {
-                let overlay = UIView(frame: CGRect(x: 0,y: 0,width: cell.cafeImage.frame.size.width, height: cell.cafeImage.frame.size.height))
-                overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55)
-                //0.37
-                overlay.tag = 98
-                
-                //Add the subview to the UIImageView
-                cell.cafeImage.addSubview(overlay)
-                
-            }
-            
-            return cell
-            
-        case 1: break
-            
-        case 2: break
-            
-        default: 0
-            
-            
-            
-        }
-        
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CafeCell
-        
-        //Configure the cell
-        
-        //populating cell w/ cafeName,cafeAddress,cafeImage from cafe obj Array
-        let cafe = allCafeList[indexPath.row]
-        
-        cell.cafeName.text = cafe.name
-        
-        cell.cafeAddress.text = cafe.address
-        
-        //print(cafe.distance)
-        
-        let imageURL = URL(string: cafe.imageURL)
-        cell.cafeImage.kf.setImage(with: imageURL)
-        
-        // Create a subview which will add an overlay effect on image view
-        if cell.cafeImage.viewWithTag(98) == nil {
-            let overlay = UIView(frame: CGRect(x: 0,y: 0,width: cell.cafeImage.frame.size.width, height: cell.cafeImage.frame.size.height))
-            overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55)
-            //0.37
-            overlay.tag = 98
-            
-            //Add the subview to the UIImageView
-            cell.cafeImage.addSubview(overlay)
-        }
-        
-        return cell
-    } */
+     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+     
+     switch collectionView.tag {
+     
+     // STUDY CAFE COLLEC VIEW
+     case 0:
+     
+     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: studyCellIdentifier, for: indexPath) as! CafeCell
+     
+     //Configure the cell
+     
+     //populating cell w/ cafeName,cafeAddress,cafeImage from cafe obj Array
+     let cafe = allCafeList[indexPath.row]
+     
+     cell.cafeName.text = cafe.name
+     
+     cell.cafeAddress.text = cafe.address
+     
+     //print(cafe.distance)
+     
+     let imageURL = URL(string: cafe.imageURL)
+     cell.cafeImage.kf.setImage(with: imageURL)
+     
+     // Create a subview which will add an overlay effect on image view
+     if cell.cafeImage.viewWithTag(98) == nil {
+     let overlay = UIView(frame: CGRect(x: 0,y: 0,width: cell.cafeImage.frame.size.width, height: cell.cafeImage.frame.size.height))
+     overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55)
+     //0.37
+     overlay.tag = 98
+     
+     //Add the subview to the UIImageView
+     cell.cafeImage.addSubview(overlay)
+     
+     }
+     
+     return cell
+     
+     case 1: break
+     
+     case 2: break
+     
+     default: 0
+     
+     
+     
+     }
+     
+     let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CafeCell
+     
+     //Configure the cell
+     
+     //populating cell w/ cafeName,cafeAddress,cafeImage from cafe obj Array
+     let cafe = allCafeList[indexPath.row]
+     
+     cell.cafeName.text = cafe.name
+     
+     cell.cafeAddress.text = cafe.address
+     
+     //print(cafe.distance)
+     
+     let imageURL = URL(string: cafe.imageURL)
+     cell.cafeImage.kf.setImage(with: imageURL)
+     
+     // Create a subview which will add an overlay effect on image view
+     if cell.cafeImage.viewWithTag(98) == nil {
+     let overlay = UIView(frame: CGRect(x: 0,y: 0,width: cell.cafeImage.frame.size.width, height: cell.cafeImage.frame.size.height))
+     overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55)
+     //0.37
+     overlay.tag = 98
+     
+     //Add the subview to the UIImageView
+     cell.cafeImage.addSubview(overlay)
+     }
+     
+     return cell
+     } */
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent

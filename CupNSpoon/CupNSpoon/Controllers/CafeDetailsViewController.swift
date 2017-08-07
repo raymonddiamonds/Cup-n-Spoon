@@ -81,8 +81,9 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             //Retrieve hashtags/count from Firebase
             RatingService.retrieveForCafe(yelpID: (cafe?.id)! , completion: { (tags) in
                 self.cafe?.hashtagCounts = tags
-                self.hashtagCollectionView.reloadData()
-                
+                DispatchQueue.main.async {
+                    self.hashtagCollectionView.reloadData()
+                }
                 /*for individualKey in Array(tags.keys)
                 {
                     if self.featuresTextView.text != ""

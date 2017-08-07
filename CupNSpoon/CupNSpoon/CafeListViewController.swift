@@ -16,9 +16,9 @@ class CafeListViewController: UIViewController{
     
     @IBOutlet weak var studyCollectionView: UICollectionView!
     @IBOutlet weak var brunchCollectionView: UICollectionView!
-    
     @IBOutlet weak var businessCollectionView: UICollectionView!
     @IBOutlet weak var photographyCollectionView: UICollectionView!
+    
     @IBOutlet weak var exploreCollectionView: UICollectionView!
     
     @IBOutlet weak var scrollView: UIScrollView!
@@ -57,23 +57,27 @@ class CafeListViewController: UIViewController{
         let headers: HTTPHeaders = [
             "Authorization": "Bearer \(UserDefaults.standard.string(forKey: "token") ?? "")"
         ]
-        
+        print("will send get businesses from Yelp \(Date())")
         YelpClientService.getBusinesses(url: baseURL, parameters: requestParams, headers: headers) { (receivedCafes) in
             self.allCafeList = receivedCafes
             
             self.yelpIDs = self.allCafeList.map { $0.id }
-            
+            print("businesses returned from Yelp \(Date())")
+
             // Studying Cafes
             RatingService.filterCafesByHastags(yelpIDs: self.yelpIDs, hashtags: ["FastWifi", "LaptopFriendly"], completion: { (filteredIds) in
                 
+                print("hashtags returned from firebase (study) \(Date())")
+
                 //filter thru allCafeList according to filteredIds
                 //reloadData for corresponding collecView
                 
                 if let temporaryFilteredIds = filteredIds {
                     self.studyCafeList = self.allCafeList.filter {temporaryFilteredIds.contains($0.id)}
-                    
-                    self.studyCollectionView?.reloadData()
-                    
+                    print("hashtags filtered (study) \(Date())")
+                    DispatchQueue.main.async {
+                        self.studyCollectionView?.reloadData()
+                    }
                 } else {
                     
                     
@@ -83,13 +87,15 @@ class CafeListViewController: UIViewController{
             
             // Brunch Cafe
             RatingService.filterCafesByHastags(yelpIDs: self.yelpIDs, hashtags: ["Organic", "Vegan"], completion: { (filteredIds) in
-                
+                print("hashtags returned from firebase (brunch) \(Date())")
+
                 //filter thru allCafeList according to filteredIds
                 //reloadData for corresponding collecView
                 
                 if let temporaryFilteredIds = filteredIds {
                     self.brunchCafeList = self.allCafeList.filter {temporaryFilteredIds.contains($0.id)}
-                    
+                    print("hashtags filtered (brunch) \(Date())")
+
                     self.brunchCollectionView?.reloadData()
                     
                 } else {
@@ -100,13 +106,15 @@ class CafeListViewController: UIViewController{
             })
             // Business Cafes
             RatingService.filterCafesByHastags(yelpIDs: self.yelpIDs, hashtags: ["Organic", "Vegan"], completion: { (filteredIds) in
-                
+                print("hashtags returned from firebase (business) \(Date())")
+
                 //filter thru allCafeList according to filteredIds
                 //reloadData for corresponding collecView
                 
                 if let temporaryFilteredIds = filteredIds {
                     self.businessCafeList = self.allCafeList.filter {temporaryFilteredIds.contains($0.id)}
-                    
+                    print("hashtags filtered (business) \(Date())")
+
                     self.businessCollectionView?.reloadData()
                     
                 } else {
@@ -117,13 +125,15 @@ class CafeListViewController: UIViewController{
             })
             // Photography Cafes
             RatingService.filterCafesByHastags(yelpIDs: self.yelpIDs, hashtags: ["Organic", "Vegan"], completion: { (filteredIds) in
-                
+                print("hashtags returned from firebase (photo) \(Date())")
+
                 //filter thru allCafeList according to filteredIds
                 //reloadData for corresponding collecView
                 
                 if let temporaryFilteredIds = filteredIds {
                     self.photographyCafeList = self.allCafeList.filter {temporaryFilteredIds.contains($0.id)}
-                    
+                    print("hashtags filtered (photo) \(Date())")
+
                     self.photographyCollectionView?.reloadData()
                     
                 } else {
@@ -223,16 +233,22 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        var cell: CafeCell
+        var cafe: Cafe
+        
         if collectionView == self.studyCollectionView {
             
-            let cell:CafeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "studyCafeCell", for: indexPath) as! CafeCell
+             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studyCafeCell", for: indexPath) as! CafeCell
             
-            let cafe = studyCafeList[indexPath.row]
+             cafe = studyCafeList[indexPath.row]
             
             cell.studyCafelabel.text = cafe.name
             
-            let imageURL = URL(string: cafe.imageURL)
-            cell.studyCafeImage.kf.setImage(with: imageURL)
+            let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
+            //cell.studyCafeImage.kf.setImage(with: imageURL)
+            cell.studyCafeImage.kf.setImage(with: imageURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image) in
+                print("image downloaded for study cell \(Date())")
+            })
             
             // Create a subview which will add an overlay effect on image view
             if cell.studyCafeImage.viewWithTag(98) == nil {
@@ -256,8 +272,10 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
             
             cell.brunchCafeLabel.text = cafe.name
             
-            let imageURL = URL(string: cafe.imageURL)
-            cell.brunchCafeImage.kf.setImage(with: imageURL)
+            let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
+            cell.brunchCafeImage.kf.setImage(with: imageURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image) in
+                print("image downloaded for brunch cell \(Date())")
+            })
             
             // Create a subview which will add an overlay effect on image view
             if cell.brunchCafeImage.viewWithTag(98) == nil {
@@ -281,8 +299,10 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
             
             cell.businessCafeLabel.text = cafe.name
             
-            let imageURL = URL(string: cafe.imageURL)
-            cell.businessCafeImage.kf.setImage(with: imageURL)
+            let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
+            cell.businessCafeImage.kf.setImage(with: imageURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image) in
+                print("image downloaded for business cell \(Date())")
+            })
             
             // Create a subview which will add an overlay effect on image view
             if cell.businessCafeImage.viewWithTag(98) == nil {
@@ -304,11 +324,14 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photographyCafeCell", for: indexPath) as! CafeCell
             
             let cafe = photographyCafeList[indexPath.row]
+
             
             cell.photographyCafeLabel.text = cafe.name
             
-            let imageURL = URL(string: cafe.imageURL)
-            cell.photographyCafeImage.kf.setImage(with: imageURL)
+            let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
+            cell.photographyCafeImage.kf.setImage(with: imageURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image) in
+                print("image downloaded for photo cell \(Date())")
+            })
             
             // Create a subview which will add an overlay effect on image view
             if cell.photographyCafeImage.viewWithTag(98) == nil {
@@ -334,7 +357,7 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
             
             cell.exploreCafeLabel.text = cafe.name
             
-            let imageURL = URL(string: cafe.imageURL)
+            let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
             cell.exploreCafeImage.kf.setImage(with: imageURL)
             
             // Create a subview which will add an overlay effect on image view
@@ -370,9 +393,18 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
             
             currentCafe = brunchCafeList[indexPath.row]
             
-        } else if collectionView == exploreCollectionView {
+        } else if collectionView == businessCollectionView {
             
-            currentCafe = exploreCafeList[indexPath.row]
+            currentCafe = businessCafeList[indexPath.row]
+            
+        } else if collectionView == photographyCollectionView {
+            
+            currentCafe = photographyCafeList[indexPath.row]
+            
+        } else {
+            
+            currentCafe = allCafeList[indexPath.row]
+            
         }
             
         performSegue(withIdentifier: "itemSelectedSegue", sender: nil)
