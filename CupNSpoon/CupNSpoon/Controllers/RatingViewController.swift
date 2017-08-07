@@ -10,7 +10,7 @@ import UIKit
 
 class RatingViewController: UIViewController {
     
-    var yelpID: String?
+    var cafe: Cafe?
     
     var selectedHash = [String]()
     
@@ -30,7 +30,7 @@ class RatingViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let yelpID = yelpID else { return }
+        guard let yelpID = cafe?.id else { return }
         RatingService.create(hashtags: selectedHash, yelpID: yelpID, completion: {})
     }
     

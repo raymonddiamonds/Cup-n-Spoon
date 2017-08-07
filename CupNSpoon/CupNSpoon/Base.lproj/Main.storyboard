@@ -567,7 +567,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cafe Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kY-Qf-kaV" customClass="CafeLabel" customModule="CupNSpoon" customModuleProvider="target">
-                                                <rect key="frame" x="70" y="65" width="235" height="21"/>
+                                                <rect key="frame" x="70" y="62" width="235" height="21"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="17"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -577,16 +577,8 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </label>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFS-mJ-qJx" userLabel="line between stars and count">
-                                                <rect key="frame" x="187" y="106" width="1" height="15"/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="15" id="Ba9-L0-Bef"/>
-                                                    <constraint firstAttribute="width" constant="1" id="OZM-BP-1ln"/>
-                                                </constraints>
-                                            </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="reviewCount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gik-s5-bCQ">
-                                                <rect key="frame" x="192" y="106" width="71" height="15"/>
+                                                <rect key="frame" x="192" y="103" width="71" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="15" id="HNI-Ds-I3N"/>
                                                 </constraints>
@@ -595,7 +587,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xk3-0h-9m3">
-                                                <rect key="frame" x="113" y="108" width="70" height="12"/>
+                                                <rect key="frame" x="113" y="105" width="70" height="12"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="12" id="LVQ-yP-qnP"/>
                                                     <constraint firstAttribute="width" constant="70" id="hOj-zE-u2N"/>
@@ -739,6 +731,14 @@
                                                     <outlet property="delegate" destination="65l-Oh-Nw1" id="sqZ-oy-3Gr"/>
                                                 </connections>
                                             </tableView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nFS-mJ-qJx" userLabel="line between stars and count">
+                                                <rect key="frame" x="187" y="103" width="1" height="15"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="Ba9-L0-Bef"/>
+                                                    <constraint firstAttribute="width" constant="1" id="OZM-BP-1ln"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -753,7 +753,7 @@
                                             <constraint firstItem="wen-eH-CFh" firstAttribute="top" secondItem="gn7-0O-mFv" secondAttribute="bottom" constant="8" id="V9b-pX-UsF"/>
                                             <constraint firstItem="zPF-Q6-qw2" firstAttribute="leading" secondItem="Q0C-ga-X3J" secondAttribute="leading" id="Zqh-bv-dMg"/>
                                             <constraint firstItem="1Br-UY-IJb" firstAttribute="leading" secondItem="Q0C-ga-X3J" secondAttribute="leading" id="Zs3-mk-IAe"/>
-                                            <constraint firstItem="2kY-Qf-kaV" firstAttribute="top" secondItem="Q0C-ga-X3J" secondAttribute="top" constant="65" id="a8k-6q-WXa"/>
+                                            <constraint firstItem="2kY-Qf-kaV" firstAttribute="top" secondItem="Q0C-ga-X3J" secondAttribute="top" constant="62" id="a8k-6q-WXa"/>
                                             <constraint firstItem="1Br-UY-IJb" firstAttribute="top" secondItem="Q0C-ga-X3J" secondAttribute="top" constant="-64" id="bAp-AN-bGg"/>
                                             <constraint firstAttribute="trailing" secondItem="2kY-Qf-kaV" secondAttribute="trailing" constant="70" id="ebp-wf-LqF"/>
                                             <constraint firstItem="xk3-0h-9m3" firstAttribute="centerY" secondItem="nFS-mJ-qJx" secondAttribute="centerY" id="lac-dH-5gH"/>
@@ -823,8 +823,8 @@
                                 <rect key="frame" x="16" y="20" width="343" height="627"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share your experiences with your community by selecting appropriate hastags that represents your  experience." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1E-eP-XdJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="150"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Share your experiences with the community by selecting relevant hashtags that represents your time at " textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D1E-eP-XdJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="130"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -832,7 +832,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wifi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIq-EK-rf3">
-                                        <rect key="frame" x="8" y="158" width="37" height="21"/>
+                                        <rect key="frame" x="25" y="158" width="37" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -846,7 +846,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OwY-hl-rPo" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="14" y="275" width="85" height="30"/>
+                                        <rect key="frame" x="225" y="196" width="85" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="#SlowWifi"/>
@@ -863,7 +863,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YfU-hb-5yv" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="134" y="260" width="74" height="30"/>
+                                        <rect key="frame" x="40" y="196" width="74" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="#FreeWifi"/>
@@ -880,7 +880,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Space" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3NK-C8-2ug">
-                                        <rect key="frame" x="242" y="201" width="59" height="21"/>
+                                        <rect key="frame" x="25" y="249" width="59" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -888,13 +888,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hlE-FL-bjM" userLabel="Space separator">
-                                        <rect key="frame" x="0.0" y="313" width="343" height="1"/>
+                                        <rect key="frame" x="8" y="273" width="327" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="grX-0d-wXm" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="196" width="120" height="30"/>
+                                        <rect key="frame" x="40" y="282" width="120" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="#LaptopFriendly"/>
@@ -911,7 +911,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XPa-Na-Jix" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="182" y="322" width="153" height="30"/>
+                                        <rect key="frame" x="157" y="320" width="153" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="#AmpleOutletAccess"/>
@@ -928,7 +928,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GDx-9g-QJn" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="25" y="313" width="62" height="30"/>
+                                        <rect key="frame" x="168" y="282" width="62" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="#Couch"/>
@@ -945,7 +945,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z2j-h0-wTP" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="117" y="441" width="109" height="30"/>
+                                        <rect key="frame" x="40" y="320" width="109" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="#AmpleSeating"/>
@@ -962,10 +962,10 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Fe-fK-EAT" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="21" y="441" width="71" height="30"/>
+                                        <rect key="frame" x="239" y="282" width="71" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="#Terasse"/>
+                                        <state key="normal" title="#Terrace"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
                                                 <real key="value" value="1"/>
@@ -979,7 +979,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Food Options" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNK-9J-J59">
-                                        <rect key="frame" x="104" y="511" width="104" height="21"/>
+                                        <rect key="frame" x="25" y="358" width="104" height="21"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -987,13 +987,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LzE-9X-69N" userLabel="Food Option Separator">
-                                        <rect key="frame" x="0.0" y="313" width="343" height="1"/>
+                                        <rect key="frame" x="8" y="385" width="327" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQi-bl-gyj" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="256" y="432" width="61" height="30"/>
+                                        <rect key="frame" x="141" y="395" width="61" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="#Vegan"/>
@@ -1010,7 +1010,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzb-xq-YB0" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="146" y="386" width="93" height="30"/>
+                                        <rect key="frame" x="217" y="395" width="93" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="#GlutenFree"/>
@@ -1027,7 +1027,7 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Noise Level" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3q-Wv-a0b">
-                                        <rect key="frame" x="229" y="247" width="88" height="21"/>
+                                        <rect key="frame" x="22" y="432" width="88" height="29"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -1035,13 +1035,13 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="X1l-1t-8U5" userLabel="Noise Level Separator">
-                                        <rect key="frame" x="0.0" y="313" width="343" height="1"/>
+                                        <rect key="frame" x="8" y="473" width="327" height="1"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </view>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ABU-qV-BuS" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="62" y="238" width="52" height="30"/>
+                                        <rect key="frame" x="40" y="482" width="52" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="#Loud"/>
@@ -1058,7 +1058,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JF6-NE-Jnr" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="80" y="368" width="58" height="30"/>
+                                        <rect key="frame" x="252" y="482" width="58" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="#Music"/>
@@ -1075,7 +1075,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mPm-u8-xER" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="152" y="212" width="71" height="30"/>
+                                        <rect key="frame" x="40" y="394" width="71" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="#Organic"/>
@@ -1092,7 +1092,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SMa-qP-4Um" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="246" y="368" width="55" height="30"/>
+                                        <rect key="frame" x="147" y="482" width="55" height="30"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" title="#Quiet"/>
@@ -1106,6 +1106,23 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="selectedHash:" destination="XBi-ma-zFb" eventType="touchUpInside" id="3le-nw-EoE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBR-R3-jJJ" userLabel="#FastWifi" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
+                                        <rect key="frame" x="131" y="196" width="81" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="#FastWifi  "/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="3"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="selectedHash:" destination="XBi-ma-zFb" eventType="touchUpInside" id="QVU-5U-kxi"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HFx-w3-8Lx" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
@@ -1123,23 +1140,6 @@
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="2hv-YY-hdB" kind="unwind" unwindAction="unwindToCafeDetailsViewController:" id="Qte-ce-Bca"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBR-R3-jJJ" userLabel="#FastWifi" customClass="RoundButton" customModule="CupNSpoon" customModuleProvider="target">
-                                        <rect key="frame" x="220" y="276" width="81" height="30"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="#FastWifi  "/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                                <real key="value" value="1"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="3"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="selectedHash:" destination="XBi-ma-zFb" eventType="touchUpInside" id="QVU-5U-kxi"/>
                                         </connections>
                                     </button>
                                 </subviews>

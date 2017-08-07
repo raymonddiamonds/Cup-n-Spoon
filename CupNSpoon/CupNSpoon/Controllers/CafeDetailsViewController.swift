@@ -12,7 +12,7 @@ import UIKit
 
 class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-
+    
     @IBOutlet weak var hashtagCollectionView: UICollectionView!
     
     @IBOutlet weak var cafeNameLabel: CafeLabel!
@@ -42,6 +42,8 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             }
         }
     }
+
+    var cafeList: Cafe?
     
     var phoneNum: String = ""
     var imageURL: String = ""
@@ -53,9 +55,11 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.hashtagCollectionView.delegate = self
         self.hashtagCollectionView.dataSource = self
-
+        
         if let currentCafe = cafe {
             print(currentCafe.address)
+            
+            cafeList = currentCafe
             
             //addressDetails.text = currentCafe.address
             cafeNameLabel.text = currentCafe.name
@@ -67,7 +71,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             avgYelpStar.image = UIImage(named:   currentCafe.rating.getImageName())
             
             let reviewURL = "https://api.yelp.com/v3/businesses/\(currentCafe.id)/reviews"
-
+            
             //code to get the ratings for all of our cafes in cafeList
             YelpClientService.getReviews(url: reviewURL, completionHandler:
                 { (receivedReviews) in
@@ -85,24 +89,24 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
                     self.hashtagCollectionView.reloadData()
                 }
                 /*for individualKey in Array(tags.keys)
-                {
-                    if self.featuresTextView.text != ""
-                    {
-                        self.featuresTextView.text = "\(self.featuresTextView.text!)   #\(individualKey): \(tags[individualKey]!)"
-                    }
-                    else
-                    {
-                        self.featuresTextView.text = "#\(individualKey): \(tags[individualKey]!)"
-                    }
-                }*/
-
+                 {
+                 if self.featuresTextView.text != ""
+                 {
+                 self.featuresTextView.text = "\(self.featuresTextView.text!)   #\(individualKey): \(tags[individualKey]!)"
+                 }
+                 else
+                 {
+                 self.featuresTextView.text = "#\(individualKey): \(tags[individualKey]!)"
+                 }
+                 }*/
+                
             })
         }
         else {
             print("is nil")
         }
         
-
+        
         
         
         // Making back button colour on nav controller white
@@ -121,8 +125,8 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             //Add the subview to the UIImageView
             backgroundPic.addSubview(overlay)
         }
-     }
-
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
@@ -138,7 +142,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         self.navigationController?.navigationBar.isTranslucent = true
         
     }
-
+    
     
     //creating # of tableView sections
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -175,7 +179,10 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "addRating" {
             if let destinationVC = segue.destination as? RatingViewController {
-                destinationVC.yelpID = (cafe?.id)!
+                
+                if let temporaryCurrentCafe = cafeList {
+                    destinationVC.cafe = temporaryCurrentCafe
+                }
             }
         }
     }
@@ -202,7 +209,7 @@ extension CafeDetailsViewController: UICollectionViewDataSource, UICollectionVie
         
         
         let hashtag = self.hashArray?[indexPath.item]
-
+        
         
         cell.hashtagLabel.text = "#\(hashtag!)"
         
