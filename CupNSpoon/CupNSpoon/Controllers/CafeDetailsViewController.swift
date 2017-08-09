@@ -24,9 +24,11 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     @IBAction func yelpURL(_ sender: Any) {
         
     }
+    @IBOutlet weak var openNowLabel: UILabel!
     
-    let reuseIdentifier = "hashtag"
+    let reuseIdentifier = "hashtagCell"
     
+    var testArray = [String]()
     
     var reviewList = [Review]()
     
@@ -61,10 +63,17 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
             
             cafeList = currentCafe
             
-            //addressDetails.text = currentCafe.address
+            addressDetails.text = currentCafe.address
             cafeNameLabel.text = currentCafe.name
             phoneNum = currentCafe.phoneNum
             imageURL = currentCafe.imageURL
+            
+            if currentCafe.isClosed == false {
+                openNowLabel.text = "Open Now"
+            }
+            else {
+                openNowLabel.text = "Closed"
+            }
             
             reviewCount.text = "\(Int(currentCafe.reviewCount)) reviews"
             
@@ -117,14 +126,21 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         backgroundPic.kf.setImage(with: backgroundPicURL)
         
         // Create a subview which will add an overlay effect on image view
-        if backgroundPic.viewWithTag(98) == nil {
+        /*if backgroundPic.viewWithTag(98) == nil {
             let overlay = UIView(frame: CGRect(x: 0,y: 0,width: backgroundPic.frame.size.width, height: backgroundPic.frame.size.height))
             overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55)
             overlay.tag = 98
             
             //Add the subview to the UIImageView
             backgroundPic.addSubview(overlay)
-        }
+        }*/
+        testArray = ["#vegan", "#ThisIsALongHashtag", "#Music", "#vegan", "#ThisIsALongOne"]
+        
+        
+        
+        let layout = hashtagCollectionView?.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = UICollectionViewFlowLayoutAutomaticSize
+        layout.estimatedItemSize = CGSize(width: 150, height: 40)
     }
     
     override func viewWillAppear(_ animated: Bool) {

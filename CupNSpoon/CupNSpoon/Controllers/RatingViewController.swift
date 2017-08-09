@@ -12,7 +12,12 @@ class RatingViewController: UIViewController {
     
     var cafe: Cafe?
     
+    @IBOutlet var tagButton: [RoundButton]!
+    
+    
     var selectedHash = [String]()
+    
+    @IBOutlet weak var reviewInfoText: UILabel!
     
     @IBAction func selectedHash(_ sender: UIButton) {
         
@@ -38,6 +43,13 @@ class RatingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+       reviewInfoText.text = "Share your experiences with the community by selecting relevant hashtags that represents your time at \(cafe!.name)"
+        
+        for button in tagButton {
+            button.titleLabel?.adjustsFontSizeToFitWidth = true
+
+        }
 
     }
     

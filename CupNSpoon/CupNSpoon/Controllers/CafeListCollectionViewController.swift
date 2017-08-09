@@ -67,6 +67,7 @@ class CafeListCollectionViewController: UIViewController,UICollectionViewDelegat
                     self.studyCafeList = self.allCafeList.filter {temporaryFilteredIds.contains($0.id)}
                     DispatchQueue.main.async {
                         self.studyCafeListCollectionView?.reloadData()
+                        self.studyCafeListCollectionView.isHidden = !self.studyCafeList.isEmpty
                     }
                 }
                 else

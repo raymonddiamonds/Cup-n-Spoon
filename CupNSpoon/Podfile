@@ -13,9 +13,6 @@ target 'CupNSpoon' do
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
   pod 'Firebase/Auth'
-  pod 'GooglePlaces'
-  pod 'GooglePlacePicker'
-  pod 'GoogleMaps'
 
 source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, '10.0'

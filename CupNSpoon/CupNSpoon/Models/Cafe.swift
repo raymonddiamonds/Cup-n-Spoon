@@ -21,8 +21,9 @@ struct Cafe {
     var reviewCount: Double
     var hashtagCounts: [String:Int]?
     var totalRatingsCount: Int?
+    var isClosed: Bool
     
-    init(name: String, id: String, imageURL: String, address: String, distance: Double, phoneNum: String, rating: Rating, reviewCount: Double) {
+    init(name: String, id: String, imageURL: String, address: String, distance: Double, phoneNum: String, rating: Rating, reviewCount: Double, isClosed: Bool) {
         self.name = name
         self.id = id
         self.imageURL = imageURL
@@ -31,6 +32,7 @@ struct Cafe {
         self.phoneNum = phoneNum
         self.rating = rating
         self.reviewCount = reviewCount
+        self.isClosed = isClosed
 
     }
 

@@ -10,18 +10,21 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import Kingfisher
+import CoreLocation
 
-class CafeListViewController: UIViewController{
+class CafeListViewController: UIViewController, CLLocationManagerDelegate{
     
     
     @IBOutlet weak var studyCollectionView: UICollectionView!
     @IBOutlet weak var brunchCollectionView: UICollectionView!
+    @IBOutlet weak var brunchEmptyView: UIView!
     @IBOutlet weak var businessCollectionView: UICollectionView!
     @IBOutlet weak var photographyCollectionView: UICollectionView!
     
     @IBOutlet weak var exploreCollectionView: UICollectionView!
     
     @IBOutlet weak var scrollView: UIScrollView!
+    
     var currentCafe: Cafe?
     var allCafeList = [Cafe]()
     var yelpIDs = [String]()
@@ -32,9 +35,24 @@ class CafeListViewController: UIViewController{
     var photographyCafeList = [Cafe]()
     var exploreCafeList = [Cafe]()
     
+    var currentLocation: CLLocation?
+    let locationManager = CLLocationManager()
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        locationManager.requestWhenInUseAuthorization()
+        
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            currentLocation = locationManager.location
+        } else {
+            
+        }
+        
+
         //MARK: Delegate
         studyCollectionView.delegate = self
         brunchCollectionView.delegate = self
@@ -50,7 +68,9 @@ class CafeListViewController: UIViewController{
         exploreCollectionView.dataSource = self
         
         // Yelp Request: Parameter, httpURL, Header, Request
-        let requestParams: Parameters = ["term": "cafe", "location": "3433 rue Durocher, Montreal", "sort_by": "best_match", "limit": 50]
+        let requestParams: Parameters = ["term": "cafe", "latitude": currentLocation?.coordinate.latitude, "longitude": currentLocation?.coordinate.longitude , "sort_by": "best_match", "limit": 50]
+        
+        //"latitude": currentLocation?.coordinate.latitude, "longitude": currentLocation?.coordinate.longitude
         
         let baseURL = "https://api.yelp.com/v3/businesses/search"
         
@@ -63,12 +83,12 @@ class CafeListViewController: UIViewController{
             
             self.yelpIDs = self.allCafeList.map { $0.id }
             print("businesses returned from Yelp \(Date())")
-
+            
             // Studying Cafes
             RatingService.filterCafesByHastags(yelpIDs: self.yelpIDs, hashtags: ["FastWifi", "LaptopFriendly"], completion: { (filteredIds) in
                 
                 print("hashtags returned from firebase (study) \(Date())")
-
+                
                 //filter thru allCafeList according to filteredIds
                 //reloadData for corresponding collecView
                 
@@ -86,17 +106,18 @@ class CafeListViewController: UIViewController{
             })
             
             // Brunch Cafe
-            RatingService.filterCafesByHastags(yelpIDs: self.yelpIDs, hashtags: ["Organic", "Vegan"], completion: { (filteredIds) in
+            RatingService.filterCafesByHastags(yelpIDs: self.yelpIDs, hashtags: ["Brunch"], completion: { (filteredIds) in
                 print("hashtags returned from firebase (brunch) \(Date())")
-
+                
                 //filter thru allCafeList according to filteredIds
                 //reloadData for corresponding collecView
                 
                 if let temporaryFilteredIds = filteredIds {
                     self.brunchCafeList = self.allCafeList.filter {temporaryFilteredIds.contains($0.id)}
                     print("hashtags filtered (brunch) \(Date())")
-
+                    
                     self.brunchCollectionView?.reloadData()
+                    //self.brunchEmptyView.isHidden = !self.brunchCafeList.isEmpty
                     
                 } else {
                     
@@ -105,16 +126,16 @@ class CafeListViewController: UIViewController{
                 
             })
             // Business Cafes
-            RatingService.filterCafesByHastags(yelpIDs: self.yelpIDs, hashtags: ["Organic", "Vegan"], completion: { (filteredIds) in
+            RatingService.filterCafesByHastags(yelpIDs: self.yelpIDs, hashtags: ["FreeWifi"], completion: { (filteredIds) in
                 print("hashtags returned from firebase (business) \(Date())")
-
+                
                 //filter thru allCafeList according to filteredIds
                 //reloadData for corresponding collecView
                 
                 if let temporaryFilteredIds = filteredIds {
                     self.businessCafeList = self.allCafeList.filter {temporaryFilteredIds.contains($0.id)}
                     print("hashtags filtered (business) \(Date())")
-
+                    
                     self.businessCollectionView?.reloadData()
                     
                 } else {
@@ -124,16 +145,16 @@ class CafeListViewController: UIViewController{
                 
             })
             // Photography Cafes
-            RatingService.filterCafesByHastags(yelpIDs: self.yelpIDs, hashtags: ["Organic", "Vegan"], completion: { (filteredIds) in
+            RatingService.filterCafesByHastags(yelpIDs: self.yelpIDs, hashtags: ["Aesthetic"], completion: { (filteredIds) in
                 print("hashtags returned from firebase (photo) \(Date())")
-
+                
                 //filter thru allCafeList according to filteredIds
                 //reloadData for corresponding collecView
                 
                 if let temporaryFilteredIds = filteredIds {
                     self.photographyCafeList = self.allCafeList.filter {temporaryFilteredIds.contains($0.id)}
                     print("hashtags filtered (photo) \(Date())")
-
+                    
                     self.photographyCollectionView?.reloadData()
                     
                 } else {
@@ -142,13 +163,13 @@ class CafeListViewController: UIViewController{
                 }
                 
             })
-    
             
-
+            
+            
             self.exploreCollectionView?.reloadData()
             
             
-
+            
             
             
         }
@@ -162,7 +183,37 @@ class CafeListViewController: UIViewController{
         automaticallyAdjustsScrollViewInsets = false
         
         
+        
     }
+    
+    
+    // If we have been deined access give the user the option to change it
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if(status == CLAuthorizationStatus.denied) {
+            showLocationDisabledPopUp()
+        }
+    }
+    
+    // Show the popup to the user if we have been deined access
+    func showLocationDisabledPopUp() {
+        let alertController = UIAlertController(title: "Location Access Disabled",
+                                                message: "In order to locate nearby cafes, we need your location",
+                                                preferredStyle: .alert)
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        //alertController.addAction(cancelAction)
+        
+        let openAction = UIAlertAction(title: "Open Settings", style: .default) { (action) in
+            if let url = URL(string: UIApplicationOpenSettingsURLString) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            }
+        }
+        alertController.addAction(openAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    
     
     //prepare destination view
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -177,17 +228,17 @@ class CafeListViewController: UIViewController{
     
     
     //dynamically resizing Collecting View cell
-    /*func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
      
      let height = self.view.frame.size.height;
      let width = self.view.frame.size.height;
      
-     return CGSize(width: width*0.25, height: height*0.25)
+     return CGSize(width: width*0.22, height: height*0.23)
      
      //return CGSize(width: width*0.26, height: height*0.26)
      
      //        return CGSize(width: CGFloat((collectionView.frame.size.width / 2) - 20), height: CGFloat(100))
-     }*/
+     }
     
     @IBAction func unwindToCafeListCollectionViewController(_ segue: UIStoryboardSegue) {
     }
@@ -224,7 +275,7 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
         else if collectionView == self.exploreCollectionView {
             return allCafeList.count
         }
-        
+            
         else {
             return allCafeList.count
         }
@@ -238,9 +289,9 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
         
         if collectionView == self.studyCollectionView {
             
-             cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studyCafeCell", for: indexPath) as! CafeCell
+            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studyCafeCell", for: indexPath) as! CafeCell
             
-             cafe = studyCafeList[indexPath.row]
+            cafe = studyCafeList[indexPath.row]
             
             cell.studyCafelabel.text = cafe.name
             
@@ -249,17 +300,6 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
             cell.studyCafeImage.kf.setImage(with: imageURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image) in
                 print("image downloaded for study cell \(Date())")
             })
-            
-            // Create a subview which will add an overlay effect on image view
-            if cell.studyCafeImage.viewWithTag(98) == nil {
-                let overlay = UIView(frame: CGRect(x: 0,y: 0,width: cell.studyCafeImage.frame.size.width, height: cell.studyCafeImage.frame.size.height))
-                overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55)
-                //0.37
-                overlay.tag = 98
-                
-                //Add the subview to the UIImageView
-                cell.studyCafeImage.addSubview(overlay)
-            }
             
             return cell
             
@@ -277,17 +317,6 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
                 print("image downloaded for brunch cell \(Date())")
             })
             
-            // Create a subview which will add an overlay effect on image view
-            if cell.brunchCafeImage.viewWithTag(98) == nil {
-                let overlay = UIView(frame: CGRect(x: 0,y: 0,width: cell.brunchCafeImage.frame.size.width, height: cell.brunchCafeImage.frame.size.height))
-                overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55)
-                //0.37
-                overlay.tag = 98
-                
-                //Add the subview to the UIImageView
-                cell.brunchCafeImage.addSubview(overlay)
-            }
-            
             return cell
             
         }
@@ -304,27 +333,16 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
                 print("image downloaded for business cell \(Date())")
             })
             
-            // Create a subview which will add an overlay effect on image view
-            if cell.businessCafeImage.viewWithTag(98) == nil {
-                let overlay = UIView(frame: CGRect(x: 0,y: 0,width: cell.businessCafeImage.frame.size.width, height: cell.businessCafeImage.frame.size.height))
-                overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55)
-                //0.37
-                overlay.tag = 98
-                
-                //Add the subview to the UIImageView
-                cell.businessCafeImage.addSubview(overlay)
-            }
-            
             return cell
         }
             
-    
+            
         else if collectionView == photographyCollectionView {
             
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photographyCafeCell", for: indexPath) as! CafeCell
             
             let cafe = photographyCafeList[indexPath.row]
-
+            
             
             cell.photographyCafeLabel.text = cafe.name
             
@@ -333,22 +351,11 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
                 print("image downloaded for photo cell \(Date())")
             })
             
-            // Create a subview which will add an overlay effect on image view
-            if cell.photographyCafeImage.viewWithTag(98) == nil {
-                let overlay = UIView(frame: CGRect(x: 0,y: 0,width: cell.photographyCafeImage.frame.size.width, height: cell.photographyCafeImage.frame.size.height))
-                overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55)
-                //0.37
-                overlay.tag = 98
-                
-                //Add the subview to the UIImageView
-                cell.photographyCafeImage.addSubview(overlay)
-            }
-            
             return cell
-
+            
         }
             
-        
+            
         else {
             
             let cell:CafeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "exploreCafeCell", for: indexPath) as! CafeCell
@@ -359,19 +366,6 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
             
             let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
             cell.exploreCafeImage.kf.setImage(with: imageURL)
-            
-            // Create a subview which will add an overlay effect on image view
-            if cell.exploreCafeImage.viewWithTag(98) == nil {
-                
-                let overlay = UIView(frame: CGRect(x: 0,y: 0,width: cell.exploreCafeImage.frame.size.width, height: cell.exploreCafeImage.frame.size.height))
-                overlay.backgroundColor = UIColor(red: 0, green: 0, blue: 0, alpha: 0.55)
-                //0.37
-                overlay.tag = 98
-                
-                //Add the subview to the UIImageView
-                cell.exploreCafeImage.addSubview(overlay)
-                
-            }
             
             return cell
             
@@ -406,7 +400,7 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
             currentCafe = allCafeList[indexPath.row]
             
         }
-            
+        
         performSegue(withIdentifier: "itemSelectedSegue", sender: nil)
     }
     

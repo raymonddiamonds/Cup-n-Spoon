@@ -32,8 +32,9 @@ class YelpClientService {
                     let ratingDouble = business["rating"].doubleValue
                     let rating = String.init(format: "%.1f", ratingDouble)
                     let reviewCount = business["review_count"].double
+                    let isClosed = business["is_closed"].bool
                     
-                    let cafe = Cafe(name: name, id: id, imageURL: imageURL, address: address, distance: distance, phoneNum: phoneNum, rating: Rating(rawValue: rating)!, reviewCount: reviewCount!)
+                    let cafe = Cafe(name: name, id: id, imageURL: imageURL, address: address, distance: distance, phoneNum: phoneNum, rating: Rating(rawValue: rating)!, reviewCount: reviewCount!, isClosed: isClosed!)
                     cafes.append(cafe)
                 }
             } else {

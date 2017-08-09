@@ -26,7 +26,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cup N Spoon" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8L0-JJ-2t3">
-                                <rect key="frame" x="8" y="123" width="359" height="99"/>
+                                <rect key="frame" x="8" y="123" width="359" height="62.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="52"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -35,7 +35,6 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="8L0-JJ-2t3" firstAttribute="centerX" secondItem="DvL-FK-fuC" secondAttribute="centerX" id="069-Lf-Aoe"/>
-                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="8L0-JJ-2t3" secondAttribute="bottom" constant="445" id="5oK-x3-2Hv"/>
                             <constraint firstItem="DvL-FK-fuC" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Nxb-WK-yua"/>
                             <constraint firstItem="8L0-JJ-2t3" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="103" id="S3V-Yt-txg"/>
                             <constraint firstItem="8L0-JJ-2t3" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Znh-dx-8kz"/>

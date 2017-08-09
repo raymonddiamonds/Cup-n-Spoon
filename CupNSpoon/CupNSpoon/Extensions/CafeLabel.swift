@@ -27,15 +27,15 @@ class CafeLabel: UILabel {
                 self.font = calculatedFont
                 break
             case 568.0: //iphone 5, 5s => 4 inch
-                calculatedFont = UIFont(name: currentFontName, size: fontSize * 0.6)
+                calculatedFont = UIFont(name: currentFontName, size: fontSize * 0.75)
                 self.font = calculatedFont
                 break
             case 667.0: //iphone 6, 6s => 4.7 inch
-                calculatedFont = UIFont(name: currentFontName, size: fontSize * 0.9)
+                calculatedFont = UIFont(name: currentFontName, size: fontSize)
                 self.font = calculatedFont
                 break
             case 736.0: //iphone 6s+ 6+ => 5.5 inch
-                calculatedFont = UIFont(name: currentFontName, size: fontSize)
+                calculatedFont = UIFont(name: currentFontName, size: fontSize * 1.05)
                 self.font = calculatedFont
                 break
             default:

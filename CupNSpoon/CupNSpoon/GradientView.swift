@@ -2,7 +2,7 @@
 //  GradientView.swift
 //  CupNSpoon
 //
-//  Created by Raymond Diamonds on 2017-08-04.
+//  Created by Raymond Diamonds on 2017-08-07.
 //  Copyright © 2017 Raymond Diamonds. All rights reserved.
 //
 
