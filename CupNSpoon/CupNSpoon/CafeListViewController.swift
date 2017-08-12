@@ -24,7 +24,7 @@ class CafeListViewController: UIViewController, CLLocationManagerDelegate{
     @IBOutlet weak var exploreCollectionView: UICollectionView!
     
     @IBOutlet weak var scrollView: UIScrollView!
-    
+
     var currentCafe: Cafe?
     var allCafeList = [Cafe]()
     var yelpIDs = [String]()
@@ -68,7 +68,7 @@ class CafeListViewController: UIViewController, CLLocationManagerDelegate{
         exploreCollectionView.dataSource = self
         
         // Yelp Request: Parameter, httpURL, Header, Request
-        let requestParams: Parameters = ["term": "cafe", "latitude": currentLocation?.coordinate.latitude, "longitude": currentLocation?.coordinate.longitude , "sort_by": "best_match", "limit": 50]
+        let requestParams: Parameters = ["term": "cafe", "location": "1547 Mission St, San Francisco" , "sort_by": "best_match", "limit": 50]
         
         //"latitude": currentLocation?.coordinate.latitude, "longitude": currentLocation?.coordinate.longitude
         
@@ -85,7 +85,7 @@ class CafeListViewController: UIViewController, CLLocationManagerDelegate{
             print("businesses returned from Yelp \(Date())")
             
             // Studying Cafes
-            RatingService.filterCafesByHastags(yelpIDs: self.yelpIDs, hashtags: ["FastWifi", "LaptopFriendly"], completion: { (filteredIds) in
+            RatingService.filterCafesByHastags(yelpIDs: self.yelpIDs, hashtags: ["LaptopFriendly"], completion: { (filteredIds) in
                 
                 print("hashtags returned from firebase (study) \(Date())")
                 
@@ -182,6 +182,9 @@ class CafeListViewController: UIViewController, CLLocationManagerDelegate{
         
         automaticallyAdjustsScrollViewInsets = false
         
+    
+        
+
         
         
     }
@@ -253,8 +256,23 @@ class CafeListViewController: UIViewController, CLLocationManagerDelegate{
 
 extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate, UICollectionViewDataSource {
     
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        
+        if collectionView == self.exploreCollectionView {
+            return 1
+        }
+        else {
+            return 2
+        }
+        
+    }
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        if section == 1 {
+            return 1
+        }
         
         if collectionView == self.studyCollectionView {
             return studyCafeList.count
@@ -289,69 +307,104 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
         
         if collectionView == self.studyCollectionView {
             
-            cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studyCafeCell", for: indexPath) as! CafeCell
+            switch indexPath.section {
+            case 0:
+                cell = collectionView.dequeueReusableCell(withReuseIdentifier: "studyCafeCell", for: indexPath) as! CafeCell
+                
+                cafe = studyCafeList[indexPath.row]
+                
+                cell.studyCafelabel.text = cafe.name
+                
+                let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
+                //cell.studyCafeImage.kf.setImage(with: imageURL)
+                cell.studyCafeImage.kf.setImage(with: imageURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image) in
+                    print("image downloaded for study cell \(Date())")
+                })
+                
+                return cell
+
+            default:
+                let normalCell = collectionView.dequeueReusableCell(withReuseIdentifier: "rateCell", for: indexPath)
+                return normalCell
+            }
             
-            cafe = studyCafeList[indexPath.row]
-            
-            cell.studyCafelabel.text = cafe.name
-            
-            let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
-            //cell.studyCafeImage.kf.setImage(with: imageURL)
-            cell.studyCafeImage.kf.setImage(with: imageURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image) in
-                print("image downloaded for study cell \(Date())")
-            })
-            
-            return cell
             
         }
         else if collectionView == self.brunchCollectionView {
             
-            let cell:CafeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "brunchCafeCell", for: indexPath) as! CafeCell
-            
-            let cafe = brunchCafeList[indexPath.row]
-            
-            cell.brunchCafeLabel.text = cafe.name
-            
-            let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
-            cell.brunchCafeImage.kf.setImage(with: imageURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image) in
-                print("image downloaded for brunch cell \(Date())")
-            })
-            
-            return cell
+            switch indexPath.section {
+            case 0:
+                
+                let cell:CafeCell = collectionView.dequeueReusableCell(withReuseIdentifier: "brunchCafeCell", for: indexPath) as! CafeCell
+                
+                let cafe = brunchCafeList[indexPath.row]
+                
+                cell.brunchCafeLabel.text = cafe.name
+                
+                let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
+                cell.brunchCafeImage.kf.setImage(with: imageURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image) in
+                    print("image downloaded for brunch cell \(Date())")
+                })
+                
+                return cell
+                
+            default:
+                let normalCell = collectionView.dequeueReusableCell(withReuseIdentifier: "rateCell", for: indexPath)
+                return normalCell
+            }
             
         }
         else if collectionView == businessCollectionView {
             
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "businessCafeCell", for: indexPath) as! CafeCell
-            
-            let cafe = businessCafeList[indexPath.row]
-            
-            cell.businessCafeLabel.text = cafe.name
-            
-            let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
-            cell.businessCafeImage.kf.setImage(with: imageURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image) in
+            switch indexPath.section {
+            case 0:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "businessCafeCell", for: indexPath) as! CafeCell
+                
+                let cafe = businessCafeList[indexPath.row]
+                
+                cell.businessCafeLabel.text = cafe.name
+                
+                let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
+                cell.businessCafeImage.kf.setImage(with: imageURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image) in
                 print("image downloaded for business cell \(Date())")
-            })
+                })
+                
+                return cell
+                
+            default:
+                let normalCell = collectionView.dequeueReusableCell(withReuseIdentifier: "rateCell", for: indexPath)
+                return normalCell
             
-            return cell
+            }
+
         }
             
             
+            
         else if collectionView == photographyCollectionView {
-            
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photographyCafeCell", for: indexPath) as! CafeCell
-            
-            let cafe = photographyCafeList[indexPath.row]
-            
-            
-            cell.photographyCafeLabel.text = cafe.name
-            
-            let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
-            cell.photographyCafeImage.kf.setImage(with: imageURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image) in
+            switch indexPath.section {
+            case 0:
+                let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "photographyCafeCell", for: indexPath) as! CafeCell
+                
+                let cafe = photographyCafeList[indexPath.row]
+                
+                
+                cell.photographyCafeLabel.text = cafe.name
+                
+                let imageURL = URL(string: cafe.imageURL.replacingOccurrences(of: "o.jpg", with: "ms.jpg"))
+                cell.photographyCafeImage.kf.setImage(with: imageURL, placeholder: nil, options: nil, progressBlock: nil, completionHandler: { (image) in
                 print("image downloaded for photo cell \(Date())")
-            })
+                })
+                
+                return cell
+                
+            default:
+                let normalCell = collectionView.dequeueReusableCell(withReuseIdentifier: "rateCell", for: indexPath)
+                return normalCell
+                
             
-            return cell
+            }
+
             
         }
             
@@ -379,7 +432,9 @@ extension CafeListViewController: UICollectionViewDelegateFlowLayout, UICollecti
         //perform segue and the sender should be the object of the array in the index path
         //TODO
         
+        
         if collectionView == studyCollectionView {
+            
             
             currentCafe = studyCafeList[indexPath.row]
             

@@ -14,6 +14,7 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     
     
     @IBOutlet weak var hashtagCollectionView: UICollectionView!
+    @IBOutlet weak var rateButton: UIBarButtonItem!
     
     @IBOutlet weak var cafeNameLabel: CafeLabel!
     @IBOutlet weak var backgroundPic: UIImageView!
@@ -57,6 +58,8 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
         
         self.hashtagCollectionView.delegate = self
         self.hashtagCollectionView.dataSource = self
+        
+        self.rateButton.setBackgroundImage(UIImage(named: "buttonBackground"), for: .normal, barMetrics: .default)
         
         if let currentCafe = cafe {
             print(currentCafe.address)
@@ -204,6 +207,25 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
     }
     
     @IBAction func unwindToCafeDetailsViewController(_ segue: UIStoryboardSegue) {
+        RatingService.retrieveForCafe(yelpID: (cafe?.id)! , completion: { (tags) in
+            self.cafe?.hashtagCounts = tags
+            DispatchQueue.main.async {
+                self.hashtagCollectionView.reloadData()
+            }
+            /*for individualKey in Array(tags.keys)
+             {
+             if self.featuresTextView.text != ""
+             {
+             self.featuresTextView.text = "\(self.featuresTextView.text!)   #\(individualKey): \(tags[individualKey]!)"
+             }
+             else
+             {
+             self.featuresTextView.text = "#\(individualKey): \(tags[individualKey]!)"
+             }
+             }*/
+            
+        })
+
     }
     
 }
@@ -211,17 +233,19 @@ class CafeDetailsViewController: UIViewController, UITableViewDelegate, UITableV
 extension CafeDetailsViewController: UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return self.cafe?.hashtagCounts?.count ?? 0
+        return self.cafe?.hashtagCounts?.count ?? 0 == 0 ? 1 : self.cafe?.hashtagCounts?.count ?? 0
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        if self.cafe?.hashtagCounts?.count ?? 0 == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "noRating", for: indexPath)
+            return cell
+        }
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! HashtagCell
         
-        
-        // configure cell based on...
-        // self.hashArray[indexPath.item]
+
         
         
         let hashtag = self.hashArray?[indexPath.item]

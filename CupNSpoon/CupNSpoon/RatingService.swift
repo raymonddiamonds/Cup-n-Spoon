@@ -76,8 +76,6 @@ struct RatingService {
                     return completion([:])
                 }
                 
-                
-                
                 completion(snapshot)
                 
             })
@@ -118,6 +116,7 @@ struct RatingService {
                     }
                     group.leave()
                 })
+       
             }
             group.notify(qos: .userInitiated, queue: .global(), execute: {
                 let finalArray = Array(yelpIDs.intersection(result))

@@ -34,9 +34,14 @@ class RatingViewController: UIViewController {
         }
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    @IBAction func submitButtonPressed(_ sender: RoundButton) {
         guard let yelpID = cafe?.id else { return }
-        RatingService.create(hashtags: selectedHash, yelpID: yelpID, completion: {})
+        RatingService.create(hashtags: selectedHash, yelpID: yelpID, completion: { [unowned self] () in
+            self.performSegue(withIdentifier: "hashtagsSubmitted", sender: self)
+        })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
     }
     
     

@@ -15,18 +15,18 @@
 		383809411F1832F80013E3C5 /* CafeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383809401F1832F80013E3C5 /* CafeDetailsViewController.swift */; };
 		383809471F183D7D0013E3C5 /* RoundButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 383809461F183D7D0013E3C5 /* RoundButton.swift */; };
 		3838094B1F19797E0013E3C5 /* CafeLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3838094A1F19797E0013E3C5 /* CafeLabel.swift */; };
+		3849E7621F3E4387005702D7 /* ShadowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3849E7611F3E4387005702D7 /* ShadowView.swift */; };
+		388032D21F3D00F500AFFFAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 388032D11F3D00F500AFFFAC /* GoogleService-Info.plist */; };
 		389CEAB01F16CC4A0081BC00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAAF1F16CC4A0081BC00 /* AppDelegate.swift */; };
 		389CEAB51F16CC4A0081BC00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 389CEAB31F16CC4A0081BC00 /* Main.storyboard */; };
 		389CEAB71F16CC4A0081BC00 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 389CEAB61F16CC4A0081BC00 /* Assets.xcassets */; };
 		389CEABA1F16CC4A0081BC00 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 389CEAB81F16CC4A0081BC00 /* LaunchScreen.storyboard */; };
-		389CEAC21F16CCF10081BC00 /* CafeListCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAC11F16CCF10081BC00 /* CafeListCollectionViewController.swift */; };
 		389CEAC41F16CCF90081BC00 /* Cafe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAC31F16CCF90081BC00 /* Cafe.swift */; };
 		389CEAC61F16CD000081BC00 /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAC51F16CD000081BC00 /* UIImage.swift */; };
 		389CEAC81F16CD170081BC00 /* CafeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389CEAC71F16CD170081BC00 /* CafeCell.swift */; };
 		38AED35C1F201E2B000C2211 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AED35B1F201E2B000C2211 /* Review.swift */; };
 		38AED3601F2122F5000C2211 /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AED35F1F2122F5000C2211 /* ReviewCell.swift */; };
 		38AED3681F22835C000C2211 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38AED3671F22835C000C2211 /* Rating.swift */; };
-		38BBCCF91F26B47C008D1591 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 38BBCCF81F26B47C008D1591 /* GoogleService-Info.plist */; };
 		38BBCCFD1F27ED94008D1591 /* RatingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BBCCFC1F27ED93008D1591 /* RatingViewController.swift */; };
 		38BBCCFF1F2A88F3008D1591 /* RatingService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38BBCCFE1F2A88F3008D1591 /* RatingService.swift */; };
 		38D5A9751F3126B50014A667 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38D5A9741F3126B50014A667 /* HomeCollectionViewController.swift */; };
@@ -42,24 +42,25 @@
 		380B2E181F38DC8A00035015 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		380B2E1A1F38DE3F00035015 /* GradientColourView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientColourView.swift; sourceTree = "<group>"; };
 		381BF3091F2BD2940062D1F8 /* HashtagCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HashtagCell.swift; sourceTree = "<group>"; };
+		382481081F3D0A7B00945C1F /* CupNSpoon.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CupNSpoon.entitlements; sourceTree = "<group>"; };
 		3838093C1F1815230013E3C5 /* YelpClientService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YelpClientService.swift; sourceTree = "<group>"; };
 		383809401F1832F80013E3C5 /* CafeDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CafeDetailsViewController.swift; path = Controllers/CafeDetailsViewController.swift; sourceTree = "<group>"; };
 		383809461F183D7D0013E3C5 /* RoundButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundButton.swift; sourceTree = "<group>"; };
 		3838094A1F19797E0013E3C5 /* CafeLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CafeLabel.swift; path = Extensions/CafeLabel.swift; sourceTree = "<group>"; };
+		3849E7611F3E4387005702D7 /* ShadowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShadowView.swift; sourceTree = "<group>"; };
+		388032D11F3D00F500AFFFAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		389CEAAC1F16CC4A0081BC00 /* CupNSpoon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CupNSpoon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		389CEAAF1F16CC4A0081BC00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		389CEAB41F16CC4A0081BC00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		389CEAB61F16CC4A0081BC00 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		389CEAB91F16CC4A0081BC00 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		389CEABB1F16CC4A0081BC00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		389CEAC11F16CCF10081BC00 /* CafeListCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CafeListCollectionViewController.swift; path = Controllers/CafeListCollectionViewController.swift; sourceTree = "<group>"; };
 		389CEAC31F16CCF90081BC00 /* Cafe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Cafe.swift; path = Models/Cafe.swift; sourceTree = "<group>"; };
 		389CEAC51F16CD000081BC00 /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UIImage.swift; path = Extensions/UIImage.swift; sourceTree = "<group>"; };
 		389CEAC71F16CD170081BC00 /* CafeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CafeCell.swift; sourceTree = "<group>"; };
 		38AED35B1F201E2B000C2211 /* Review.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		38AED35F1F2122F5000C2211 /* ReviewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 		38AED3671F22835C000C2211 /* Rating.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
-		38BBCCF81F26B47C008D1591 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		38BBCCFC1F27ED93008D1591 /* RatingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RatingViewController.swift; path = Controllers/RatingViewController.swift; sourceTree = "<group>"; };
 		38BBCCFE1F2A88F3008D1591 /* RatingService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingService.swift; sourceTree = "<group>"; };
 		38D5A9741F3126B50014A667 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +134,7 @@
 				389CEAC51F16CD000081BC00 /* UIImage.swift */,
 				3838094A1F19797E0013E3C5 /* CafeLabel.swift */,
 				380B2E1A1F38DE3F00035015 /* GradientColourView.swift */,
+				3849E7611F3E4387005702D7 /* ShadowView.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -158,8 +160,9 @@
 		389CEAAE1F16CC4A0081BC00 /* CupNSpoon */ = {
 			isa = PBXGroup;
 			children = (
-				38BBCCF81F26B47C008D1591 /* GoogleService-Info.plist */,
+				382481081F3D0A7B00945C1F /* CupNSpoon.entitlements */,
 				389CEAAF1F16CC4A0081BC00 /* AppDelegate.swift */,
+				388032D11F3D00F500AFFFAC /* GoogleService-Info.plist */,
 				3838093E1F182E670013E3C5 /* Model */,
 				389CEACA1F17D4B90081BC00 /* View */,
 				389CEAC91F17D4B00081BC00 /* Controllers */,
@@ -176,7 +179,6 @@
 		389CEAC91F17D4B00081BC00 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				389CEAC11F16CCF10081BC00 /* CafeListCollectionViewController.swift */,
 				38D5A9761F317BBB0014A667 /* CafeListViewController.swift */,
 				383809401F1832F80013E3C5 /* CafeDetailsViewController.swift */,
 				38BBCCFC1F27ED93008D1591 /* RatingViewController.swift */,
@@ -244,6 +246,11 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = V579BRRZN7;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -271,8 +278,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				389CEABA1F16CC4A0081BC00 /* LaunchScreen.storyboard in Resources */,
+				388032D21F3D00F500AFFFAC /* GoogleService-Info.plist in Resources */,
 				389CEAB71F16CC4A0081BC00 /* Assets.xcassets in Resources */,
-				38BBCCF91F26B47C008D1591 /* GoogleService-Info.plist in Resources */,
 				389CEAB51F16CC4A0081BC00 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -344,7 +351,7 @@
 				383809411F1832F80013E3C5 /* CafeDetailsViewController.swift in Sources */,
 				38BBCCFF1F2A88F3008D1591 /* RatingService.swift in Sources */,
 				380B2E191F38DC8A00035015 /* GradientView.swift in Sources */,
-				389CEAC21F16CCF10081BC00 /* CafeListCollectionViewController.swift in Sources */,
+				3849E7621F3E4387005702D7 /* ShadowView.swift in Sources */,
 				3838093D1F1815230013E3C5 /* YelpClientService.swift in Sources */,
 				381BF30A1F2BD2940062D1F8 /* HashtagCell.swift in Sources */,
 				389CEAB01F16CC4A0081BC00 /* AppDelegate.swift in Sources */,
@@ -477,6 +484,7 @@
 			baseConfigurationReference = 35D0C501B6394B116549820C /* Pods-CupNSpoon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CupNSpoon/CupNSpoon.entitlements;
 				DEVELOPMENT_TEAM = V579BRRZN7;
 				INFOPLIST_FILE = CupNSpoon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -491,6 +499,7 @@
 			baseConfigurationReference = B2C748506A9C51946A0891E7 /* Pods-CupNSpoon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CupNSpoon/CupNSpoon.entitlements;
 				DEVELOPMENT_TEAM = V579BRRZN7;
 				INFOPLIST_FILE = CupNSpoon/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
